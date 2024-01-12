@@ -462,6 +462,7 @@ func TestNewListOptions(t *testing.T) {
 			&Filter{},
 			&OrderBy{},
 			&Select{},
+			&Expand{},
 			&Skip{},
 			&SkipToken{},
 			&Top{},

@@ -72,6 +72,44 @@ func (f *Filter) MarshalSchema() string {
 	return f.v
 }
 
+// Expand causes related entities to be included inline in the response.
+type Expand struct {
+	v []string
+}
+
+// Set sets the expand query options
+func (e *Expand) Set(fields []string) {
+	e.v = fields
+}
+
+// Add a field to the Expand query
+func (e *Expand) Add(field string) {
+	for _, key := range e.v {
+		if key == field {
+			return
+		}
+	}
+	e.v = append(e.v, field)
+}
+
+// Remove a field from the Expand query
+func (e *Expand) Remove(field string) {
+	for i, v := range e.v {
+		if v == field {
+			e.v = append(e.v[:i], e.v[i+1:]...)
+			break
+		}
+	}
+}
+
+// MarshalSchema marshals the options in a query string
+func (e *Expand) MarshalSchema() string {
+	if len(e.v) == 0 {
+		return ""
+	}
+	return strings.Join(e.v, ",")
+}
+
 // OrderBy specifies an expression for determining what values are used
 // to order the collection
 type OrderBy struct {
@@ -172,6 +210,7 @@ type ListOptions struct {
 	Filter    *Filter    `param:"$filter,omitempty"`
 	OrderBy   *OrderBy   `param:"$orderby,omitempty"`
 	Select    *Select    `param:"$select,omitempty"`
+	Expand    *Expand    `param:"$expand,omitempty"`
 	Skip      *Skip      `param:"$skip,omitempty"`
 	SkipToken *SkipToken `param:"$skiptoken,omitempty"`
 	Top       *Top       `param:"$top,omitempty"`
@@ -183,6 +222,7 @@ func NewListOptions() *ListOptions {
 		&Filter{},
 		&OrderBy{},
 		&Select{},
+		&Expand{},
 		&Skip{},
 		&SkipToken{},
 		&Top{},
