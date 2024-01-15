@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,31 +26,31 @@ type DocumentTypesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentTypes
 type DocumentTypes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Int32
 	ID *int `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Description: Document type description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DocumentIsCreatable: Indicates if documents of this type can be created
+	// DocumentIsCreatable: Edm.Boolean
 	DocumentIsCreatable *bool `json:"DocumentIsCreatable,omitempty"`
 
-	// DocumentIsDeletable: Indicates if documents of this type can be deleted
+	// DocumentIsDeletable: Edm.Boolean
 	DocumentIsDeletable *bool `json:"DocumentIsDeletable,omitempty"`
 
-	// DocumentIsUpdatable: Indicates if documents of this type can be updated
+	// DocumentIsUpdatable: Edm.Boolean
 	DocumentIsUpdatable *bool `json:"DocumentIsUpdatable,omitempty"`
 
-	// DocumentIsViewable: Indicates if documents of this type can be retrieved
+	// DocumentIsViewable: Edm.Boolean
 	DocumentIsViewable *bool `json:"DocumentIsViewable,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// TypeCategory: ID of the document type category
+	// TypeCategory: Edm.Int32
 	TypeCategory *int `json:"TypeCategory,omitempty"`
 }
 

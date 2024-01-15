@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,91 +26,118 @@ type MeEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemMe
 type Me struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// UserID: Primary key
+	// UserID: Edm.Guid
 	UserID *types.GUID `json:"UserID,omitempty"`
 
-	// CurrentDivision: Division number that is currently used in the API. You should use a division number in the url
+	// AccountingDivision: Edm.Int32
+	AccountingDivision *int `json:"AccountingDivision,omitempty"`
+
+	// CurrentDivision: Edm.Int32
 	CurrentDivision *int `json:"CurrentDivision,omitempty"`
 
-	// DivisionCustomer: Owner account of the division
+	// CustomerCode: Edm.String
+	CustomerCode *string `json:"CustomerCode,omitempty"`
+
+	// DivisionCustomer: Edm.Guid
 	DivisionCustomer *types.GUID `json:"DivisionCustomer,omitempty"`
 
-	// DivisionCustomerCode: Owner account code of the division
+	// DivisionCustomerCode: Edm.String
 	DivisionCustomerCode *string `json:"DivisionCustomerCode,omitempty"`
 
-	// DivisionCustomerName: Owner account name of the division
+	// DivisionCustomerName: Edm.String
 	DivisionCustomerName *string `json:"DivisionCustomerName,omitempty"`
 
-	// DivisionCustomerSiretNumber: Owner account SIRET Number of the division for French legislation
+	// DivisionCustomerSiretNumber: Edm.String
 	DivisionCustomerSiretNumber *string `json:"DivisionCustomerSiretNumber,omitempty"`
 
-	// DivisionCustomerVatNumber: Owner account VAT Number of the division
+	// DivisionCustomerVatNumber: Edm.String
 	DivisionCustomerVatNumber *string `json:"DivisionCustomerVatNumber,omitempty"`
 
-	// Email: Email address of the user
+	// DossierDivision: Edm.Int32
+	DossierDivision *int `json:"DossierDivision,omitempty"`
+
+	// Email: Edm.String
 	Email *string `json:"Email,omitempty"`
 
-	// EmployeeID: Employee ID
+	// EmployeeID: Edm.Guid
 	EmployeeID *types.GUID `json:"EmployeeID,omitempty"`
 
-	// FirstName: First name
+	// FirstName: Edm.String
 	FirstName *string `json:"FirstName,omitempty"`
 
-	// FullName: Full name of the user
+	// FullName: Edm.String
 	FullName *string `json:"FullName,omitempty"`
 
-	// Gender: Gender: M=Male, V=Female, O=Unknown
+	// Gender: Edm.String
 	Gender *string `json:"Gender,omitempty"`
 
-	// Initials: Initials
+	// Initials: Edm.String
 	Initials *string `json:"Initials,omitempty"`
 
-	// Language: Language spoken by this user
+	// IsClientUser: Edm.Boolean
+	IsClientUser *bool `json:"IsClientUser,omitempty"`
+
+	// IsEmployeeSelfServiceUser: Edm.Boolean
+	IsEmployeeSelfServiceUser *bool `json:"IsEmployeeSelfServiceUser,omitempty"`
+
+	// IsMyFirmLiteUser: Edm.Boolean
+	IsMyFirmLiteUser *bool `json:"IsMyFirmLiteUser,omitempty"`
+
+	// IsMyFirmPortalUser: Edm.Boolean
+	IsMyFirmPortalUser *bool `json:"IsMyFirmPortalUser,omitempty"`
+
+	// IsStarterUser: Edm.Boolean
+	IsStarterUser *bool `json:"IsStarterUser,omitempty"`
+
+	// Language: Edm.String
 	Language *string `json:"Language,omitempty"`
 
-	// LanguageCode: Language (culture) that is used in Exact Online
+	// LanguageCode: Edm.String
 	LanguageCode *string `json:"LanguageCode,omitempty"`
 
-	// LastName: Last name
+	// LastName: Edm.String
 	LastName *string `json:"LastName,omitempty"`
 
-	// Legislation: Legislation
+	// Legislation: Edm.Int64
 	Legislation *int64 `json:"Legislation,string,omitempty"`
 
-	// MiddleName: Middle name
+	// MiddleName: Edm.String
 	MiddleName *string `json:"MiddleName,omitempty"`
 
-	// Mobile: Mobile phone
+	// Mobile: Edm.String
 	Mobile *string `json:"Mobile,omitempty"`
 
-	// Nationality: Nationality
+	// Nationality: Edm.String
 	Nationality *string `json:"Nationality,omitempty"`
 
-	// Phone: Phone number
+	// PackageCode: Edm.String
+	PackageCode *string `json:"PackageCode,omitempty"`
+
+	// Phone: Edm.String
 	Phone *string `json:"Phone,omitempty"`
 
-	// PhoneExtension: Phone number extension
+	// PhoneExtension: Edm.String
 	PhoneExtension *string `json:"PhoneExtension,omitempty"`
 
-	// PictureUrl: Url that can be used to retrieve the picture of the user
+	// PictureUrl: Edm.String
 	PictureUrl *string `json:"PictureUrl,omitempty"`
 
-	// ServerTime: The current date and time in Exact Online
+	// ServerTime: Edm.String
 	ServerTime *string `json:"ServerTime,omitempty"`
 
-	// ServerUtcOffset: The time difference with UTC in seconds
+	// ServerUtcOffset: Edm.Double
 	ServerUtcOffset *float64 `json:"ServerUtcOffset,omitempty"`
 
-	// ThumbnailPicture: Binary thumbnail picture of this user
+	// ThumbnailPicture: Edm.Binary
 	ThumbnailPicture *[]byte `json:"ThumbnailPicture,omitempty"`
 
-	// ThumbnailPictureFormat: File type of the picture
+	// ThumbnailPictureFormat: Edm.String
 	ThumbnailPictureFormat *string `json:"ThumbnailPictureFormat,omitempty"`
 
-	// Title: Title
+	// Title: Edm.String
 	Title *string `json:"Title,omitempty"`
 
-	// UserName: Login name of the user
+	// UserName: Edm.String
 	UserName *string `json:"UserName,omitempty"`
 }
 

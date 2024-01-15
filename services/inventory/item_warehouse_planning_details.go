@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,54 +26,57 @@ type ItemWarehousePlanningDetailsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehousePlanningDetails
 type ItemWarehousePlanningDetails struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Item: ID of item
+	// ID: Edm.Guid
+	ID *types.GUID `json:"ID,omitempty"`
+
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// PlannedDate: Date which quantity in stock is planned to change
+	// PlannedDate: Edm.DateTime
 	PlannedDate *types.Date `json:"PlannedDate,omitempty"`
 
-	// PlannedQuantity: Amount by which quantity in stock is planned to change
+	// PlannedQuantity: Edm.Double
 	PlannedQuantity *float64 `json:"PlannedQuantity,omitempty"`
 
-	// PlanningSourceDescription: Human readable description of the PlanningSource (translated to user&#39;s language) - Examples: Purchase Order, Sales Order, Shop Order, etc.
+	// PlanningSourceDescription: Edm.String
 	PlanningSourceDescription *string `json:"PlanningSourceDescription,omitempty"`
 
-	// PlanningSourceID: ID of the PlanningSource
+	// PlanningSourceID: Edm.Guid
 	PlanningSourceID *types.GUID `json:"PlanningSourceID,omitempty"`
 
-	// PlanningSourceLineNumber: Line number of the PlanningSource if the PlanningSourceType supports line numbers
+	// PlanningSourceLineNumber: Edm.Int32
 	PlanningSourceLineNumber *int `json:"PlanningSourceLineNumber,omitempty"`
 
-	// PlanningSourceNumber: Human readable number of the PlanningSource - Examples: Shop order number &#39;201600001&#39; or Sales order number &#39;2016020001&#39;
+	// PlanningSourceNumber: Edm.Int32
 	PlanningSourceNumber *int `json:"PlanningSourceNumber,omitempty"`
 
-	// PlanningSourceUrl: REST API URL of this specific PlanningSource and PlanningSourceID (Assembly orders and warehouse transfers not supported over REST)
+	// PlanningSourceUrl: Edm.String
 	PlanningSourceUrl *string `json:"PlanningSourceUrl,omitempty"`
 
-	// PlanningType: Type of the PlanningSource - 120=GoodsDelivery, 124=WarehouseTransferDelivery, 130=GoodsReceipt, 134=WarehouseTransferReceipt, 140=ShopOrderStockReceipt, 147=ShopOrderByProductReceipt, 150=ShopOrderRequirement, 160=AssemblyOrderReceipt, 165=AssemblyOrderIssue
+	// PlanningType: Edm.Int32
 	PlanningType *int `json:"PlanningType,omitempty"`
 
-	// PlanningTypeDescription: Human readable description of the PlanningSourceType (translated to user&#39;s language) - Examples: &#39;Shop order stock receipt&#39; or &#39;Goods delivery&#39;
+	// PlanningTypeDescription: Edm.String
 	PlanningTypeDescription *string `json:"PlanningTypeDescription,omitempty"`
 
-	// Warehouse: ID of warehouse
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 
 func (e *ItemWarehousePlanningDetails) GetPrimary() *types.GUID {
-	return e.Item
+	return e.ID
 }
 
 func (s *ItemWarehousePlanningDetailsEndpoint) UserHasRights(ctx context.Context, division int, method string) (bool, error) {

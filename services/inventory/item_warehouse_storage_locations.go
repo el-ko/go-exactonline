@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,46 +26,61 @@ type ItemWarehouseStorageLocationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouseStorageLocations
 type ItemWarehouseStorageLocations struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Uniquely identifies the item, warehouse, storage location combination
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// IsFractionAllowedItem: Does the item allow partial quantities (1.75 meters)
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// Item: Item
+	// IsStockItem: Edm.Byte
+	IsStockItem *byte `json:"IsStockItem,omitempty"`
+
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of the item of this stock quantity
+	// ItemBarcode: Edm.String
+	ItemBarcode *string `json:"ItemBarcode,omitempty"`
+
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of the item of this stock quantity
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemUnit: Unit of the item
+	// ItemEndDate: Edm.DateTime
+	ItemEndDate *types.Date `json:"ItemEndDate,omitempty"`
+
+	// ItemStartDate: Edm.DateTime
+	ItemStartDate *types.Date `json:"ItemStartDate,omitempty"`
+
+	// ItemUnit: Edm.String
 	ItemUnit *string `json:"ItemUnit,omitempty"`
 
-	// ItemUnitDescription: Unit description of the item
+	// ItemUnitDescription: Edm.String
 	ItemUnitDescription *string `json:"ItemUnitDescription,omitempty"`
 
-	// Stock: Number of items in stock
+	// Stock: Edm.Double
 	Stock *float64 `json:"Stock,omitempty"`
 
-	// StorageLocation: Storage location of this stock
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Code of the storage location of this stock quantity
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Description of the storage location of this stock quantity
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// Warehouse: ID of Warehouse
+	// StorageLocationSequenceNumber: Edm.Int32
+	StorageLocationSequenceNumber *int `json:"StorageLocationSequenceNumber,omitempty"`
+
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of the warehouse of this stock quantity
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of the warehouse of this stock quantity
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

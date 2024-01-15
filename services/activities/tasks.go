@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,94 +27,97 @@ type TasksEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks
 type Tasks struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: The Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The account that is related to the task
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName: The name of the account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// ActionDate: The end date by which the task has to be realized
+	// ActionDate: Edm.DateTime
 	ActionDate *types.Date `json:"ActionDate,omitempty"`
 
-	// Attachments: Attachments linked to the task
+	// Attachments: RequestAttachments
 	Attachments *json.RawMessage `json:"Attachments,omitempty"`
 
-	// Contact: The contact person that is related to the task
+	// Contact: Edm.Guid
 	Contact *types.GUID `json:"Contact,omitempty"`
 
-	// ContactFullName: The name of the contact person
+	// ContactFullName: Edm.String
 	ContactFullName *string `json:"ContactFullName,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// CustomTaskType: Custom type of the task. If both TaskType and CustomTaskType are specified then TaskType is preferred. This value is write-only.
+	// CustomTaskType: Edm.Guid
 	CustomTaskType *types.GUID `json:"CustomTaskType,omitempty"`
 
-	// Description: The description of the task
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: The division of the task
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document: The document that is linked to the task
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentSubject: The subject of the document
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// HID: The human readable key
+	// Employee: Edm.Guid
+	Employee *types.GUID `json:"Employee,omitempty"`
+
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of the last modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: The notes of the task
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Opportunity: The opportunity linked to the task
+	// Opportunity: Edm.Guid
 	Opportunity *types.GUID `json:"Opportunity,omitempty"`
 
-	// OpportunityName: The name of the opportunity
+	// OpportunityName: Edm.String
 	OpportunityName *string `json:"OpportunityName,omitempty"`
 
-	// Project: The project linked to the task
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectDescription: The description of the project
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// Status: Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription: The description of the status
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 
-	// TaskType: The type of the task. This value is write-only.0 = Other (default), 1 = Call, 2 = Request for information, 3 = Investigate, 4 = Correspondence, 5 = Create an appointment, 6 = Create a quotation
+	// TaskType: Edm.Int32
 	TaskType *int `json:"TaskType,omitempty"`
 
-	// TaskTypeDescription: The description of the type of the task
+	// TaskTypeDescription: Edm.String
 	TaskTypeDescription *string `json:"TaskTypeDescription,omitempty"`
 
-	// User: The user that has to realize the task
+	// User: Edm.Guid
 	User *types.GUID `json:"User,omitempty"`
 
-	// UserFullName: The user name
+	// UserFullName: Edm.String
 	UserFullName *string `json:"UserFullName,omitempty"`
 }
 

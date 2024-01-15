@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,76 +26,76 @@ type LeaveRegistrationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMLeaveRegistrations
 type LeaveRegistrations struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of leave
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee linked to the leave registration
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Employee full name
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric ID of the employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EndDate: End date of leave
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// EndTime: End time on the last day of leave stored as DateTime, and the date should be ignored
+	// EndTime: Edm.DateTime
 	EndTime *types.Date `json:"EndTime,omitempty"`
 
-	// Hours: Total number of leave hours
+	// Hours: Edm.Double
 	Hours *float64 `json:"Hours,omitempty"`
 
-	// HoursFirstDay: Hours of leave on the first day
+	// HoursFirstDay: Edm.Double
 	HoursFirstDay *float64 `json:"HoursFirstDay,omitempty"`
 
-	// HoursLastDay: Hours of leave on the last day
+	// HoursLastDay: Edm.Double
 	HoursLastDay *float64 `json:"HoursLastDay,omitempty"`
 
-	// LeaveType: Type of leave
+	// LeaveType: Edm.Guid
 	LeaveType *types.GUID `json:"LeaveType,omitempty"`
 
-	// LeaveTypeCode: Code for type of leave
+	// LeaveTypeCode: Edm.String
 	LeaveTypeCode *string `json:"LeaveTypeCode,omitempty"`
 
-	// LeaveTypeDescription: Description for type of leave
+	// LeaveTypeDescription: Edm.String
 	LeaveTypeDescription *string `json:"LeaveTypeDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Extra information for leave
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// StartDate: Start date of leave
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// StartTime: Start time on the first day of leave stored as DateTime, and the date should be ignored
+	// StartTime: Edm.DateTime
 	StartTime *types.Date `json:"StartTime,omitempty"`
 
-	// Status: Status of leave, 1 = Submitted, 2 = Approved, 3 = Rejected
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 }
 

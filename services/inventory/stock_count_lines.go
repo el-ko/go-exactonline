@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,83 +30,107 @@ type StockCountLinesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockCountLines
 type StockCountLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// BatchNumbers: The collection of batch numbers that belong to the items included in this stock count
+	// BatchNumbers: BatchNumbers
 	BatchNumbers *json.RawMessage `json:"BatchNumbers,omitempty"`
 
-	// CostPrice: Cost price of the item that is used to create the stock count
+	// CostPrice: Edm.Double
 	CostPrice *float64 `json:"CostPrice,omitempty"`
 
-	// CountedBy: Counted by
+	// CountedBy: Edm.Guid
 	CountedBy *types.GUID `json:"CountedBy,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Item: Reference to the item for which the stock is counted
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Item code
+	// ItemBarcode: Edm.String
+	ItemBarcode *string `json:"ItemBarcode,omitempty"`
+
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemCostPrice: Current standard/actual item cost price
+	// ItemCostPrice: Edm.Double
 	ItemCostPrice *float64 `json:"ItemCostPrice,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemDivisable: Indicates if fractional quantities of the item can be used, for example quantity = 0.4
+	// ItemDivisable: Edm.Boolean
 	ItemDivisable *bool `json:"ItemDivisable,omitempty"`
 
-	// LineNumber: Line number
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// QuantityDifference: The difference between the current quantity in stock and the new quantity in stock. For example specify -1 for this field to correct the quantity if one item in stock is broken.
+	// QuantityDifference: Edm.Double
 	QuantityDifference *float64 `json:"QuantityDifference,omitempty"`
 
-	// QuantityInStock: The current quantity available in stock
+	// QuantityInStock: Edm.Double
 	QuantityInStock *float64 `json:"QuantityInStock,omitempty"`
 
-	// QuantityNew: The new quantity in stock. Use this field to correct the quantity when the items in stock are physically counted.
+	// QuantityNew: Edm.Double
 	QuantityNew *float64 `json:"QuantityNew,omitempty"`
 
-	// SerialNumbers: The collection of serial numbers that belong to the items included in this stock count
+	// ReasonCode: Edm.String
+	ReasonCode *string `json:"ReasonCode,omitempty"`
+
+	// ReasonCodeDescription: Edm.String
+	ReasonCodeDescription *string `json:"ReasonCodeDescription,omitempty"`
+
+	// ReasonCodeID: Edm.Guid
+	ReasonCodeID *types.GUID `json:"ReasonCodeID,omitempty"`
+
+	// SerialNumbers: SerialNumbers
 	SerialNumbers *json.RawMessage `json:"SerialNumbers,omitempty"`
 
-	// StockCountID: Identifies the stock count. All the lines of a stock count have the same StockCountID
+	// Source: Edm.Int16
+	Source *int `json:"Source,omitempty"`
+
+	// Status: Edm.Int16
+	Status *int `json:"Status,omitempty"`
+
+	// StockCountID: Edm.Guid
 	StockCountID *types.GUID `json:"StockCountID,omitempty"`
 
-	// StockKeepingUnit: Stock item&#39;s unit description
+	// StockKeepingUnit: Edm.String
 	StockKeepingUnit *string `json:"StockKeepingUnit,omitempty"`
 
-	// StorageLocation: This property is package specific (Stock count can have multiple lines for the same item only if it is for multiple storage locations).
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Storage location code
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Storage location description
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
+
+	// StorageLocationSequenceNumber: Edm.Int32
+	StorageLocationSequenceNumber *int `json:"StorageLocationSequenceNumber,omitempty"`
+
+	// Warehouse: Edm.Guid
+	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 }
 
 func (e *StockCountLines) GetPrimary() *types.GUID {

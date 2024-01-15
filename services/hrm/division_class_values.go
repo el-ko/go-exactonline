@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,61 +27,61 @@ type DivisionClassValuesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMDivisionClassValues
 type DivisionClassValues struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Class_01: First classification
+	// Class_01: Class_01
 	Class_01 *json.RawMessage `json:"Class_01,omitempty"`
 
-	// Class_01_ID: First classification ID
+	// Class_01_ID: Edm.Guid
 	Class_01_ID *types.GUID `json:"Class_01_ID,omitempty"`
 
-	// Class_02: Second classification
+	// Class_02: Class_02
 	Class_02 *json.RawMessage `json:"Class_02,omitempty"`
 
-	// Class_02_ID: Second classification ID
+	// Class_02_ID: Edm.Guid
 	Class_02_ID *types.GUID `json:"Class_02_ID,omitempty"`
 
-	// Class_03: Third classification
+	// Class_03: Class_03
 	Class_03 *json.RawMessage `json:"Class_03,omitempty"`
 
-	// Class_03_ID: Third classification ID
+	// Class_03_ID: Edm.Guid
 	Class_03_ID *types.GUID `json:"Class_03_ID,omitempty"`
 
-	// Class_04: Fourth classification
+	// Class_04: Class_04
 	Class_04 *json.RawMessage `json:"Class_04,omitempty"`
 
-	// Class_04_ID: Fourth classification ID
+	// Class_04_ID: Edm.Guid
 	Class_04_ID *types.GUID `json:"Class_04_ID,omitempty"`
 
-	// Class_05: Fifth classification
+	// Class_05: Class_05
 	Class_05 *json.RawMessage `json:"Class_05,omitempty"`
 
-	// Class_05_ID: Fifth classification ID
+	// Class_05_ID: Edm.Guid
 	Class_05_ID *types.GUID `json:"Class_05_ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Customer: ID of customer
+	// Customer: Edm.Guid
 	Customer *types.GUID `json:"Customer,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,94 +27,103 @@ type DivisionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMDivisions
 type Divisions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Code: Primary key
+	// Code: Edm.Int32
 	Code *int `json:"Code,omitempty"`
 
-	// BlockingStatus: Values: 0 = Not blocked 1 = Backup 2 = Conversion busy 3 = Conversion shadow 4 = Conversion waiting 5 = Copy data waiting 6 = Copy data buzy 100 = Wait for deletion 101 = Deleted 102 = Deletion failed
+	// ArchiveDate: Edm.DateTime
+	ArchiveDate *types.Date `json:"ArchiveDate,omitempty"`
+
+	// BlockingStatus: Edm.Int32
 	BlockingStatus *int `json:"BlockingStatus,omitempty"`
 
-	// Class_01: First division classification. User should have access rights to view division classifications.
+	// Class_01: DivisionClasses
 	Class_01 *json.RawMessage `json:"Class_01,omitempty"`
 
-	// Class_02: Second division classification. User should have access rights to view division classifications.
+	// Class_02: DivisionClasses
 	Class_02 *json.RawMessage `json:"Class_02,omitempty"`
 
-	// Class_03: Third division classification. User should have access rights to view division classifications.
+	// Class_03: DivisionClasses
 	Class_03 *json.RawMessage `json:"Class_03,omitempty"`
 
-	// Class_04: Fourth division classification. User should have access rights to view division classifications.
+	// Class_04: DivisionClasses
 	Class_04 *json.RawMessage `json:"Class_04,omitempty"`
 
-	// Class_05: Fifth division classification. User should have access rights to view division classifications.
+	// Class_05: DivisionClasses
 	Class_05 *json.RawMessage `json:"Class_05,omitempty"`
 
-	// Country: Country of the division. Is used for determination of legislation
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// CountryDescription: Description of Country
+	// CountryDescription: Edm.String
 	CountryDescription *string `json:"CountryDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: Default currency of the division
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// CurrencyDescription: Description of Currency
+	// CurrencyDescription: Edm.String
 	CurrencyDescription *string `json:"CurrencyDescription,omitempty"`
 
-	// Customer: Owner account of the division
+	// Customer: Edm.Guid
 	Customer *types.GUID `json:"Customer,omitempty"`
 
-	// CustomerCode: Owner account code of the division
+	// CustomerCode: Edm.String
 	CustomerCode *string `json:"CustomerCode,omitempty"`
 
-	// CustomerName: Owner account name of the division
+	// CustomerName: Edm.String
 	CustomerName *string `json:"CustomerName,omitempty"`
 
-	// Description: Description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// HID: Number that customers give to the division
+	// HID: Edm.Int64
 	HID *int64 `json:"HID,omitempty"`
 
-	// Main: True for the main (hosting) division
+	// Main: Edm.Boolean
 	Main *bool `json:"Main,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// SiretNumber: Siret Number of the division (France)
+	// OBNumber: Edm.String
+	OBNumber *string `json:"OBNumber,omitempty"`
+
+	// SiretNumber: Edm.String
 	SiretNumber *string `json:"SiretNumber,omitempty"`
 
-	// StartDate: Date on which the division becomes active
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// Status: Regular administrations will have status 0.  Currently, the only other possibility is &#39;archived&#39; (1), which means the administration is not actively used, but still needs to be accessible for the customer/accountant to meet legal obligations
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// TaxOfficeNumber: Number of your local tax authority (Germany)
+	// TaxOfficeNumber: Edm.String
 	TaxOfficeNumber *string `json:"TaxOfficeNumber,omitempty"`
 
-	// TaxReferenceNumber: Local tax reference number (Germany)
+	// TaxReferenceNumber: Edm.String
 	TaxReferenceNumber *string `json:"TaxReferenceNumber,omitempty"`
 
-	// VATNumber: VAT number
+	// TemplateCode: Edm.String
+	TemplateCode *string `json:"TemplateCode,omitempty"`
+
+	// VATNumber: Edm.String
 	VATNumber *string `json:"VATNumber,omitempty"`
 
-	// Website: Customer value, hyperlink to external website
+	// Website: Edm.String
 	Website *string `json:"Website,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,22 +29,22 @@ type DocumentAttachmentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentAttachments
 type DocumentAttachments struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Attachment:
+	// Attachment: Edm.Binary
 	Attachment *[]byte `json:"Attachment,omitempty"`
 
-	// Document:
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// FileName:
+	// FileName: Edm.String
 	FileName *string `json:"FileName,omitempty"`
 
-	// FileSize:
+	// FileSize: Edm.Double
 	FileSize *float64 `json:"FileSize,omitempty"`
 
-	// Url:
+	// Url: Edm.String
 	Url *string `json:"Url,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,35 +26,107 @@ type SubscriptionTypesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionTypes
 type SubscriptionTypes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Code
+	// AutomaticGenerateInvoiceDays: Edm.Int16
+	AutomaticGenerateInvoiceDays *int `json:"AutomaticGenerateInvoiceDays,omitempty"`
+
+	// AutomaticGenerateInvoiceDescription: Edm.String
+	AutomaticGenerateInvoiceDescription *string `json:"AutomaticGenerateInvoiceDescription,omitempty"`
+
+	// AutomaticGenerateInvoiceType: Edm.Int16
+	AutomaticGenerateInvoiceType *int `json:"AutomaticGenerateInvoiceType,omitempty"`
+
+	// AutomaticSendInvoiceDays: Edm.Int16
+	AutomaticSendInvoiceDays *int `json:"AutomaticSendInvoiceDays,omitempty"`
+
+	// AutomaticSendInvoiceMethod: Edm.Int16
+	AutomaticSendInvoiceMethod *int `json:"AutomaticSendInvoiceMethod,omitempty"`
+
+	// AutomaticSendInvoiceSender: Edm.Int16
+	AutomaticSendInvoiceSender *int `json:"AutomaticSendInvoiceSender,omitempty"`
+
+	// AutomaticSendInvoiceSenderMailbox: Edm.Guid
+	AutomaticSendInvoiceSenderMailbox *types.GUID `json:"AutomaticSendInvoiceSenderMailbox,omitempty"`
+
+	// AutomaticSendInvoiceType: Edm.Int16
+	AutomaticSendInvoiceType *int `json:"AutomaticSendInvoiceType,omitempty"`
+
+	// CancellationPeriod: Edm.Int16
+	CancellationPeriod *int `json:"CancellationPeriod,omitempty"`
+
+	// CancellationPeriodUnit: Edm.String
+	CancellationPeriodUnit *string `json:"CancellationPeriodUnit,omitempty"`
+
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Modified: Last modified date
+	// EnablePaymentLink: Edm.Int16
+	EnablePaymentLink *int `json:"EnablePaymentLink,omitempty"`
+
+	// InvoiceCorrectionMethod: Edm.Int16
+	InvoiceCorrectionMethod *int `json:"InvoiceCorrectionMethod,omitempty"`
+
+	// InvoicePeriod: Edm.Int16
+	InvoicePeriod *int `json:"InvoicePeriod,omitempty"`
+
+	// InvoicePeriodUnit: Edm.String
+	InvoicePeriodUnit *string `json:"InvoicePeriodUnit,omitempty"`
+
+	// ManualRenewalMethod: Edm.Int16
+	ManualRenewalMethod *int `json:"ManualRenewalMethod,omitempty"`
+
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of the last modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
+
+	// Notes: Edm.String
+	Notes *string `json:"Notes,omitempty"`
+
+	// ProlongationType: Edm.Byte
+	ProlongationType *byte `json:"ProlongationType,omitempty"`
+
+	// RenewalCancellationPeriod: Edm.Int16
+	RenewalCancellationPeriod *int `json:"RenewalCancellationPeriod,omitempty"`
+
+	// RenewalCancellationPeriodUnit: Edm.String
+	RenewalCancellationPeriodUnit *string `json:"RenewalCancellationPeriodUnit,omitempty"`
+
+	// RenewalPeriod: Edm.Int16
+	RenewalPeriod *int `json:"RenewalPeriod,omitempty"`
+
+	// RenewalPeriodUnit: Edm.String
+	RenewalPeriodUnit *string `json:"RenewalPeriodUnit,omitempty"`
+
+	// SubscriptionPeriod: Edm.Int16
+	SubscriptionPeriod *int `json:"SubscriptionPeriod,omitempty"`
+
+	// SubscriptionPeriodUnit: Edm.String
+	SubscriptionPeriodUnit *string `json:"SubscriptionPeriodUnit,omitempty"`
 }
 
 func (e *SubscriptionTypes) GetPrimary() *types.GUID {

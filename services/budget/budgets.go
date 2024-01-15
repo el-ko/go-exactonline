@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,79 +26,79 @@ type BudgetsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=BudgetBudgets
 type Budgets struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AmountDC: Budget amount (always in the default currency of the company)
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// BudgetScenario: Budget scenario
+	// BudgetScenario: Edm.Guid
 	BudgetScenario *types.GUID `json:"BudgetScenario,omitempty"`
 
-	// BudgetScenarioCode: Code of BudgetScenario
+	// BudgetScenarioCode: Edm.String
 	BudgetScenarioCode *string `json:"BudgetScenarioCode,omitempty"`
 
-	// BudgetScenarioDescription: Description of BudgetScenario
+	// BudgetScenarioDescription: Edm.String
 	BudgetScenarioDescription *string `json:"BudgetScenarioDescription,omitempty"`
 
-	// Costcenter: Used for cost center-specific budgets - NULL otherwise
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription: Description of Costcenter
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// Costunit: Used for cost unit-specific budgets - NULL otherwise
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// CostunitDescription: Description of Costunit
+	// CostunitDescription: Edm.String
 	CostunitDescription *string `json:"CostunitDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLAccount: G/L account
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// GLAccountCode: Code of GLAccount
+	// GLAccountCode: Edm.String
 	GLAccountCode *string `json:"GLAccountCode,omitempty"`
 
-	// GLAccountDescription: Description of GLAccount
+	// GLAccountDescription: Edm.String
 	GLAccountDescription *string `json:"GLAccountDescription,omitempty"`
 
-	// HID: Numerical ID. Never displayed to the user, but it may have its use for performance reasons
+	// HID: Edm.Int64
 	HID *int64 `json:"HID,omitempty"`
 
-	// Item: Used for item-specific budgets - NULL otherwise
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of Item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// ReportingPeriod: Period (combined with financial year)
+	// ReportingPeriod: Edm.Int16
 	ReportingPeriod *int `json:"ReportingPeriod,omitempty"`
 
-	// ReportingYear: Financial year
+	// ReportingYear: Edm.Int16
 	ReportingYear *int `json:"ReportingYear,omitempty"`
 }
 

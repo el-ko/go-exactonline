@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,55 +26,55 @@ type JobTitlesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMJobTitles
 type JobTitles struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Job title code
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Job title description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// JobCode: Reference job code
+	// JobCode: Edm.String
 	JobCode *string `json:"JobCode,omitempty"`
 
-	// JobGroup: Group this job title belongs to
+	// JobGroup: Edm.Guid
 	JobGroup *types.GUID `json:"JobGroup,omitempty"`
 
-	// JobGroupCode: Job group code
+	// JobGroupCode: Edm.String
 	JobGroupCode *string `json:"JobGroupCode,omitempty"`
 
-	// JobGroupDescription: Job group description
+	// JobGroupDescription: Edm.String
 	JobGroupDescription *string `json:"JobGroupDescription,omitempty"`
 
-	// JobLevelFrom: Job title represents job level from
+	// JobLevelFrom: Edm.Int32
 	JobLevelFrom *int `json:"JobLevelFrom,omitempty"`
 
-	// JobLevelTo: Job title represents job level to
+	// JobLevelTo: Edm.Int32
 	JobLevelTo *int `json:"JobLevelTo,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Explanation or extra information can be stored in the notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 }
 

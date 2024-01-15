@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,40 +27,40 @@ type DivisionClassNamesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMDivisionClassNames
 type DivisionClassNames struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Customer: ID of customer
+	// Customer: Edm.Guid
 	Customer *types.GUID `json:"Customer,omitempty"`
 
-	// Description: Description of classification
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DescriptionTermID: Term ID of the classification
+	// DescriptionTermID: Edm.Int32
 	DescriptionTermID *int `json:"DescriptionTermID,omitempty"`
 
-	// DivisionClasses: Collection of classification properties
+	// DivisionClasses: DivisionClasses
 	DivisionClasses *json.RawMessage `json:"DivisionClasses,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// SequenceNr: Sequence number
+	// SequenceNr: Edm.Int32
 	SequenceNr *int `json:"SequenceNr,omitempty"`
 }
 

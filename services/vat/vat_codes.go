@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,127 +30,136 @@ type VATCodesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=VATVATCodes
 type VATCodes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: Tax account
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// CalculationBasis: Indicates how to calculate the tax. 0 = based on the gross amount, 1 = based on the gross amount &#43; another tax
+	// CalculationBasis: Edm.Byte
 	CalculationBasis *byte `json:"CalculationBasis,omitempty"`
 
-	// Charged: Indicates if transactions using the VAT code are transactions of the domestic VAT charging regulation (such as those for subcontractors) or transactions that are registered within the EU. If Charged=1 and linked to a purchase invoice, both a line for the VAT to pay and a line for the VAT to claim are being created
+	// Charged: Edm.Boolean
 	Charged *bool `json:"Charged,omitempty"`
 
-	// Code: VAT code
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Country: Obsolete
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the VAT code
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EUSalesListing: Used in all legislations except France. Indicates if and how transactions using the VAT code appear on the ICT return (EU sales list). L = Listing goods, N = No listing, S = Listing services, T = Triangulation
+	// EUSalesListing: Edm.String
 	EUSalesListing *string `json:"EUSalesListing,omitempty"`
 
-	// GLDiscountPurchase: Indicates the purchase discount GL account linked to the VAT codes for German legislation
+	// ExcludeVATListing: Edm.Byte
+	ExcludeVATListing *byte `json:"ExcludeVATListing,omitempty"`
+
+	// GLDiscountPurchase: Edm.Guid
 	GLDiscountPurchase *types.GUID `json:"GLDiscountPurchase,omitempty"`
 
-	// GLDiscountPurchaseCode: Code of GLDiscountPurchase
+	// GLDiscountPurchaseCode: Edm.String
 	GLDiscountPurchaseCode *string `json:"GLDiscountPurchaseCode,omitempty"`
 
-	// GLDiscountPurchaseDescription: Description of GLDiscountPurchase
+	// GLDiscountPurchaseDescription: Edm.String
 	GLDiscountPurchaseDescription *string `json:"GLDiscountPurchaseDescription,omitempty"`
 
-	// GLDiscountSales: Indicates the sales discount GL account linked to the VAT codes for German legislation
+	// GLDiscountSales: Edm.Guid
 	GLDiscountSales *types.GUID `json:"GLDiscountSales,omitempty"`
 
-	// GLDiscountSalesCode: Code of GLDiscountSales
+	// GLDiscountSalesCode: Edm.String
 	GLDiscountSalesCode *string `json:"GLDiscountSalesCode,omitempty"`
 
-	// GLDiscountSalesDescription: Description of GLDiscountSales
+	// GLDiscountSalesDescription: Edm.String
 	GLDiscountSalesDescription *string `json:"GLDiscountSalesDescription,omitempty"`
 
-	// GLToClaim: G/L account that is used to book the VAT to claim. If you enter purchases with a VAT code, the VAT amount to be claimed is entered to this VAT account. Must be of type VAT
+	// GLToClaim: Edm.Guid
 	GLToClaim *types.GUID `json:"GLToClaim,omitempty"`
 
-	// GLToClaimCode: Code of GLToClaim
+	// GLToClaimCode: Edm.String
 	GLToClaimCode *string `json:"GLToClaimCode,omitempty"`
 
-	// GLToClaimDescription: Description of GLToClaim
+	// GLToClaimDescription: Edm.String
 	GLToClaimDescription *string `json:"GLToClaimDescription,omitempty"`
 
-	// GLToPay: G/L account that is used to book the VAT to pay. If you enter sales with a VAT code, the VAT amount to be paid is entered to this VAT account. Must be of type VAT
+	// GLToPay: Edm.Guid
 	GLToPay *types.GUID `json:"GLToPay,omitempty"`
 
-	// GLToPayCode: Code of GLToPay
+	// GLToPayCode: Edm.String
 	GLToPayCode *string `json:"GLToPayCode,omitempty"`
 
-	// GLToPayDescription: Description of GLToPay
+	// GLToPayDescription: Edm.String
 	GLToPayDescription *string `json:"GLToPayDescription,omitempty"`
 
-	// IntraStat: Used in all legislations except France. Indicates if intrastat is used
+	// IntraStat: Edm.Boolean
 	IntraStat *bool `json:"IntraStat,omitempty"`
 
-	// IntrastatType: Used in France legislation only. Indicates if and how transactions using the VAT code appear on the DEB/DES return. L = Goods, N = Empty, S = Services
+	// IntrastatType: Edm.String
 	IntrastatType *string `json:"IntrastatType,omitempty"`
 
-	// IsBlocked: Indicates if the VAT code may still be used
+	// IsBlocked: Edm.Boolean
 	IsBlocked *bool `json:"IsBlocked,omitempty"`
 
-	// LegalText: Legal description for VAT code to print in the total block of the invoice
+	// LegalText: Edm.String
 	LegalText *string `json:"LegalText,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: User name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Percentage: Percentage of the VAT code
+	// OssCountry: Edm.String
+	OssCountry *string `json:"OssCountry,omitempty"`
+
+	// Percentage: Edm.Double
 	Percentage *float64 `json:"Percentage,omitempty"`
 
-	// TaxReturnType: Indicates what type of Taxcode it is: can be VAT, IncomeTax
+	// TaxReturnType: Edm.Int16
 	TaxReturnType *int `json:"TaxReturnType,omitempty"`
 
-	// Type: Indicates how the VAT amount should be calculated in relation to the invoice amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT
+	// Type: Edm.String
 	Type *string `json:"Type,omitempty"`
 
-	// VatDocType: Field in VAT code maintenance to calculate different VATs depending on the selected document type. P = purchase invoice, F = freelance invoice, E = expense voucher. The field is valid for witholding tax type
+	// VatDocType: Edm.String
 	VatDocType *string `json:"VatDocType,omitempty"`
 
-	// VatMargin: The VAT margin scheme is used for the trade of secondhand goods which are purchased without VAT (for example when a company buys a secondhand good from a private person). In the VAT margin scheme, the VAT is not calculated based on the sales price. Instead of that, the VAT is calculated based on the margin (gross sales price minus the gross purchase price)
+	// VatMargin: Edm.Byte
 	VatMargin *byte `json:"VatMargin,omitempty"`
 
-	// VATPartialRatio: Partial ratio explains which part of the VAT the company has to pay. Used in some branches where the sellers have a bad reputation, so the buyers have to take over the VAT-liability
+	// VATPartialRatio: Edm.Int16
 	VATPartialRatio *int `json:"VATPartialRatio,omitempty"`
 
-	// VATPercentages: VAT percentages. You can have several VAT percentages, with start and end dates
+	// VATPercentages: VATPercentages
 	VATPercentages *json.RawMessage `json:"VATPercentages,omitempty"`
 
-	// VATTransactionType: Indicates the type of transactions for which the VAT code may be used. B = Both, P = Purchase, S = Sales
+	// VATTransactionType: Edm.String
 	VATTransactionType *string `json:"VATTransactionType,omitempty"`
 }
 

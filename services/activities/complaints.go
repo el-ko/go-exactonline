@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,76 +27,76 @@ type ComplaintsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints
 type Complaints struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: The Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The account that is related to the complaint
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName: The name of the account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AssignedTo: The user that the complaint is assigned to
+	// AssignedTo: Edm.Guid
 	AssignedTo *types.GUID `json:"AssignedTo,omitempty"`
 
-	// AssignedToFullName: The user name
+	// AssignedToFullName: Edm.String
 	AssignedToFullName *string `json:"AssignedToFullName,omitempty"`
 
-	// Attachments: Attachments linked to the complaint
+	// Attachments: RequestAttachments
 	Attachments *json.RawMessage `json:"Attachments,omitempty"`
 
-	// Complaint: A short description of the complaint
+	// Complaint: Edm.String
 	Complaint *string `json:"Complaint,omitempty"`
 
-	// Contact: The contact person that is related to the complaint
+	// Contact: Edm.Guid
 	Contact *types.GUID `json:"Contact,omitempty"`
 
-	// ContactFullName: The name of the contact person
+	// ContactFullName: Edm.String
 	ContactFullName *string `json:"ContactFullName,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: The division
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document: The document that is linked to the complaint
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentSubject: The subject of the document
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// HID: The human readable key
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of the last modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// NextAction: The date indicating by when the next action has to be taken
+	// NextAction: Edm.DateTime
 	NextAction *types.Date `json:"NextAction,omitempty"`
 
-	// Notes: The notes of the complaint
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// ReceiptDate: The date the complaint was received
+	// ReceiptDate: Edm.DateTime
 	ReceiptDate *types.Date `json:"ReceiptDate,omitempty"`
 
-	// Status: Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription: The description of the status
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 }
 

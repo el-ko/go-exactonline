@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -24,139 +24,142 @@ type SubscriptionsEndpoint service
 // Service: Subscription
 // Entity: Subscriptions
 // URL: /api/v1/{division}/subscription/Subscriptions
-// HasWebhook: false
+// HasWebhook: true
 // IsInBeta: false
 // Methods: GET POST PUT DELETE
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptions
 type Subscriptions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// EntryID: Primary key
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// BlockEntry: Indicates if subscription is blocked for time cost entry
+	// BlockEntry: Edm.Boolean
 	BlockEntry *bool `json:"BlockEntry,omitempty"`
 
-	// CancellationDate: Date of cancellation
+	// CancellationDate: Edm.DateTime
 	CancellationDate *types.Date `json:"CancellationDate,omitempty"`
 
-	// Classification: Reference to Classification
+	// Classification: Edm.Guid
 	Classification *types.GUID `json:"Classification,omitempty"`
 
-	// ClassificationCode: Code of Classification
+	// ClassificationCode: Edm.String
 	ClassificationCode *string `json:"ClassificationCode,omitempty"`
 
-	// ClassificationDescription: Description of Classification
+	// ClassificationDescription: Edm.String
 	ClassificationDescription *string `json:"ClassificationDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: Currency code
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// CustomerPONumber: Purchase order number of customer
+	// CustomerPONumber: Edm.String
 	CustomerPONumber *string `json:"CustomerPONumber,omitempty"`
 
-	// Description: Description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EndDate: End date
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// InvoiceDay: Invoice Day
+	// InvoiceDay: Edm.Byte
 	InvoiceDay *byte `json:"InvoiceDay,omitempty"`
 
-	// InvoicedTo: Invoice date
+	// InvoicedTo: Edm.DateTime
 	InvoicedTo *types.Date `json:"InvoicedTo,omitempty"`
 
-	// InvoiceTo: Reference to invoice account
+	// InvoiceTo: Edm.Guid
 	InvoiceTo *types.GUID `json:"InvoiceTo,omitempty"`
 
-	// InvoiceToContactPerson: Reference to contact person of invoice account
+	// InvoiceToContactPerson: Edm.Guid
 	InvoiceToContactPerson *types.GUID `json:"InvoiceToContactPerson,omitempty"`
 
-	// InvoiceToContactPersonFullName: Name of contact person of invoice account
+	// InvoiceToContactPersonFullName: Edm.String
 	InvoiceToContactPersonFullName *string `json:"InvoiceToContactPersonFullName,omitempty"`
 
-	// InvoiceToName: Name of invoice account
+	// InvoiceToName: Edm.String
 	InvoiceToName *string `json:"InvoiceToName,omitempty"`
 
-	// InvoicingStartDate: Invoicing start date
+	// InvoicingStartDate: Edm.DateTime
 	InvoicingStartDate *types.Date `json:"InvoicingStartDate,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Remarks
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Number: Number
+	// Number: Edm.Int32
 	Number *int `json:"Number,omitempty"`
 
-	// OrderedBy: Reference to order account
+	// OrderedBy: Edm.Guid
 	OrderedBy *types.GUID `json:"OrderedBy,omitempty"`
 
-	// OrderedByContactPerson: Reference of contact person of order account
+	// OrderedByContactPerson: Edm.Guid
 	OrderedByContactPerson *types.GUID `json:"OrderedByContactPerson,omitempty"`
 
-	// OrderedByContactPersonFullName: Name of contact person of order account
+	// OrderedByContactPersonFullName: Edm.String
 	OrderedByContactPersonFullName *string `json:"OrderedByContactPersonFullName,omitempty"`
 
-	// OrderedByName: Name of order account
+	// OrderedByName: Edm.String
 	OrderedByName *string `json:"OrderedByName,omitempty"`
 
-	// PaymentCondition: Payment condition
+	// PaymentCondition: Edm.String
 	PaymentCondition *string `json:"PaymentCondition,omitempty"`
 
-	// PaymentConditionDescription: Description of PaymentCondition
+	// PaymentConditionDescription: Edm.String
 	PaymentConditionDescription *string `json:"PaymentConditionDescription,omitempty"`
 
-	// Printed: Indicates if subscription is printed
+	// Printed: Edm.Boolean
 	Printed *bool `json:"Printed,omitempty"`
 
-	// ReasonCancelled: Reference to reason cancelled
+	// Project: Edm.Guid
+	Project *types.GUID `json:"Project,omitempty"`
+
+	// ReasonCancelled: Edm.Guid
 	ReasonCancelled *types.GUID `json:"ReasonCancelled,omitempty"`
 
-	// ReasonCancelledCode: Code of ReasonCancelled
+	// ReasonCancelledCode: Edm.String
 	ReasonCancelledCode *string `json:"ReasonCancelledCode,omitempty"`
 
-	// ReasonCancelledDescription: Description of ReasonCancelled
+	// ReasonCancelledDescription: Edm.String
 	ReasonCancelledDescription *string `json:"ReasonCancelledDescription,omitempty"`
 
-	// StartDate: Start date
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// SubscriptionLines: Collection of subscription lines
+	// SubscriptionLines: SubscriptionLines
 	SubscriptionLines *json.RawMessage `json:"SubscriptionLines,omitempty"`
 
-	// SubscriptionRestrictionEmployees: Collection of restriction employees
+	// SubscriptionRestrictionEmployees: SubscriptionRestrictionEmployees
 	SubscriptionRestrictionEmployees *json.RawMessage `json:"SubscriptionRestrictionEmployees,omitempty"`
 
-	// SubscriptionRestrictionItems: Collection of restriction items
+	// SubscriptionRestrictionItems: SubscriptionRestrictionItems
 	SubscriptionRestrictionItems *json.RawMessage `json:"SubscriptionRestrictionItems,omitempty"`
 
-	// SubscriptionType: Reference to subscription type
+	// SubscriptionType: Edm.Guid
 	SubscriptionType *types.GUID `json:"SubscriptionType,omitempty"`
 
-	// SubscriptionTypeCode: Code of SubscriptionType
+	// SubscriptionTypeCode: Edm.String
 	SubscriptionTypeCode *string `json:"SubscriptionTypeCode,omitempty"`
 
-	// SubscriptionTypeDescription: Description of SubscriptionType
+	// SubscriptionTypeDescription: Edm.String
 	SubscriptionTypeDescription *string `json:"SubscriptionTypeDescription,omitempty"`
 }
 

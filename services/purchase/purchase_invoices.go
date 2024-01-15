@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,79 +30,79 @@ type PurchaseInvoicesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoices
 type PurchaseInvoices struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: A guid that is the unique identifier of the purchase invoice.
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Amount: The amount including VAT in the currency of the invoice.
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 
-	// ContactPerson: Guid identifying the contact person of the supplier.
+	// ContactPerson: Edm.Guid
 	ContactPerson *types.GUID `json:"ContactPerson,omitempty"`
 
-	// Currency: The code of the currency of the invoiced amount.
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Description: The description of the invoice.
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Document: Guid identifying a document that is attached to the invoice.
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DueDate: The date before which the invoice has to be paid.
+	// DueDate: Edm.DateTime
 	DueDate *types.Date `json:"DueDate,omitempty"`
 
-	// EntryNumber: The unique number of the purchase invoice. The entry number is based on a setting in the purchase journal and incremented for each new purchase invoice.
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// ExchangeRate: The exchange rate between the invoice currency and the default currency of the division.
+	// ExchangeRate: Edm.Double
 	ExchangeRate *float64 `json:"ExchangeRate,omitempty"`
 
-	// FinancialPeriod: The financial period in which the invoice is entered.
+	// FinancialPeriod: Edm.Int16
 	FinancialPeriod *int `json:"FinancialPeriod,omitempty"`
 
-	// FinancialYear: The financial year in which the invoice is entered.
+	// FinancialYear: Edm.Int16
 	FinancialYear *int `json:"FinancialYear,omitempty"`
 
-	// InvoiceDate: The date on which the supplier entered the invoice.
+	// InvoiceDate: Edm.DateTime
 	InvoiceDate *types.Date `json:"InvoiceDate,omitempty"`
 
-	// Journal: The code of the purchase journal in which the invoice is entered.
+	// Journal: Edm.String
 	Journal *string `json:"Journal,omitempty"`
 
-	// Modified: The date and time the invoice was last modified.
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// PaymentCondition: The code of the payment condition that is used to calculate the due date and discount.
+	// PaymentCondition: Edm.String
 	PaymentCondition *string `json:"PaymentCondition,omitempty"`
 
-	// PaymentReference: Unique reference to match payments and invoices.
+	// PaymentReference: Edm.String
 	PaymentReference *string `json:"PaymentReference,omitempty"`
 
-	// PurchaseInvoiceLines: The collection of lines that belong to the purchase invoice.
+	// PurchaseInvoiceLines: PurchaseInvoiceLines
 	PurchaseInvoiceLines *json.RawMessage `json:"PurchaseInvoiceLines,omitempty"`
 
-	// Remarks: The user can enter remarks related to the invoice here.
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// Source: Indicates the origin of the invoice. 1 Manual entry, 3 Purchase invoice, 4 Purchase order, 5 Web service.
+	// Source: Edm.Int16
 	Source *int `json:"Source,omitempty"`
 
-	// Status: The status of the invoice. 10 Draft, 20 Open, 50 Processed.
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// Supplier: Guid that identifies the supplier.
+	// Supplier: Edm.Guid
 	Supplier *types.GUID `json:"Supplier,omitempty"`
 
-	// Type: Indicates the type of the purchase invoice. 8030 Direct purchase invoice, 8031 Direct purchase invoice (Credit), 8033 Purchase invoice, 8034 Purchase invoice (Credit)
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 
-	// VATAmount: The total VAT amount of the purchase invoice.
+	// VATAmount: Edm.Double
 	VATAmount *float64 `json:"VATAmount,omitempty"`
 
-	// Warehouse: Guid that identifies the warehouse that will receive the purchased goods. This is mandatory for creating a direct purchase invoice.
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// YourRef: The invoice number provided by the supplier.
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 

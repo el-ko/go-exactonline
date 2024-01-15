@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -22,242 +22,245 @@ type ReceivablesEndpoint service
 // URL: /api/v1/{division}/cashflow/Receivables
 // HasWebhook: false
 // IsInBeta: false
-// Methods: GET
+// Methods: GET PUT
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowReceivables
 type Receivables struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Identifier of the receivable.
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The customer from which the receivable will come.
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountBankAccountID: The bank account of the customer, from which the receivable will come.
+	// AccountBankAccountID: Edm.Guid
 	AccountBankAccountID *types.GUID `json:"AccountBankAccountID,omitempty"`
 
-	// AccountBankAccountNumber: The bank account number of the customer, from which the receivable will come.
+	// AccountBankAccountNumber: Edm.String
 	AccountBankAccountNumber *string `json:"AccountBankAccountNumber,omitempty"`
 
-	// AccountCode: The code of the customer from which the receivable will come.
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountContact: Contact person copied from the purchase invoice linked to the related purchase entry.
+	// AccountContact: Edm.Guid
 	AccountContact *types.GUID `json:"AccountContact,omitempty"`
 
-	// AccountContactName: Name of the contact person of the customer.
+	// AccountContactName: Edm.String
 	AccountContactName *string `json:"AccountContactName,omitempty"`
 
-	// AccountCountry: Country code of the customer.
+	// AccountCountry: Edm.String
 	AccountCountry *string `json:"AccountCountry,omitempty"`
 
-	// AccountName: Name of the customer.
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AmountDC: The amount in default currency (division currency). Receivables are matched on this amount.
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountDiscountDC: The amount of the discount in the default currency.
+	// AmountDiscountDC: Edm.Double
 	AmountDiscountDC *float64 `json:"AmountDiscountDC,omitempty"`
 
-	// AmountDiscountFC: The amount of the discount. This is in the amount of the selected currency.
+	// AmountDiscountFC: Edm.Double
 	AmountDiscountFC *float64 `json:"AmountDiscountFC,omitempty"`
 
-	// AmountFC: The amount of the receivable. This is in the amount of the selected currency.
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// BankAccountID: Own bank account to which the receivable will be done.
+	// BankAccountID: Edm.Guid
 	BankAccountID *types.GUID `json:"BankAccountID,omitempty"`
 
-	// BankAccountNumber: Own bank account number to which the receivable will be done.
+	// BankAccountNumber: Edm.String
 	BankAccountNumber *string `json:"BankAccountNumber,omitempty"`
 
-	// CashflowTransactionBatchCode: When processing receivables, all receivable with the same processing data are put in a batch. This field contains the code of that batch.
+	// CashflowTransactionBatchCode: Edm.String
 	CashflowTransactionBatchCode *string `json:"CashflowTransactionBatchCode,omitempty"`
 
-	// Created: Creation date.
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator.
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator.
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: The currency of the receivable. This currency can only deviate from the division currency if the module Currency is in the license.
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Description: Description.
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DirectDebitMandate: Direct Debit Mandate used to collect the receivable.
+	// DirectDebitMandate: Edm.Guid
 	DirectDebitMandate *types.GUID `json:"DirectDebitMandate,omitempty"`
 
-	// DirectDebitMandateDescription: Description of the mandate.
+	// DirectDebitMandateDescription: Edm.String
 	DirectDebitMandateDescription *string `json:"DirectDebitMandateDescription,omitempty"`
 
-	// DirectDebitMandatePaymentType: Payment type of the mandate. 0 = One off payment 1 = Recurrent payment.
+	// DirectDebitMandatePaymentType: Edm.Int16
 	DirectDebitMandatePaymentType *int `json:"DirectDebitMandatePaymentType,omitempty"`
 
-	// DirectDebitMandateReference: Unique mandate reference.
+	// DirectDebitMandateReference: Edm.String
 	DirectDebitMandateReference *string `json:"DirectDebitMandateReference,omitempty"`
 
-	// DirectDebitMandateType: Type of the mandate. 0 = Core 1 = Business-to-business.
+	// DirectDebitMandateType: Edm.Int16
 	DirectDebitMandateType *int `json:"DirectDebitMandateType,omitempty"`
 
-	// DiscountDueDate: Date before which the payment by the customer must be done to be eligible for discount.
+	// DiscountDueDate: Edm.DateTime
 	DiscountDueDate *types.Date `json:"DiscountDueDate,omitempty"`
 
-	// Division: Division code.
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document: Document that is created when processing collections.  The bank export file is attached to the document.
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentNumber: Number of the document.
+	// DocumentNumber: Edm.Int32
 	DocumentNumber *int `json:"DocumentNumber,omitempty"`
 
-	// DocumentSubject: Subject of the document.
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// DueDate: Date before which the payment by the customer must be done.
+	// DueDate: Edm.DateTime
 	DueDate *types.Date `json:"DueDate,omitempty"`
 
-	// EndDate: Date since when the receivable is no longer an outstanding item. This is the highest invoice date of all matched receivables.
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// EndPeriod: Period since when the receivable is no longer an outstanding item. This is the highest period of all matched receivables.
+	// EndPeriod: Edm.Int16
 	EndPeriod *int `json:"EndPeriod,omitempty"`
 
-	// EndToEndID: The value of the tag &#39;EndToEndID&#39; when generating a SEPA file.
+	// EndToEndID: Edm.String
 	EndToEndID *string `json:"EndToEndID,omitempty"`
 
-	// EndYear: Year (of period) since when the receivable is no longer an outstanding item. This is the highest year of all matched receivables. Used in combination with EndPeriod.
+	// EndYear: Edm.Int16
 	EndYear *int `json:"EndYear,omitempty"`
 
-	// EntryDate: Processing date of the receivable.
+	// EntryDate: Edm.DateTime
 	EntryDate *types.Date `json:"EntryDate,omitempty"`
 
-	// EntryID: The unique identifier for a set of receivables. A receivable can be split so that one part is received on a different date. In that case the two records get a different EntryID.
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// EntryNumber: Entry number of the linked transaction.
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// GLAccount: G/L account of the payment. Must be of type 20 (Accounts receivable).
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// GLAccountCode: Code of the G/L account.
+	// GLAccountCode: Edm.String
 	GLAccountCode *string `json:"GLAccountCode,omitempty"`
 
-	// GLAccountDescription: Description of the G/L account.
+	// GLAccountDescription: Edm.String
 	GLAccountDescription *string `json:"GLAccountDescription,omitempty"`
 
-	// InvoiceDate: Invoice date of the linked transaction.
+	// InvoiceDate: Edm.DateTime
 	InvoiceDate *types.Date `json:"InvoiceDate,omitempty"`
 
-	// InvoiceNumber: Invoice number of the linked transaction.
+	// InvoiceNumber: Edm.Int32
 	InvoiceNumber *int `json:"InvoiceNumber,omitempty"`
 
-	// IsBatchBooking: Boolean indicating whether the receivable is part of a batch booking.
+	// IsBatchBooking: Edm.Byte
 	IsBatchBooking *byte `json:"IsBatchBooking,omitempty"`
 
-	// IsFullyPaid: Boolean indicating whether the receivable was fully paid by the customer.
+	// IsFullyPaid: Edm.Boolean
 	IsFullyPaid *bool `json:"IsFullyPaid,omitempty"`
 
-	// Journal: Journal of the linked transaction.
+	// Journal: Edm.String
 	Journal *string `json:"Journal,omitempty"`
 
-	// JournalDescription: Description of the journal.
+	// JournalDescription: Edm.String
 	JournalDescription *string `json:"JournalDescription,omitempty"`
 
-	// LastPaymentDate: Last payment date.
+	// LastPaymentDate: Edm.DateTime
 	LastPaymentDate *types.Date `json:"LastPaymentDate,omitempty"`
 
-	// Modified: Last modified date.
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier.
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier.
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PaymentCondition: Payment condition of the linked transaction.
+	// OrderNumber: Edm.Int32
+	OrderNumber *int `json:"OrderNumber,omitempty"`
+
+	// PaymentCondition: Edm.String
 	PaymentCondition *string `json:"PaymentCondition,omitempty"`
 
-	// PaymentConditionDescription: Description of the payment condition.
+	// PaymentConditionDescription: Edm.String
 	PaymentConditionDescription *string `json:"PaymentConditionDescription,omitempty"`
 
-	// PaymentDays: Number of days between invoice date and due date.
+	// PaymentDays: Edm.Int32
 	PaymentDays *int `json:"PaymentDays,omitempty"`
 
-	// PaymentDaysDiscount: Number of days between invoice date and due date of the discount.
+	// PaymentDaysDiscount: Edm.Int32
 	PaymentDaysDiscount *int `json:"PaymentDaysDiscount,omitempty"`
 
-	// PaymentDiscountPercentage: Payment discount percentage.
+	// PaymentDiscountPercentage: Edm.Double
 	PaymentDiscountPercentage *float64 `json:"PaymentDiscountPercentage,omitempty"`
 
-	// PaymentInformationID: PaymentInformationID tag from the SEPA xml file.
+	// PaymentInformationID: Edm.String
 	PaymentInformationID *string `json:"PaymentInformationID,omitempty"`
 
-	// PaymentMethod: Method of payment. B = On credit (default) I = Collection K = Cash V = Credit card
+	// PaymentMethod: Edm.String
 	PaymentMethod *string `json:"PaymentMethod,omitempty"`
 
-	// PaymentReference: Payment reference for the receivable that may be included In the bank export file
+	// PaymentReference: Edm.String
 	PaymentReference *string `json:"PaymentReference,omitempty"`
 
-	// RateFC: Exchange rate from receivable currency to division currency. AmountFC * RateFC = AmountDC.
+	// RateFC: Edm.Double
 	RateFC *float64 `json:"RateFC,omitempty"`
 
-	// ReceivableBatchNumber: Number assigned during the processing of receivables.
+	// ReceivableBatchNumber: Edm.Int32
 	ReceivableBatchNumber *int `json:"ReceivableBatchNumber,omitempty"`
 
-	// ReceivableSelected: Date and time since when the receivable is selected to be collected.
+	// ReceivableSelected: Edm.DateTime
 	ReceivableSelected *types.Date `json:"ReceivableSelected,omitempty"`
 
-	// ReceivableSelector: User who selected the receivable to be collected.
+	// ReceivableSelector: Edm.Guid
 	ReceivableSelector *types.GUID `json:"ReceivableSelector,omitempty"`
 
-	// ReceivableSelectorFullName: Name of the receivable selector.
+	// ReceivableSelectorFullName: Edm.String
 	ReceivableSelectorFullName *string `json:"ReceivableSelectorFullName,omitempty"`
 
-	// Source: The source of the receivable. 1 = manual 2 = reconcile 3 = match 4 = import 5 = process
+	// Source: Edm.Int32
 	Source *int `json:"Source,omitempty"`
 
-	// Status: The status of the receivable. 20 = open 30 = selected - receivable is selected to be collected 40 = processed - collection has been done 50 = matched - receivable is matched with one or more other outstanding items or financial statement lines
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// TransactionAmountDC: Total amount of the linked transaction in default currency (division currency).
+	// TransactionAmountDC: Edm.Double
 	TransactionAmountDC *float64 `json:"TransactionAmountDC,omitempty"`
 
-	// TransactionAmountFC: Total amount of the linked transaction in the selected currency.
+	// TransactionAmountFC: Edm.Double
 	TransactionAmountFC *float64 `json:"TransactionAmountFC,omitempty"`
 
-	// TransactionDueDate: Due date of the linked transaction.
+	// TransactionDueDate: Edm.DateTime
 	TransactionDueDate *types.Date `json:"TransactionDueDate,omitempty"`
 
-	// TransactionEntryID: Linked transaction. Use this as reference to SalesEntries.
+	// TransactionEntryID: Edm.Guid
 	TransactionEntryID *types.GUID `json:"TransactionEntryID,omitempty"`
 
-	// TransactionID: Linked transaction line. Use this as reference to BankEntryLines and CashEntryLines.
+	// TransactionID: Edm.Guid
 	TransactionID *types.GUID `json:"TransactionID,omitempty"`
 
-	// TransactionIsReversal: Indicates if the linked transaction is a reversal entry.
+	// TransactionIsReversal: Edm.Boolean
 	TransactionIsReversal *bool `json:"TransactionIsReversal,omitempty"`
 
-	// TransactionReportingPeriod: Period of the linked transaction.
+	// TransactionReportingPeriod: Edm.Int16
 	TransactionReportingPeriod *int `json:"TransactionReportingPeriod,omitempty"`
 
-	// TransactionReportingYear: Year of the linked transaction.
+	// TransactionReportingYear: Edm.Int16
 	TransactionReportingYear *int `json:"TransactionReportingYear,omitempty"`
 
-	// TransactionStatus: Status of the linked transaction.
+	// TransactionStatus: Edm.Int16
 	TransactionStatus *int `json:"TransactionStatus,omitempty"`
 
-	// TransactionType: Type of the linked transaction.
+	// TransactionType: Edm.Int32
 	TransactionType *int `json:"TransactionType,omitempty"`
 
-	// YourRef: Invoice number. In case the receivable belongs to a bank entry line and is matched with one invoice, YourRef is filled with the YourRef of this invoice.
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 
@@ -294,5 +297,18 @@ func (s *ReceivablesEndpoint) Get(ctx context.Context, division int, id *types.G
 
 	e := &Receivables{}
 	_, _, requestError := s.client.NewRequestAndDo(ctx, "GET", u.String(), nil, e)
+	return e, requestError
+}
+
+// Update the Receivables entity in the provided division.
+func (s *ReceivablesEndpoint) Update(ctx context.Context, division int, entity *Receivables) (*Receivables, error) {
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/cashflow/Receivables", division) // #nosec
+	u, err := api.AddOdataKeyToURL(b, entity.GetPrimary())
+	if err != nil {
+		return nil, err
+	}
+
+	e := &Receivables{}
+	_, _, requestError := s.client.NewRequestAndDo(ctx, "PUT", u.String(), entity, e)
 	return e, requestError
 }

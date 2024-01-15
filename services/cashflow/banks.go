@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,34 +26,34 @@ type BanksEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowBanks
 type Banks struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// BankName: The name of the bank
+	// BankName: Edm.String
 	BankName *string `json:"BankName,omitempty"`
 
-	// BICCode: The bank identification code of the bank
+	// BICCode: Edm.String
 	BICCode *string `json:"BICCode,omitempty"`
 
-	// Country: The country in which the bank is based
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Description: The extended description of the bank
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Format: The account format used by the bank
+	// Format: Edm.String
 	Format *string `json:"Format,omitempty"`
 
-	// HomePageAddress: The website of the bank
+	// HomePageAddress: Edm.String
 	HomePageAddress *string `json:"HomePageAddress,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Status: The status of the bank. A = Active, P = Passive
+	// Status: Edm.String
 	Status *string `json:"Status,omitempty"`
 }
 

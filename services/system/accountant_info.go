@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,43 +26,43 @@ type AccountantInfoEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemAccountantInfo
 type AccountantInfo struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: The account ID of the accountant.
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AddressLine1: First address line.
+	// AddressLine1: Edm.String
 	AddressLine1 *string `json:"AddressLine1,omitempty"`
 
-	// AddressLine2: Second address line.
+	// AddressLine2: Edm.String
 	AddressLine2 *string `json:"AddressLine2,omitempty"`
 
-	// AddressLine3: Third address line.
+	// AddressLine3: Edm.String
 	AddressLine3 *string `json:"AddressLine3,omitempty"`
 
-	// City: City.
+	// City: Edm.String
 	City *string `json:"City,omitempty"`
 
-	// Email: Email.
+	// Email: Edm.String
 	Email *string `json:"Email,omitempty"`
 
-	// IsAccountant: Indicates if the customer is an accountant himself.
+	// IsAccountant: Edm.Boolean
 	IsAccountant *bool `json:"IsAccountant,omitempty"`
 
-	// Logo: Logo.
+	// Logo: Edm.Binary
 	Logo *[]byte `json:"Logo,omitempty"`
 
-	// MenuLogoUrl: Url to retrieve the logo of the accountant.
+	// MenuLogoUrl: Edm.String
 	MenuLogoUrl *string `json:"MenuLogoUrl,omitempty"`
 
-	// Name: The name of the accountant.
+	// Name: Edm.String
 	Name *string `json:"Name,omitempty"`
 
-	// Phone: Phone.
+	// Phone: Edm.String
 	Phone *string `json:"Phone,omitempty"`
 
-	// Postcode: Postcode.
+	// Postcode: Edm.String
 	Postcode *string `json:"Postcode,omitempty"`
 
-	// Website: Website.
+	// Website: Edm.String
 	Website *string `json:"Website,omitempty"`
 }
 

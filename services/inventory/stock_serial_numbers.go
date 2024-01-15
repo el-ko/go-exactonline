@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,89 +29,104 @@ type StockSerialNumbersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockSerialNumbers
 type StockSerialNumbers struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DraftStockTransactionID: ID representing a group of serial numbers being reserved for use in a subsequent stock transaction
+	// DraftStockTransactionID: Edm.Guid
 	DraftStockTransactionID *types.GUID `json:"DraftStockTransactionID,omitempty"`
 
-	// EndDate: End date of effective period for serial number
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// IsBlocked: Boolean value indicating whether or not the serial number is blocked
+	// IsBlocked: Edm.Byte
 	IsBlocked *byte `json:"IsBlocked,omitempty"`
 
-	// IsDraft: Boolean value indicating if this serial number is being reserved
+	// IsDraft: Edm.Byte
 	IsDraft *byte `json:"IsDraft,omitempty"`
 
-	// Item: Item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Item code
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Remarks: Remarks
+	// ParentID: Edm.Guid
+	ParentID *types.GUID `json:"ParentID,omitempty"`
+
+	// PickOrderLine: Edm.Guid
+	PickOrderLine *types.GUID `json:"PickOrderLine,omitempty"`
+
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// SerialNumber: Human readable serial number
+	// SalesOrderLine: Edm.Guid
+	SalesOrderLine *types.GUID `json:"SalesOrderLine,omitempty"`
+
+	// SalesReturnLine: Edm.Guid
+	SalesReturnLine *types.GUID `json:"SalesReturnLine,omitempty"`
+
+	// SerialNumber: Edm.String
 	SerialNumber *string `json:"SerialNumber,omitempty"`
 
-	// SerialNumberID: Serial number ID
+	// SerialNumberID: Edm.Guid
 	SerialNumberID *types.GUID `json:"SerialNumberID,omitempty"`
 
-	// StartDate: Start date of effective period for serial number
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// StockCountLine: ID of stock count entry
+	// StockCountLine: Edm.Guid
 	StockCountLine *types.GUID `json:"StockCountLine,omitempty"`
 
-	// StockTransactionID: ID of the stock transaction in which this serial number was used
+	// StockTransactionID: Edm.Guid
 	StockTransactionID *types.GUID `json:"StockTransactionID,omitempty"`
 
-	// StockTransactionType: Type of stock transaction associated with this serial number.Available values:10 = Opening balance120 = Goods delivery121 = Sales return122 = Stock out (Drop shipment)123 = Stock in (Drop shipment return)124 = Warehouse transfer delivery125 = Location Transfer Delivery130 = Goods receipt131 = Purchase return132 = Stock in (Drop shipment)133 = Stock out (Drop shipment return)134 = Warehouse transfer receipt135 = Location Transfer Receipt140 = Shop order stock receipt141 = Shop order stock reversal147 = Shop order by-product receipt148 = Shop order by-product reversal150 = Requirement issue151 = Requirement reversal155 = Subcontract issue156 = Subcontract return160 = Receipt (Assembly)161 = Return receipt (Disassembly)165 = Issue (Assembly)166 = Return issue (Disassembly)180 = Stock revaluation181 = Financial revaluation195 = Stock count196 = Adjust stock - out197 = Adjust stock - in
+	// StockTransactionType: Edm.Int32
 	StockTransactionType *int `json:"StockTransactionType,omitempty"`
 
-	// StorageLocation: Storage location which this serial number is entering or leaving
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Code of the storage location which this serial number is entering or leaving
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Description of the storage location which this serial number is entering or leaving
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// Warehouse: Warehouse which this serial number is entering or leaving
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of the warehouse which this serial number is entering or leaving
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of the warehouse which this serial number is entering or leaving
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
+
+	// WarehouseTransferLine: Edm.Guid
+	WarehouseTransferLine *types.GUID `json:"WarehouseTransferLine,omitempty"`
 }
 
 func (e *StockSerialNumbers) GetPrimary() *types.GUID {

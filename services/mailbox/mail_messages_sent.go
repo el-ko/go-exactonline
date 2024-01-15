@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,100 +26,106 @@ type MailMessagesSentEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=MailboxMailMessagesSent
 type MailMessagesSent struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Bank:
+	// Bank: Edm.Guid
 	Bank *types.GUID `json:"Bank,omitempty"`
 
-	// BankAccount:
+	// BankAccount: Edm.String
 	BankAccount *string `json:"BankAccount,omitempty"`
 
-	// Created:
+	// Country: Edm.String
+	Country *string `json:"Country,omitempty"`
+
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// ForDivision:
+	// ForDivision: Edm.Int32
 	ForDivision *int `json:"ForDivision,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Operation:
+	// Operation: Edm.Int16
 	Operation *int `json:"Operation,omitempty"`
 
-	// OriginalMessage:
+	// OriginalMessage: Edm.Guid
 	OriginalMessage *types.GUID `json:"OriginalMessage,omitempty"`
 
-	// OriginalMessageSubject:
+	// OriginalMessageSubject: Edm.String
 	OriginalMessageSubject *string `json:"OriginalMessageSubject,omitempty"`
 
-	// PartnerKey:
+	// PartnerKey: Edm.Guid
 	PartnerKey *types.GUID `json:"PartnerKey,omitempty"`
 
-	// Quantity:
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// RecipientAccount:
+	// RecipientAccount: Edm.Guid
 	RecipientAccount *types.GUID `json:"RecipientAccount,omitempty"`
 
-	// RecipientDeleted:
+	// RecipientDeleted: Edm.Byte
 	RecipientDeleted *byte `json:"RecipientDeleted,omitempty"`
 
-	// RecipientMailbox:
+	// RecipientMailbox: Edm.String
 	RecipientMailbox *string `json:"RecipientMailbox,omitempty"`
 
-	// RecipientMailboxDescription:
+	// RecipientMailboxDescription: Edm.String
 	RecipientMailboxDescription *string `json:"RecipientMailboxDescription,omitempty"`
 
-	// RecipientMailboxID:
+	// RecipientMailboxID: Edm.Guid
 	RecipientMailboxID *types.GUID `json:"RecipientMailboxID,omitempty"`
 
-	// RecipientStatus:
+	// RecipientStatus: Edm.Int16
 	RecipientStatus *int `json:"RecipientStatus,omitempty"`
 
-	// RecipientStatusDescription:
+	// RecipientStatusDescription: Edm.String
 	RecipientStatusDescription *string `json:"RecipientStatusDescription,omitempty"`
 
-	// SenderAccount:
+	// SenderAccount: Edm.Guid
 	SenderAccount *types.GUID `json:"SenderAccount,omitempty"`
 
-	// SenderDateSent:
+	// SenderDateSent: Edm.DateTime
 	SenderDateSent *types.Date `json:"SenderDateSent,omitempty"`
 
-	// SenderDeleted:
+	// SenderDeleted: Edm.Byte
 	SenderDeleted *byte `json:"SenderDeleted,omitempty"`
 
-	// SenderIPAddress:
+	// SenderIPAddress: Edm.String
 	SenderIPAddress *string `json:"SenderIPAddress,omitempty"`
 
-	// SenderMailbox:
+	// SenderMailbox: Edm.String
 	SenderMailbox *string `json:"SenderMailbox,omitempty"`
 
-	// SenderMailboxDescription:
+	// SenderMailboxDescription: Edm.String
 	SenderMailboxDescription *string `json:"SenderMailboxDescription,omitempty"`
 
-	// SenderMailboxID:
+	// SenderMailboxID: Edm.Guid
 	SenderMailboxID *types.GUID `json:"SenderMailboxID,omitempty"`
 
-	// Subject:
+	// SkipRecipientMailBoxAddressOverride: Edm.String
+	SkipRecipientMailBoxAddressOverride *string `json:"SkipRecipientMailBoxAddressOverride,omitempty"`
+
+	// Subject: Edm.String
 	Subject *string `json:"Subject,omitempty"`
 
-	// SynchronizationCode:
+	// SynchronizationCode: Edm.String
 	SynchronizationCode *string `json:"SynchronizationCode,omitempty"`
 
-	// Type:
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 }
 

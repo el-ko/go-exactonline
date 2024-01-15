@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,37 +26,37 @@ type DefaultMailboxEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadMailboxDefaultMailbox
 type DefaultMailbox struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// Description: Extra description of the mailbox
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// ForDivision: Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration
+	// ForDivision: Edm.Int32
 	ForDivision *int `json:"ForDivision,omitempty"`
 
-	// IsScanServiceMailbox: Indicates whether this service is used for messages returned by the scanning service
+	// IsScanServiceMailbox: Edm.Boolean
 	IsScanServiceMailbox *bool `json:"IsScanServiceMailbox,omitempty"`
 
-	// Mailbox: E-mail address-like format, for example johndoe@exactonline.nl
+	// Mailbox: Edm.String
 	Mailbox *string `json:"Mailbox,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ValidFrom: Date that this mailbox became valid
+	// ValidFrom: Edm.DateTime
 	ValidFrom *types.Date `json:"ValidFrom,omitempty"`
 
-	// ValidTo: Date that this mailbox will not be valid anymore
+	// ValidTo: Edm.DateTime
 	ValidTo *types.Date `json:"ValidTo,omitempty"`
 }
 

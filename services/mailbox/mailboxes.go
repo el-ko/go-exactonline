@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,55 +29,55 @@ type MailboxesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=MailboxMailboxes
 type Mailboxes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The account this mailbox belongs to. Can be empty if the owner of the mailbox isn&#39;t an Exact Online customer yet
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Extra description of the mailbox
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// ForDivision: Only used when this mailbox is used for one specific administration, for example invoices to this mailbox will only be booked in this administration
+	// ForDivision: Edm.Int32
 	ForDivision *int `json:"ForDivision,omitempty"`
 
-	// ForDivisionDescription: Description of ForDivision
+	// ForDivisionDescription: Edm.String
 	ForDivisionDescription *string `json:"ForDivisionDescription,omitempty"`
 
-	// Mailbox: E-mail address-like format, for example johndoe@exactonline.nl
+	// Mailbox: Edm.String
 	Mailbox *string `json:"Mailbox,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Publish: Customers can decide if they want this mailbox to be visible by all. i.e. some other customer can see this in address maintenance for digital postbox of type Exact
+	// Publish: Edm.Byte
 	Publish *byte `json:"Publish,omitempty"`
 
-	// Type: Type of mailbox. Exact / Government / Manual
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 
-	// ValidFrom: Date that this mailbox became valid
+	// ValidFrom: Edm.DateTime
 	ValidFrom *types.Date `json:"ValidFrom,omitempty"`
 
-	// ValidTo: Date that this mailbox will not be valid anymore
+	// ValidTo: Edm.DateTime
 	ValidTo *types.Date `json:"ValidTo,omitempty"`
 }
 

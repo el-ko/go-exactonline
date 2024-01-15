@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,37 +26,40 @@ type MailMessageAttachmentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=MailboxMailMessageAttachments
 type MailMessageAttachments struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Attachment:
+	// Attachment: Edm.Binary
 	Attachment *[]byte `json:"Attachment,omitempty"`
 
-	// AttachmentFileExtension:
+	// AttachmentFileExtension: Edm.String
 	AttachmentFileExtension *string `json:"AttachmentFileExtension,omitempty"`
 
-	// AttachmentFileName:
+	// AttachmentFileName: Edm.String
 	AttachmentFileName *string `json:"AttachmentFileName,omitempty"`
 
-	// FileSize:
+	// FileSize: Edm.Int64
 	FileSize *int64 `json:"FileSize,omitempty"`
 
-	// MailMessageID:
+	// MailMessageID: Edm.Guid
 	MailMessageID *types.GUID `json:"MailMessageID,omitempty"`
 
-	// RecipientAccount:
+	// MailMessageOrigin: Edm.Int32
+	MailMessageOrigin *int `json:"MailMessageOrigin,omitempty"`
+
+	// RecipientAccount: Edm.Guid
 	RecipientAccount *types.GUID `json:"RecipientAccount,omitempty"`
 
-	// SenderAccount:
+	// SenderAccount: Edm.Guid
 	SenderAccount *types.GUID `json:"SenderAccount,omitempty"`
 
-	// Type:
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription:
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 
-	// Url:
+	// Url: Edm.String
 	Url *string `json:"Url,omitempty"`
 }
 

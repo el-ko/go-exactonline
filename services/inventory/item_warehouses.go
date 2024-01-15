@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,94 +29,127 @@ type ItemWarehousesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouses
 type ItemWarehouses struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// CountingCycle: Edm.Int16
+	CountingCycle *int `json:"CountingCycle,omitempty"`
+
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// CurrentStock: Quantity that is currently on stock, sales/purchase orders excluded
+	// CurrentStock: Edm.Double
 	CurrentStock *float64 `json:"CurrentStock,omitempty"`
 
-	// DefaultStorageLocation: This is a default storage location
+	// DefaultStorageLocation: Edm.Guid
 	DefaultStorageLocation *types.GUID `json:"DefaultStorageLocation,omitempty"`
 
-	// DefaultStorageLocationCode: Default storage location&#39;s code
+	// DefaultStorageLocationCode: Edm.String
 	DefaultStorageLocationCode *string `json:"DefaultStorageLocationCode,omitempty"`
 
-	// DefaultStorageLocationDescription: Default storage location&#39;s description
+	// DefaultStorageLocationDescription: Edm.String
 	DefaultStorageLocationDescription *string `json:"DefaultStorageLocationDescription,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Item: Item ID
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item
+	// ItemBarcode: Edm.String
+	ItemBarcode *string `json:"ItemBarcode,omitempty"`
+
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemIsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of this item
+	// ItemEndDate: Edm.DateTime
+	ItemEndDate *types.Date `json:"ItemEndDate,omitempty"`
+
+	// ItemIsFractionAllowedItem: Edm.Boolean
 	ItemIsFractionAllowedItem *bool `json:"ItemIsFractionAllowedItem,omitempty"`
 
-	// ItemUnit: The standard unit code of this item
+	// ItemIsStockItem: Edm.Boolean
+	ItemIsStockItem *bool `json:"ItemIsStockItem,omitempty"`
+
+	// ItemStartDate: Edm.DateTime
+	ItemStartDate *types.Date `json:"ItemStartDate,omitempty"`
+
+	// ItemUnit: Edm.String
 	ItemUnit *string `json:"ItemUnit,omitempty"`
 
-	// ItemUnitDescription: Description of item&#39;s unit
+	// ItemUnitDescription: Edm.String
 	ItemUnitDescription *string `json:"ItemUnitDescription,omitempty"`
 
-	// MaximumStock: Maximum number of stock could enter warehouse
+	// MaximumStock: Edm.Double
 	MaximumStock *float64 `json:"MaximumStock,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PlannedStockIn: The quantity still open to be received based on i.e. purchase orders and assembly orders.
+	// NextCountingCycle: Edm.DateTime
+	NextCountingCycle *types.Date `json:"NextCountingCycle,omitempty"`
+
+	// OrderPolicy: Edm.Int16
+	OrderPolicy *int `json:"OrderPolicy,omitempty"`
+
+	// Period: Edm.Int16
+	Period *int `json:"Period,omitempty"`
+
+	// PlannedStockIn: Edm.Double
 	PlannedStockIn *float64 `json:"PlannedStockIn,omitempty"`
 
-	// PlannedStockOut: The quantity still open to be delivered based on i.e. sales orders and assembly orders.
+	// PlannedStockOut: Edm.Double
 	PlannedStockOut *float64 `json:"PlannedStockOut,omitempty"`
 
-	// PlanningDetailsUrl: URL of the stock planning details of this record
+	// PlanningDetailsUrl: Edm.String
 	PlanningDetailsUrl *string `json:"PlanningDetailsUrl,omitempty"`
 
-	// ProjectedStock: The quantity of stock projected given all planned future stock changes
+	// ProjectedStock: Edm.Double
 	ProjectedStock *float64 `json:"ProjectedStock,omitempty"`
 
-	// ReorderPoint: Reorder point when stock depletes
+	// ReorderPoint: Edm.Double
 	ReorderPoint *float64 `json:"ReorderPoint,omitempty"`
 
-	// ReservedStock: The quantity in a back to back order process which is already received from the purchase order, but not yet delivered for the sales order.
+	// ReorderQuantity: Edm.Double
+	ReorderQuantity *float64 `json:"ReorderQuantity,omitempty"`
+
+	// ReplenishmentType: Edm.Int16
+	ReplenishmentType *int `json:"ReplenishmentType,omitempty"`
+
+	// ReservedStock: Edm.Double
 	ReservedStock *float64 `json:"ReservedStock,omitempty"`
 
-	// SafetyStock: Safety stock
+	// SafetyStock: Edm.Double
 	SafetyStock *float64 `json:"SafetyStock,omitempty"`
 
-	// StorageLocationUrl: URL pointing to details of which storage locations this ItemWarehouse&#39;s stock is located
+	// StorageLocationSequenceNumber: Edm.Int32
+	StorageLocationSequenceNumber *int `json:"StorageLocationSequenceNumber,omitempty"`
+
+	// StorageLocationUrl: Edm.String
 	StorageLocationUrl *string `json:"StorageLocationUrl,omitempty"`
 
-	// Warehouse: Warehouse ID
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

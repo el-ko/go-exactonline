@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,6 +29,8 @@ func TestNewInventoryService(t *testing.T) {
 	want := &InventoryService{client: c}
 	want.common.client = c
 
+	want.AssemblyBillOfMaterialHeader = (*AssemblyBillOfMaterialHeaderEndpoint)(&want.common)
+	want.AssemblyBillOfMaterialMaterials = (*AssemblyBillOfMaterialMaterialsEndpoint)(&want.common)
 	want.AssemblyOrders = (*AssemblyOrdersEndpoint)(&want.common)
 	want.BatchNumbers = (*BatchNumbersEndpoint)(&want.common)
 	want.ItemWarehousePlanningDetails = (*ItemWarehousePlanningDetailsEndpoint)(&want.common)
@@ -41,6 +43,8 @@ func TestNewInventoryService(t *testing.T) {
 	want.StockSerialNumbers = (*StockSerialNumbersEndpoint)(&want.common)
 	want.StorageLocations = (*StorageLocationsEndpoint)(&want.common)
 	want.Warehouses = (*WarehousesEndpoint)(&want.common)
+	want.WarehouseTransferLines = (*WarehouseTransferLinesEndpoint)(&want.common)
+	want.WarehouseTransfers = (*WarehouseTransfersEndpoint)(&want.common)
 
 	if !reflect.DeepEqual(s, want) {
 		t.Error("Clients are supposed to be the same")

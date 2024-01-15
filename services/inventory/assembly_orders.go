@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,64 +27,82 @@ type AssemblyOrdersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryAssemblyOrders
 type AssemblyOrders struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AssemblyDate: Planned date for assembly of the item
+	// AssemblyDate: Edm.DateTime
 	AssemblyDate *types.Date `json:"AssemblyDate,omitempty"`
 
-	// Description: Description of assembly order
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// FinishedQuantity: Quantity of items that have actually been assembled
+	// FinishedAssemblyDate: Edm.DateTime
+	FinishedAssemblyDate *types.Date `json:"FinishedAssemblyDate,omitempty"`
+
+	// FinishedQuantity: Edm.Double
 	FinishedQuantity *float64 `json:"FinishedQuantity,omitempty"`
 
-	// Item: Reference to item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Item code
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// Notes: Notes of the assembly order
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// OrderDate: Date of the assembly order is initiated
+	// OrderDate: Edm.DateTime
 	OrderDate *types.Date `json:"OrderDate,omitempty"`
 
-	// OrderNumber: Assembly order number
+	// OrderNumber: Edm.Int32
 	OrderNumber *int `json:"OrderNumber,omitempty"`
 
-	// OrderStatus: Assembly order status: 20 = Open, 30 = Partial, 50 = Complete
+	// OrderStatus: Edm.Int16
 	OrderStatus *int `json:"OrderStatus,omitempty"`
 
-	// PartItems: Collection of part items for assembly order
+	// PartItems: PartItems
 	PartItems *json.RawMessage `json:"PartItems,omitempty"`
 
-	// PlannedQuantity: Planned quantity of the item to be assembled
+	// PlannedQuantity: Edm.Double
 	PlannedQuantity *float64 `json:"PlannedQuantity,omitempty"`
 
-	// StorageLocation: Reference to storage location
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Storage location code
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Storage location description
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// Warehouse: Warehouse
+	// StorageLocationSequenceNumber: Edm.Int32
+	StorageLocationSequenceNumber *int `json:"StorageLocationSequenceNumber,omitempty"`
+
+	// Type: Edm.Int16
+	Type *int `json:"Type,omitempty"`
+
+	// Unit: Edm.Guid
+	Unit *types.GUID `json:"Unit,omitempty"`
+
+	// UnitCode: Edm.String
+	UnitCode *string `json:"UnitCode,omitempty"`
+
+	// UnitDescription: Edm.String
+	UnitDescription *string `json:"UnitDescription,omitempty"`
+
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of Warehouse
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of Warehouse
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

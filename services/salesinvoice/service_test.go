@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -31,6 +31,7 @@ func TestNewSalesInvoiceService(t *testing.T) {
 
 	want.Layouts = (*LayoutsEndpoint)(&want.common)
 	want.SalesInvoiceLines = (*SalesInvoiceLinesEndpoint)(&want.common)
+	want.SalesInvoiceOrderChargeLines = (*SalesInvoiceOrderChargeLinesEndpoint)(&want.common)
 	want.SalesInvoices = (*SalesInvoicesEndpoint)(&want.common)
 
 	if !reflect.DeepEqual(s, want) {

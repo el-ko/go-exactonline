@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,61 +27,61 @@ type AbsenceRegistrationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMAbsenceRegistrations
 type AbsenceRegistrations struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AbsenceRegistrationTransactions: Collection of absence registration transactions
+	// AbsenceRegistrationTransactions: AbsenceRegistrationTransactions
 	AbsenceRegistrationTransactions *json.RawMessage `json:"AbsenceRegistrationTransactions,omitempty"`
 
-	// Cause: Absence cause, only supported for the Netherland legislation
+	// Cause: Edm.Int16
 	Cause *int `json:"Cause,omitempty"`
 
-	// CauseCode: Code for the absence cause, only supported for the Netherland legislation
+	// CauseCode: Edm.String
 	CauseCode *string `json:"CauseCode,omitempty"`
 
-	// CauseDescription: Description for the absence cause, only supported for the Netherland legislation
+	// CauseDescription: Edm.String
 	CauseDescription *string `json:"CauseDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee linked to the absence
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Employee full name
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric ID of the employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// Kind: Absence kind, only supported for the Netherland legislation
+	// Kind: Edm.Int16
 	Kind *int `json:"Kind,omitempty"`
 
-	// KindCode: Code for the absence kind, only supported for the Netherland legislation
+	// KindCode: Edm.String
 	KindCode *string `json:"KindCode,omitempty"`
 
-	// KindDescription: Description for the absence kind, only supported for the Netherland legislation
+	// KindDescription: Edm.String
 	KindDescription *string `json:"KindDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Extra information for absence
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 }
 

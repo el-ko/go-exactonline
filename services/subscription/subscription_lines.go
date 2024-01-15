@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -23,85 +23,94 @@ type SubscriptionLinesEndpoint service
 // Service: Subscription
 // Entity: SubscriptionLines
 // URL: /api/v1/{division}/subscription/SubscriptionLines
-// HasWebhook: false
+// HasWebhook: true
 // IsInBeta: false
 // Methods: GET POST PUT DELETE
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionLines
 type SubscriptionLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AmountDC: Amount in the default currency of the company
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC: Amount in the currency of the transaction
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// Costcenter: Cost center
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// Costunit: Cost unit
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// Description: Description
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Discount: Discount percentage
+	// Discount: Edm.Double
 	Discount *float64 `json:"Discount,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EntryID: Entry ID
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// FromDate: From date
+	// FromDate: Edm.DateTime
 	FromDate *types.Date `json:"FromDate,omitempty"`
 
-	// Item: Reference to Item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// LineNumber: Line number
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// LineType: Reference to LineType
+	// LineType: Edm.Int16
 	LineType *int `json:"LineType,omitempty"`
 
-	// LineTypeDescription: Description of LineType
+	// LineTypeDescription: Edm.String
 	LineTypeDescription *string `json:"LineTypeDescription,omitempty"`
 
-	// NetPrice: Net price in the currency of the transaction
+	// Modified: Edm.DateTime
+	Modified *types.Date `json:"Modified,omitempty"`
+
+	// NetPrice: Edm.Double
 	NetPrice *float64 `json:"NetPrice,omitempty"`
 
-	// Notes: Remarks
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Quantity: Quantity
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// ToDate: To date
+	// SubscriptionNumber: Edm.Int32
+	SubscriptionNumber *int `json:"SubscriptionNumber,omitempty"`
+
+	// ToDate: Edm.DateTime
 	ToDate *types.Date `json:"ToDate,omitempty"`
 
-	// UnitCode: Unit code
+	// UnitCode: Edm.String
 	UnitCode *string `json:"UnitCode,omitempty"`
 
-	// UnitDescription: Description of Unit
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// UnitPrice: Unit price in the currency of the transaction (price * unit factor)
+	// UnitPrice: Edm.Double
 	UnitPrice *float64 `json:"UnitPrice,omitempty"`
 
-	// VATAmountFC: Vat Amount in the currency of the transaction
+	// VATAmountFC: Edm.Double
 	VATAmountFC *float64 `json:"VATAmountFC,omitempty"`
 
-	// VATCode: VATCode
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATCodeDescription: Description of VATCode
+	// VATCodeDescription: Edm.String
 	VATCodeDescription *string `json:"VATCodeDescription,omitempty"`
 }
 

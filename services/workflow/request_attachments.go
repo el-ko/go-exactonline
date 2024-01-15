@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,22 +26,22 @@ type RequestAttachmentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=WorkflowRequestAttachments
 type RequestAttachments struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Division: The division
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DownloadUrl: To get the file in its original format (xml, jpg, pdf, etc.) append &amp;Download=1 to the url.
+	// DownloadUrl: Edm.String
 	DownloadUrl *string `json:"DownloadUrl,omitempty"`
 
-	// FileName: Filename of the attachment
+	// FileName: Edm.String
 	FileName *string `json:"FileName,omitempty"`
 
-	// FileSize: File size of the attachment
+	// FileSize: Edm.Double
 	FileSize *float64 `json:"FileSize,omitempty"`
 
-	// Request: The request this attachment is linked to
+	// Request: Edm.Guid
 	Request *types.GUID `json:"Request,omitempty"`
 }
 

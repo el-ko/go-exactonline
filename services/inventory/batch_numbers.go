@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,58 +27,61 @@ type BatchNumbersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryBatchNumbers
 type BatchNumbers struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AvailableQuantity: Available quantity of this batch number
+	// AvailableQuantity: Edm.Double
 	AvailableQuantity *float64 `json:"AvailableQuantity,omitempty"`
 
-	// BatchNumber: Human readable batch number
+	// BatchNumber: Edm.String
 	BatchNumber *string `json:"BatchNumber,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// ExpiryDate: Expiry date of effective period for batch number
+	// ExpiryDate: Edm.DateTime
 	ExpiryDate *types.Date `json:"ExpiryDate,omitempty"`
 
-	// IsBlocked: Boolean value indicating whether or not the batch number is blocked
+	// IsBlocked: Edm.Byte
 	IsBlocked *byte `json:"IsBlocked,omitempty"`
 
-	// Item: Item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Item code
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Remarks: Remarks
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// StorageLocations: Total quantity available per location
+	// StorageLocations: StorageLocations
 	StorageLocations *json.RawMessage `json:"StorageLocations,omitempty"`
 
-	// Warehouses: Total quantity available per warehouse
+	// Warehouses: Warehouses
 	Warehouses *json.RawMessage `json:"Warehouses,omitempty"`
 }
 

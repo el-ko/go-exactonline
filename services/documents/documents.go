@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,118 +29,139 @@ type DocumentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocuments
 type Documents struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode:
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// Body:
+	// Body: Edm.String
 	Body *string `json:"Body,omitempty"`
 
-	// Category:
+	// Category: Edm.Guid
 	Category *types.GUID `json:"Category,omitempty"`
 
-	// CategoryDescription:
+	// CategoryDescription: Edm.String
 	CategoryDescription *string `json:"CategoryDescription,omitempty"`
 
-	// Contact:
+	// Contact: Edm.Guid
 	Contact *types.GUID `json:"Contact,omitempty"`
 
-	// ContactFullName:
+	// ContactFullName: Edm.String
 	ContactFullName *string `json:"ContactFullName,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DocumentDate:
+	// DocumentDate: Edm.DateTime
 	DocumentDate *types.Date `json:"DocumentDate,omitempty"`
 
-	// DocumentFolder:
+	// DocumentFolder: Edm.Guid
 	DocumentFolder *types.GUID `json:"DocumentFolder,omitempty"`
 
-	// DocumentFolderCode:
+	// DocumentFolderCode: Edm.String
 	DocumentFolderCode *string `json:"DocumentFolderCode,omitempty"`
 
-	// DocumentFolderDescription:
+	// DocumentFolderDescription: Edm.String
 	DocumentFolderDescription *string `json:"DocumentFolderDescription,omitempty"`
 
-	// DocumentViewUrl:
+	// DocumentViewUrl: Edm.String
 	DocumentViewUrl *string `json:"DocumentViewUrl,omitempty"`
 
-	// FinancialTransactionEntryID:
+	// ExpiryDate: Edm.DateTime
+	ExpiryDate *types.Date `json:"ExpiryDate,omitempty"`
+
+	// FinancialTransactionEntryID: Edm.Guid
 	FinancialTransactionEntryID *types.GUID `json:"FinancialTransactionEntryID,omitempty"`
 
-	// HasEmptyBody:
+	// HasEmptyBody: Edm.Boolean
 	HasEmptyBody *bool `json:"HasEmptyBody,omitempty"`
 
-	// HID:
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// Language:
+	// InheritShare: Edm.Boolean
+	InheritShare *bool `json:"InheritShare,omitempty"`
+
+	// Item: Edm.Guid
+	Item *types.GUID `json:"Item,omitempty"`
+
+	// ItemCode: Edm.String
+	ItemCode *string `json:"ItemCode,omitempty"`
+
+	// ItemDescription: Edm.String
+	ItemDescription *string `json:"ItemDescription,omitempty"`
+
+	// Language: Edm.String
 	Language *string `json:"Language,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Opportunity:
+	// Opportunity: Edm.Guid
 	Opportunity *types.GUID `json:"Opportunity,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// SalesInvoiceNumber:
+	// ProposedEntryStatus: Edm.Int16
+	ProposedEntryStatus *int `json:"ProposedEntryStatus,omitempty"`
+
+	// SalesInvoiceNumber: Edm.Int32
 	SalesInvoiceNumber *int `json:"SalesInvoiceNumber,omitempty"`
 
-	// SalesOrderNumber:
+	// SalesOrderNumber: Edm.Int32
 	SalesOrderNumber *int `json:"SalesOrderNumber,omitempty"`
 
-	// SendMethod:
+	// SendMethod: Edm.Int32
 	SendMethod *int `json:"SendMethod,omitempty"`
 
-	// ShopOrderNumber:
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// Subject:
+	// Subject: Edm.String
 	Subject *string `json:"Subject,omitempty"`
 
-	// Type:
+	// TeamsMeetingId: Edm.String
+	TeamsMeetingId *string `json:"TeamsMeetingId,omitempty"`
+
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription:
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 }
 

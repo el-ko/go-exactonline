@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,64 +26,64 @@ type AbsenceRegistrationTransactionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMAbsenceRegistrationTransactions
 type AbsenceRegistrationTransactions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AbsenceRegistration: Reference key to Absence Registration
+	// AbsenceRegistration: Edm.Guid
 	AbsenceRegistration *types.GUID `json:"AbsenceRegistration,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EndTime: End time on the last day of absence stored as DateTime, and the date should be ignored
+	// EndTime: Edm.DateTime
 	EndTime *types.Date `json:"EndTime,omitempty"`
 
-	// ExpectedEndDate: Expected end date of absence
+	// ExpectedEndDate: Edm.DateTime
 	ExpectedEndDate *types.Date `json:"ExpectedEndDate,omitempty"`
 
-	// Hours: Total number of absence hours
+	// Hours: Edm.Double
 	Hours *float64 `json:"Hours,omitempty"`
 
-	// HoursFirstDay: Hours of absence on the first day
+	// HoursFirstDay: Edm.Double
 	HoursFirstDay *float64 `json:"HoursFirstDay,omitempty"`
 
-	// HoursLastDay: Hours of absence on the last day
+	// HoursLastDay: Edm.Double
 	HoursLastDay *float64 `json:"HoursLastDay,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Extra information for absence
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// NotificationMoment: Notification moment of absence
+	// NotificationMoment: Edm.DateTime
 	NotificationMoment *types.Date `json:"NotificationMoment,omitempty"`
 
-	// PercentageDisablement: Percentage disablement
+	// PercentageDisablement: Edm.Double
 	PercentageDisablement *float64 `json:"PercentageDisablement,omitempty"`
 
-	// StartDate: Start date of absence
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// StartTime: Start time on the first day of absence stored as DateTime, and the date should be ignored
+	// StartTime: Edm.DateTime
 	StartTime *types.Date `json:"StartTime,omitempty"`
 
-	// Status: Status of absence, 0 = Open, 1 = Recovered
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 }
 

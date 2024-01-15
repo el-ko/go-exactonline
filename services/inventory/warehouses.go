@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,55 +29,55 @@ type WarehousesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryWarehouses
 type Warehouses struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Code of the warehouse
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// DefaultStorageLocation: The default storage location of this warehouse. Warehouses can have a default storage location in packages Manufacturing Premium or Wholesale Premium
+	// DefaultStorageLocation: Edm.Guid
 	DefaultStorageLocation *types.GUID `json:"DefaultStorageLocation,omitempty"`
 
-	// DefaultStorageLocationCode: Default storage location&#39;s code
+	// DefaultStorageLocationCode: Edm.String
 	DefaultStorageLocationCode *string `json:"DefaultStorageLocationCode,omitempty"`
 
-	// DefaultStorageLocationDescription: Default storage location&#39;s description
+	// DefaultStorageLocationDescription: Edm.String
 	DefaultStorageLocationDescription *string `json:"DefaultStorageLocationDescription,omitempty"`
 
-	// Description: The description of the warehouse
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EMail: Email address
+	// EMail: Edm.String
 	EMail *string `json:"EMail,omitempty"`
 
-	// Main: Indicates if this is the main warehouse. There&#39;s always exactly one main warehouse per administration
+	// Main: Edm.Byte
 	Main *byte `json:"Main,omitempty"`
 
-	// ManagerUser: User reponsible for the warehouse
+	// ManagerUser: Edm.Guid
 	ManagerUser *types.GUID `json:"ManagerUser,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// UseStorageLocations: Indicates if this warehouse is using storage locations. The storage locations will not be removed when when this is deactivated
+	// UseStorageLocations: Edm.Byte
 	UseStorageLocations *byte `json:"UseStorageLocations,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,70 +26,70 @@ type PaymentConditionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowPaymentConditions
 type PaymentConditions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Code of the payment condition
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// CreditManagementScenario: Default credit management scenario to be used for new payment terms
+	// CreditManagementScenario: Edm.Guid
 	CreditManagementScenario *types.GUID `json:"CreditManagementScenario,omitempty"`
 
-	// CreditManagementScenarioCode: Code of CreditManagementScenario
+	// CreditManagementScenarioCode: Edm.String
 	CreditManagementScenarioCode *string `json:"CreditManagementScenarioCode,omitempty"`
 
-	// CreditManagementScenarioDescription: Description of CreditManagementScenario
+	// CreditManagementScenarioDescription: Edm.String
 	CreditManagementScenarioDescription *string `json:"CreditManagementScenarioDescription,omitempty"`
 
-	// Description: Description of the payment condition
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DiscountCalculation: Indicates how the discount amount is calculated. Values: E = Excluding VAT, I = Including VAT
+	// DiscountCalculation: Edm.String
 	DiscountCalculation *string `json:"DiscountCalculation,omitempty"`
 
-	// DiscountPaymentDays: Number of days to pay within, to have the right to take the discount
+	// DiscountPaymentDays: Edm.Int32
 	DiscountPaymentDays *int `json:"DiscountPaymentDays,omitempty"`
 
-	// DiscountPercentage: Discount percentage
+	// DiscountPercentage: Edm.Double
 	DiscountPercentage *float64 `json:"DiscountPercentage,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PaymentDays: Number of days to be included in the due date calculation. Example: invoice date = 17/01 PaymentEndOfMonths = 2 =&gt; 31/03 PaymentDays = 15 =&gt; 15/04
+	// PaymentDays: Edm.Int32
 	PaymentDays *int `json:"PaymentDays,omitempty"`
 
-	// PaymentDiscountType: Type of payment discount. Values: B = Settlement discount, K = Credit surcharge
+	// PaymentDiscountType: Edm.String
 	PaymentDiscountType *string `json:"PaymentDiscountType,omitempty"`
 
-	// PaymentEndOfMonths: Number of month endings to be included in the due date calculation
+	// PaymentEndOfMonths: Edm.Int32
 	PaymentEndOfMonths *int `json:"PaymentEndOfMonths,omitempty"`
 
-	// PaymentMethod: Method of payment. Values: B = On credit, I = Collection, K = Cash
+	// PaymentMethod: Edm.String
 	PaymentMethod *string `json:"PaymentMethod,omitempty"`
 
-	// Percentage: Percentage (stored as fraction) of total invoice amount
+	// Percentage: Edm.Double
 	Percentage *float64 `json:"Percentage,omitempty"`
 
-	// VATCalculation: Indicates how the VAT amount is calculated Values: E = Excluding discount, I = Including discount
+	// VATCalculation: Edm.String
 	VATCalculation *string `json:"VATCalculation,omitempty"`
 }
 

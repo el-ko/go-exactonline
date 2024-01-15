@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,58 +29,58 @@ type DirectDebitMandatesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowDirectDebitMandates
 type DirectDebitMandates struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: Account to which the mandate belongs.
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// BankAccount: Bank account to which the mandate belongs.
+	// BankAccount: Edm.Guid
 	BankAccount *types.GUID `json:"BankAccount,omitempty"`
 
-	// CancellationDate: Date that the mandate is cancelled. Used to check the validity of the mandate.
+	// CancellationDate: Edm.DateTime
 	CancellationDate *types.Date `json:"CancellationDate,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Displays the description of the mandate.
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// FirstSend: Indicates the first collection hasn&#39;t been sent/confirmed with this mandate.
+	// FirstSend: Edm.Byte
 	FirstSend *byte `json:"FirstSend,omitempty"`
 
-	// Main: Indicates if the mandate is the main, you can have only one main mandate
+	// Main: Edm.Byte
 	Main *byte `json:"Main,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PaymentType: Depending on the payment type, a different bank file will be generated. 0 = One-off payment, 1 = Recurrent payment, 2 = AdHoc (UK only)
+	// PaymentType: Edm.Int16
 	PaymentType *int `json:"PaymentType,omitempty"`
 
-	// Reference: Displays a reference number for the mandate. It is a unique reference number that you can assign to each mandate.
+	// Reference: Edm.String
 	Reference *string `json:"Reference,omitempty"`
 
-	// SignatureDate: Date that the mandate is signed. The collection must take place after the signature date of the mandate. The date is used to check the validity of the mandate.
+	// SignatureDate: Edm.DateTime
 	SignatureDate *types.Date `json:"SignatureDate,omitempty"`
 
-	// Type: Depending on the type, a different bank file will be generated. 0 = Core, 1 = B2B and 2 = bottomline (UK only)
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 }
 

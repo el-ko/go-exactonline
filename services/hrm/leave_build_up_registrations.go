@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,61 +26,61 @@ type LeaveBuildUpRegistrationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMLeaveBuildUpRegistrations
 type LeaveBuildUpRegistrations struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Date: Date of leave build up
+	// Date: Edm.DateTime
 	Date *types.Date `json:"Date,omitempty"`
 
-	// Description: Description of leave build up
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee linked to the leave build up
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Employee full name
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric ID of the employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// Hours: Total number of leave build up hours
+	// Hours: Edm.Double
 	Hours *float64 `json:"Hours,omitempty"`
 
-	// LeaveType: Type of leave
+	// LeaveType: Edm.Guid
 	LeaveType *types.GUID `json:"LeaveType,omitempty"`
 
-	// LeaveTypeCode: Code for type of leave
+	// LeaveTypeCode: Edm.String
 	LeaveTypeCode *string `json:"LeaveTypeCode,omitempty"`
 
-	// LeaveTypeDescription: Description for type of leave
+	// LeaveTypeDescription: Edm.String
 	LeaveTypeDescription *string `json:"LeaveTypeDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Extra information for leave build up
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Status: Status of leave build up, 1 = Submitted, 2 = Approved, 3 = Rejected
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 }
 

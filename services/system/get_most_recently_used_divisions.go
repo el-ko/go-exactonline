@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,166 +27,190 @@ type GetMostRecentlyUsedDivisionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemGetMostRecentlyUsedDivisions
 type GetMostRecentlyUsedDivisions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Code: Primary key
+	// Code: Edm.Int32
 	Code *int `json:"Code,omitempty"`
 
-	// AddressLine1: Address line 1
+	// AddressLine1: Edm.String
 	AddressLine1 *string `json:"AddressLine1,omitempty"`
 
-	// AddressLine2: Address line 2
+	// AddressLine2: Edm.String
 	AddressLine2 *string `json:"AddressLine2,omitempty"`
 
-	// AddressLine3: Address line 3
+	// AddressLine3: Edm.String
 	AddressLine3 *string `json:"AddressLine3,omitempty"`
 
-	// BlockingStatus: Values: 0 = Not blocked, 1 = Backup, 2 = Conversion busy, 3 = Conversion shadow, 4 = Conversion waiting, 5 = Copy data waiting, 6 = Copy data buzy, 100 = Wait for deletion, 101 = Deleted, 102 = Deletion failed
+	// ArchiveDate: Edm.DateTime
+	ArchiveDate *types.Date `json:"ArchiveDate,omitempty"`
+
+	// BlockingStatus: Edm.Int32
 	BlockingStatus *int `json:"BlockingStatus,omitempty"`
 
-	// BusinessTypeCode: Business Type Code
+	// BusinessTypeCode: Edm.String
 	BusinessTypeCode *string `json:"BusinessTypeCode,omitempty"`
 
-	// BusinessTypeDescription: Business Type Description
+	// BusinessTypeDescription: Edm.String
 	BusinessTypeDescription *string `json:"BusinessTypeDescription,omitempty"`
 
-	// ChamberOfCommerceEstablishment: Chamber of commerce establishment
+	// ChamberOfCommerceEstablishment: Edm.String
 	ChamberOfCommerceEstablishment *string `json:"ChamberOfCommerceEstablishment,omitempty"`
 
-	// ChamberOfCommerceNumber: Chamber of commerce number
+	// ChamberOfCommerceNumber: Edm.String
 	ChamberOfCommerceNumber *string `json:"ChamberOfCommerceNumber,omitempty"`
 
-	// City: City
+	// City: Edm.String
 	City *string `json:"City,omitempty"`
 
-	// Class_01: First division classification. User should have access rights to view division classifications.
+	// Class_01: Exact.Web.Api.Models.HRM.DivisionClass
 	Class_01 *json.RawMessage `json:"Class_01,omitempty"`
 
-	// Class_02: Second division classification. User should have access rights to view division classifications.
+	// Class_02: Exact.Web.Api.Models.HRM.DivisionClass
 	Class_02 *json.RawMessage `json:"Class_02,omitempty"`
 
-	// Class_03: Third division classification. User should have access rights to view division classifications.
+	// Class_03: Exact.Web.Api.Models.HRM.DivisionClass
 	Class_03 *json.RawMessage `json:"Class_03,omitempty"`
 
-	// Class_04: Fourth division classification. User should have access rights to view division classifications.
+	// Class_04: Exact.Web.Api.Models.HRM.DivisionClass
 	Class_04 *json.RawMessage `json:"Class_04,omitempty"`
 
-	// Class_05: Fifth division classification. User should have access rights to view division classifications.
+	// Class_05: Exact.Web.Api.Models.HRM.DivisionClass
 	Class_05 *json.RawMessage `json:"Class_05,omitempty"`
 
-	// CompanySizeCode: Company Size Code
+	// CompanySizeCode: Edm.String
 	CompanySizeCode *string `json:"CompanySizeCode,omitempty"`
 
-	// CompanySizeDescription: Company Size Description
+	// CompanySizeDescription: Edm.String
 	CompanySizeDescription *string `json:"CompanySizeDescription,omitempty"`
 
-	// Country: Country of the division. Is used for determination of legislation
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: Default currency
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Current: True when this division is most recently used by the API
+	// Current: Edm.Boolean
 	Current *bool `json:"Current,omitempty"`
 
-	// Customer: Owner account of the division
+	// Customer: Edm.Guid
 	Customer *types.GUID `json:"Customer,omitempty"`
 
-	// CustomerCode: Owner account code of the division
+	// CustomerCode: Edm.String
 	CustomerCode *string `json:"CustomerCode,omitempty"`
 
-	// CustomerName: Owner account name of the division
+	// CustomerName: Edm.String
 	CustomerName *string `json:"CustomerName,omitempty"`
 
-	// DatevAccountantNumber: Accountant number DATEV (Germany)
+	// DatevAccountantNumber: Edm.String
 	DatevAccountantNumber *string `json:"DatevAccountantNumber,omitempty"`
 
-	// DatevClientNumber: Client number DATEV (Germany)
+	// DatevClientNumber: Edm.String
 	DatevClientNumber *string `json:"DatevClientNumber,omitempty"`
 
-	// Description: Description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Email: Email address
+	// DivisionHRLinkUnlinkDate: Edm.DateTime
+	DivisionHRLinkUnlinkDate *types.Date `json:"DivisionHRLinkUnlinkDate,omitempty"`
+
+	// DivisionMoveDate: Edm.DateTime
+	DivisionMoveDate *types.Date `json:"DivisionMoveDate,omitempty"`
+
+	// Email: Edm.String
 	Email *string `json:"Email,omitempty"`
 
-	// Fax: Fax number
+	// Fax: Edm.String
 	Fax *string `json:"Fax,omitempty"`
 
-	// Hid: Company number that is assigned by the customer
+	// Hid: Edm.Int64
 	Hid *int64 `json:"Hid,omitempty"`
 
-	// IsMainDivision: True if the division is the main division
+	// IsDossierDivision: Edm.Boolean
+	IsDossierDivision *bool `json:"IsDossierDivision,omitempty"`
+
+	// IsHRDivision: Edm.Boolean
+	IsHRDivision *bool `json:"IsHRDivision,omitempty"`
+
+	// IsMainDivision: Edm.Boolean
 	IsMainDivision *bool `json:"IsMainDivision,omitempty"`
 
-	// Legislation: Legislation
+	// IsPracticeDivision: Edm.Boolean
+	IsPracticeDivision *bool `json:"IsPracticeDivision,omitempty"`
+
+	// Legislation: Edm.String
 	Legislation *string `json:"Legislation,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Phone: Phone number
+	// OBNumber: Edm.String
+	OBNumber *string `json:"OBNumber,omitempty"`
+
+	// Phone: Edm.String
 	Phone *string `json:"Phone,omitempty"`
 
-	// Postcode: Postcode
+	// Postcode: Edm.String
 	Postcode *string `json:"Postcode,omitempty"`
 
-	// SbiCode: SBI Code
+	// SbiCode: Edm.String
 	SbiCode *string `json:"SbiCode,omitempty"`
 
-	// SbiDescription: SBI Description
+	// SbiDescription: Edm.String
 	SbiDescription *string `json:"SbiDescription,omitempty"`
 
-	// SectorCode: Sector Code
+	// SectorCode: Edm.String
 	SectorCode *string `json:"SectorCode,omitempty"`
 
-	// SectorDescription: Sector Description
+	// SectorDescription: Edm.String
 	SectorDescription *string `json:"SectorDescription,omitempty"`
 
-	// ShareCapital: the part of the capital of a company that comes from the issue of shares (France)
+	// ShareCapital: Edm.Double
 	ShareCapital *float64 `json:"ShareCapital,omitempty"`
 
-	// SiretNumber: An INSEE code which allows the geographic identification of the company. (France)
+	// SiretNumber: Edm.String
 	SiretNumber *string `json:"SiretNumber,omitempty"`
 
-	// StartDate: Date on which the division becomes active
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// State: State/Province code
+	// State: Edm.String
 	State *string `json:"State,omitempty"`
 
-	// Status: Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// SubsectorCode: Subsector Code
+	// SubsectorCode: Edm.String
 	SubsectorCode *string `json:"SubsectorCode,omitempty"`
 
-	// SubsectorDescription: Subsector Description
+	// SubsectorDescription: Edm.String
 	SubsectorDescription *string `json:"SubsectorDescription,omitempty"`
 
-	// TaxOfficeNumber: Number of your local tax authority (Germany)
+	// TaxOfficeNumber: Edm.String
 	TaxOfficeNumber *string `json:"TaxOfficeNumber,omitempty"`
 
-	// TaxReferenceNumber: Local tax reference number (Germany)
+	// TaxReferenceNumber: Edm.String
 	TaxReferenceNumber *string `json:"TaxReferenceNumber,omitempty"`
 
-	// VATNumber: The number under which the account is known at the Value Added Tax collection agency
+	// TemplateCode: Edm.String
+	TemplateCode *string `json:"TemplateCode,omitempty"`
+
+	// VATNumber: Edm.String
 	VATNumber *string `json:"VATNumber,omitempty"`
 
-	// Website: Customer value, hyperlink to external website
+	// Website: Edm.String
 	Website *string `json:"Website,omitempty"`
 }
 

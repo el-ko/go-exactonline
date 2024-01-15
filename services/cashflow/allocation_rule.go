@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,43 +29,43 @@ type AllocationRuleEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowAllocationRule
 type AllocationRule struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The account ID to which the imported bank transaction must be allocated.
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountBankAccount: The bank account number that should be in the imported bank transaction in order to perform the automatic allocation on bank account. Either bank account or word must be filled.
+	// AccountBankAccount: Edm.String
 	AccountBankAccount *string `json:"AccountBankAccount,omitempty"`
 
-	// Costcenter: The cost centre that will be allocated to the imported bank transaction.
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// Costunit: The cost unit that will be allocated to the imported bank transaction.
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// Division: Division Code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLAccount: The G/L account to which the imported bank transaction must be allocated.
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// VATCode: The VAT code that will be allocated to the imported bank transaction.
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// Words: Words for the automatic allocation. Either bank account or word must be filled.
+	// Words: Edm.String
 	Words *string `json:"Words,omitempty"`
 }
 
