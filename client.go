@@ -53,6 +53,7 @@ import (
 	"github.com/mcnijman/go-exactonline/services/workflow"
 	"github.com/mcnijman/go-exactonline/types"
 	"golang.org/x/oauth2"
+	"golang.org/x/time/rate"
 )
 
 // A Client manages communication with the Exact Online API.
@@ -101,7 +102,6 @@ type Client struct {
 // golang.org/x/oauth2 library).
 func NewClient(httpClient *http.Client) *Client {
 	restClient := api.NewClient(httpClient)
-
 	c := &Client{client: restClient}
 
 	// Services setup
@@ -156,12 +156,13 @@ func NewClientFromTokenSource(ctx context.Context, tokenSource oauth2.TokenSourc
 // For each country, the Exact Online solution is deployed on a separate site.
 // Because of this, the Exact Online server URL is country dependent.
 // The Exact Online server URLs are:
-//     - The Netherlands: https://start.exactonline.nl (default)
-//     - Belgium: https://start.exactonline.be
-//     - Germany: https://start.exactonline.de
-//     - United Kingdom: https://start.exactonline.co.uk
-//     - United States of America: https://start.exactonline.com
-//     - Spain: https://start.exactonline.es
+//   - The Netherlands: https://start.exactonline.nl (default)
+//   - Belgium: https://start.exactonline.be
+//   - Germany: https://start.exactonline.de
+//   - United Kingdom: https://start.exactonline.co.uk
+//   - United States of America: https://start.exactonline.com
+//   - Spain: https://start.exactonline.es
+//
 // Docs: https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-exact-online-sites
 func (c *Client) SetBaseURL(baseURL string) error {
 	baseEndpoint, err := url.Parse(baseURL)
@@ -179,6 +180,13 @@ func (c *Client) SetBaseURL(baseURL string) error {
 // SetUserAgent sets the useragent provided on every communication with the Exact Online API.
 func (c *Client) SetUserAgent(userAgent string) {
 	c.client.UserAgent = userAgent
+}
+
+// SetRateLimit sets the rate limit for every communication with the Exact Online API.
+
+func (c *Client) SetRateLimit(requestPerMinute int, burst int) {
+	limit := rate.Every(time.Minute / time.Duration(requestPerMinute))
+	c.client.Throttle = rate.NewLimiter(limit, burst)
 }
 
 // GetCurrentDivisionID fetches the last used division id of the user.
