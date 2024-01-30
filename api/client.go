@@ -41,10 +41,7 @@ type Client struct {
 	// UserAgent used when communicating with the Exact Online API.
 	UserAgent string
 
-	// Throttles the requests so rate limit is not exceded.
 	Throttle *rate.Limiter
-
-	ctx context.Context
 }
 
 // NewClient returns a new Exact Online API client. Provide a http.Client that
@@ -57,9 +54,8 @@ func NewClient(httpClient *http.Client) *Client {
 
 	baseURL, _ := url.Parse(defaultBaseURL) // #nosec
 	limit := rate.Every(time.Minute / 60)
-	ctx := context.Background()
 
-	c := &Client{client: httpClient, BaseURL: baseURL, UserAgent: userAgent, Throttle: rate.NewLimiter(limit, 1), ctx: ctx}
+	c := &Client{client: httpClient, BaseURL: baseURL, UserAgent: userAgent, Throttle: rate.NewLimiter(limit, 1)}
 	return c
 }
 
@@ -119,8 +115,8 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 // interface, the raw response body will be written to v, without attempting to
 // first decode it.
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*Response, error) {
-	c.Throttle.Wait(c.ctx)
 	req = req.WithContext(ctx)
+	c.Throttle.Wait(ctx)
 	res, err := c.client.Do(req) // #nosec G107
 	if err != nil {
 		// If we got an error, and the context has been canceled,
