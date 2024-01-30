@@ -41,7 +41,7 @@ type Client struct {
 	// UserAgent used when communicating with the Exact Online API.
 	UserAgent string
 
-	Throttle *rate.Limiter
+	Limiter *rate.Limiter
 }
 
 // NewClient returns a new Exact Online API client. Provide a http.Client that
@@ -55,7 +55,7 @@ func NewClient(httpClient *http.Client) *Client {
 	baseURL, _ := url.Parse(defaultBaseURL) // #nosec
 	limit := rate.Every(time.Minute / 60)
 
-	c := &Client{client: httpClient, BaseURL: baseURL, UserAgent: userAgent, Throttle: rate.NewLimiter(limit, 1)}
+	c := &Client{client: httpClient, BaseURL: baseURL, UserAgent: userAgent, Limiter: rate.NewLimiter(limit, 1)}
 	return c
 }
 
@@ -116,7 +116,12 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 // first decode it.
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*Response, error) {
 	req = req.WithContext(ctx)
-	c.Throttle.Wait(ctx)
+
+	c.Limiter.Wait(ctx)
+
+	/* if err := c.Throttle(ctx); err != nil {
+		return nil, err
+	} */
 	res, err := c.client.Do(req) // #nosec G107
 	if err != nil {
 		// If we got an error, and the context has been canceled,
@@ -165,6 +170,12 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*Res
 	}
 
 	return response, err
+}
+
+func (c *Client) Throttle(ctx context.Context) error {
+	fmt.Print("Throttling ")
+	fmt.Println(c.Limiter.Allow())
+	return c.Limiter.Wait(ctx)
 }
 
 // NewRequestAndDo combines NewRequest and Do methods

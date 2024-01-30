@@ -185,7 +185,7 @@ func (c *Client) SetUserAgent(userAgent string) {
 // SetRateLimit sets the rate limit for every communication with the Exact Online API.
 func (c *Client) SetRateLimit(requestPerMinute int, burst int) {
 	limit := rate.Every(time.Minute / time.Duration(requestPerMinute))
-	c.client.Throttle = rate.NewLimiter(limit, burst)
+	c.client.Limiter = rate.NewLimiter(limit, burst)
 }
 
 // GetCurrentDivisionID fetches the last used division id of the user.
