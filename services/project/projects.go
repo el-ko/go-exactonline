@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,163 +30,193 @@ type ProjectsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjects
 type Projects struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The account for this project
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountContact: Contact person of Account
+	// AccountContact: Edm.Guid
 	AccountContact *types.GUID `json:"AccountContact,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AllowAdditionalInvoicing: Is additional invoice is allowed for project
+	// AllowAdditionalInvoicing: Edm.Boolean
 	AllowAdditionalInvoicing *bool `json:"AllowAdditionalInvoicing,omitempty"`
 
-	// BlockEntry: Block time and cost entries
+	// AllowMemberEntryOnly: Edm.Boolean
+	AllowMemberEntryOnly *bool `json:"AllowMemberEntryOnly,omitempty"`
+
+	// BlockEntry: Edm.Boolean
 	BlockEntry *bool `json:"BlockEntry,omitempty"`
 
-	// BlockRebilling: Block rebilling
+	// BlockInvoicing: Edm.Boolean
+	BlockInvoicing *bool `json:"BlockInvoicing,omitempty"`
+
+	// BlockPlanning: Edm.Boolean
+	BlockPlanning *bool `json:"BlockPlanning,omitempty"`
+
+	// BlockPurchasing: Edm.Boolean
+	BlockPurchasing *bool `json:"BlockPurchasing,omitempty"`
+
+	// BlockRebilling: Edm.Boolean
 	BlockRebilling *bool `json:"BlockRebilling,omitempty"`
 
-	// BudgetedAmount: Budgeted amount of sales in the default currency of the company
+	// BudgetedAmount: Edm.Double
 	BudgetedAmount *float64 `json:"BudgetedAmount,omitempty"`
 
-	// BudgetedCosts: Budgeted amount of costs in the default currency of the company
+	// BudgetedCosts: Edm.Double
 	BudgetedCosts *float64 `json:"BudgetedCosts,omitempty"`
 
-	// BudgetedHoursPerHourType: Collection of budgeted hours
+	// BudgetedHoursPerHourType: BudgetedHoursPerHourType
 	BudgetedHoursPerHourType *json.RawMessage `json:"BudgetedHoursPerHourType,omitempty"`
 
-	// BudgetedRevenue: Budgeted amount of revenue in the default currency of the company
+	// BudgetedRevenue: Edm.Double
 	BudgetedRevenue *float64 `json:"BudgetedRevenue,omitempty"`
 
-	// BudgetOverrunHours: BudgetOverrunHours: 10-Allowed, 20-Not Allowed
+	// BudgetOverrunHours: Edm.Byte
 	BudgetOverrunHours *byte `json:"BudgetOverrunHours,omitempty"`
 
-	// BudgetType: Budget type
+	// BudgetType: Edm.Int16
 	BudgetType *int `json:"BudgetType,omitempty"`
 
-	// BudgetTypeDescription: Budget type description
+	// BudgetTypeDescription: Edm.String
 	BudgetTypeDescription *string `json:"BudgetTypeDescription,omitempty"`
 
-	// Classification: Used only for PSA to link a project classification to the project
+	// Classification: Edm.Guid
 	Classification *types.GUID `json:"Classification,omitempty"`
 
-	// ClassificationDescription: Description of Classification
+	// ClassificationDescription: Edm.String
 	ClassificationDescription *string `json:"ClassificationDescription,omitempty"`
 
-	// Code: Code
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// CostsAmountFC: Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only
+	// CostsAmountFC: Edm.Double
 	CostsAmountFC *float64 `json:"CostsAmountFC,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// CustomerPOnumber: Used only for PSA to store the customer&#39;s PO number
+	// CustomerPOnumber: Edm.String
 	CustomerPOnumber *string `json:"CustomerPOnumber,omitempty"`
 
-	// Description: Description of the project
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DivisionName: Name of Division
+	// DivisionName: Edm.String
 	DivisionName *string `json:"DivisionName,omitempty"`
 
-	// EndDate: End date of the project. In combination with the start date the status is determined
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// FixedPriceItem: Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting
+	// FixedPriceItem: Edm.Guid
 	FixedPriceItem *types.GUID `json:"FixedPriceItem,omitempty"`
 
-	// FixedPriceItemDescription: Description of FixedPriceItem
+	// FixedPriceItemDescription: Edm.String
 	FixedPriceItemDescription *string `json:"FixedPriceItemDescription,omitempty"`
 
-	// InternalNotes: Internal notes not to be printed in invoice
+	// HasWBSLines: Edm.Boolean
+	HasWBSLines *bool `json:"HasWBSLines,omitempty"`
+
+	// IncludeInvoiceSpecification: Edm.Int16
+	IncludeInvoiceSpecification *int `json:"IncludeInvoiceSpecification,omitempty"`
+
+	// IncludeSpecificationInInvoicePdf: Edm.Boolean
+	IncludeSpecificationInInvoicePdf *bool `json:"IncludeSpecificationInInvoicePdf,omitempty"`
+
+	// InternalNotes: Edm.String
 	InternalNotes *string `json:"InternalNotes,omitempty"`
 
-	// InvoiceAsQuoted: Is invoice as quoted
+	// InvoiceAddress: Edm.Guid
+	InvoiceAddress *types.GUID `json:"InvoiceAddress,omitempty"`
+
+	// InvoiceAsQuoted: Edm.Boolean
 	InvoiceAsQuoted *bool `json:"InvoiceAsQuoted,omitempty"`
 
-	// InvoiceTerms: Collection of invoice terms
+	// InvoiceTerms: InvoiceTerms
 	InvoiceTerms *json.RawMessage `json:"InvoiceTerms,omitempty"`
 
-	// Manager: Responsible person for this project
+	// Manager: Edm.Guid
 	Manager *types.GUID `json:"Manager,omitempty"`
 
-	// ManagerFullname: Name of Manager
+	// ManagerFullname: Edm.String
 	ManagerFullname *string `json:"ManagerFullname,omitempty"`
 
-	// MarkupPercentage: Purchase markup percentage
+	// MarkupPercentage: Edm.Double
 	MarkupPercentage *float64 `json:"MarkupPercentage,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: For additional information about projects
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PrepaidItem: Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting
+	// PaymentCondition: Edm.String
+	PaymentCondition *string `json:"PaymentCondition,omitempty"`
+
+	// PrepaidItem: Edm.Guid
 	PrepaidItem *types.GUID `json:"PrepaidItem,omitempty"`
 
-	// PrepaidItemDescription: Description of PrepaidItem
+	// PrepaidItemDescription: Edm.String
 	PrepaidItemDescription *string `json:"PrepaidItemDescription,omitempty"`
 
-	// PrepaidType: PrepaidType: 1-Retainer, 2-Hour type bundle
+	// PrepaidType: Edm.Int16
 	PrepaidType *int `json:"PrepaidType,omitempty"`
 
-	// PrepaidTypeDescription: Description of PrepaidType
+	// PrepaidTypeDescription: Edm.String
 	PrepaidTypeDescription *string `json:"PrepaidTypeDescription,omitempty"`
 
-	// ProjectRestrictionEmployees: Collection of employee restrictions
+	// ProjectRestrictionEmployees: ProjectRestrictionEmployees
 	ProjectRestrictionEmployees *json.RawMessage `json:"ProjectRestrictionEmployees,omitempty"`
 
-	// ProjectRestrictionItems: Collection of item restrictions
+	// ProjectRestrictionItems: ProjectRestrictionItems
 	ProjectRestrictionItems *json.RawMessage `json:"ProjectRestrictionItems,omitempty"`
 
-	// ProjectRestrictionRebillings: Collection of rebilling restrictions
+	// ProjectRestrictionRebillings: ProjectRestrictionRebillings
 	ProjectRestrictionRebillings *json.RawMessage `json:"ProjectRestrictionRebillings,omitempty"`
 
-	// SalesTimeQuantity: Budgeted time. Total number of hours estimated for the fixed price project
+	// SalesTimeQuantity: Edm.Double
 	SalesTimeQuantity *float64 `json:"SalesTimeQuantity,omitempty"`
 
-	// SourceQuotation: Source quotation
+	// SourceQuotation: Edm.Guid
 	SourceQuotation *types.GUID `json:"SourceQuotation,omitempty"`
 
-	// StartDate: Start date of a project. In combination with the end date the status is determined
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// TimeQuantityToAlert: Alert when exceeding (Hours)
+	// TimeQuantityToAlert: Edm.Double
 	TimeQuantityToAlert *float64 `json:"TimeQuantityToAlert,omitempty"`
 
-	// Type: Reference to ProjectTypes
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription: Description of Type
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 
-	// UseBillingMilestones: Using billing milestones
+	// UseBillingMilestones: Edm.Boolean
 	UseBillingMilestones *bool `json:"UseBillingMilestones,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,79 +26,79 @@ type ShopOrderReversalsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderReversals
 type ShopOrderReversals struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ReversalStockTransactionId: ID of stock transaction related to this ShopOrderReversal
+	// ReversalStockTransactionId: Edm.Guid
 	ReversalStockTransactionId *types.GUID `json:"ReversalStockTransactionId,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Date of this reversal
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// IsBatch: Does the ShopOrderReversal&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the ShopOrderReversal&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the ShopOrderReversal&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item reversed
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item reversed
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item reversed
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of shop order item
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Note: Notes associated with this reversal
+	// Note: Edm.String
 	Note *string `json:"Note,omitempty"`
 
-	// OriginalStockTransactionId: ID of the original stock transaction, which was reversed
+	// OriginalStockTransactionId: Edm.Guid
 	OriginalStockTransactionId *types.GUID `json:"OriginalStockTransactionId,omitempty"`
 
-	// Quantity: Quantity reversed
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// ShopOrder: Shop order being reversed
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// ShopOrderNumber: Number of shop order being reversed
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// StorageLocation: ID of storage location reversed from
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Code of storage location reversed from
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Description of storage location reversed from
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// TransactionDate: Effective date of this ShopOrderReversal
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of item reversed
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of item reversed
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of warehouse reversed from
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse reversed from
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse reversed from
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

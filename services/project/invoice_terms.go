@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,74 +29,83 @@ type InvoiceTermsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectInvoiceTerms
 type InvoiceTerms struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Amount: Amount in the currency of the transaction
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Deliverable: WBS&#39;s deliverable linked to invoice term
+	// Deliverable: Edm.String
 	Deliverable *string `json:"Deliverable,omitempty"`
 
-	// Description: Description of invoice term
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division number
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// ExecutionFromDate: Execution date: From
+	// ExecutionFromDate: Edm.DateTime
 	ExecutionFromDate *types.Date `json:"ExecutionFromDate,omitempty"`
 
-	// ExecutionToDate: Execution date: To
+	// ExecutionToDate: Edm.DateTime
 	ExecutionToDate *types.Date `json:"ExecutionToDate,omitempty"`
 
-	// InvoiceDate: Invoice date
+	// InvoiceDate: Edm.DateTime
 	InvoiceDate *types.Date `json:"InvoiceDate,omitempty"`
 
-	// Item: Reference to item
+	// InvoiceId: Edm.Guid
+	InvoiceId *types.GUID `json:"InvoiceId,omitempty"`
+
+	// InvoiceStatus: Edm.Int16
+	InvoiceStatus *int `json:"InvoiceStatus,omitempty"`
+
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemDescription: Description of item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Percentage: Percentage of amount per project&#39;s budgeted amount
+	// Percentage: Edm.Double
 	Percentage *float64 `json:"Percentage,omitempty"`
 
-	// Project: Reference to project
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectDescription: Description of project
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// VATCode: Reference to VATCode
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATCodeDescription: Description of VATCode
+	// VATCodeDescription: Edm.String
 	VATCodeDescription *string `json:"VATCodeDescription,omitempty"`
 
-	// VATPercentage: VATCode percentage
+	// VATPercentage: Edm.Double
 	VATPercentage *float64 `json:"VATPercentage,omitempty"`
+
+	// WBS: Edm.Guid
+	WBS *types.GUID `json:"WBS,omitempty"`
 }
 
 func (e *InvoiceTerms) GetPrimary() *types.GUID {

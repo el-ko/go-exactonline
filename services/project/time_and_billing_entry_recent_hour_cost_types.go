@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,13 +26,19 @@ type TimeAndBillingEntryRecentHourCostTypesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingEntryRecentHourCostTypes
 type TimeAndBillingEntryRecentHourCostTypes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ItemId: Primary key
+	// ItemId: Edm.Guid
 	ItemId *types.GUID `json:"ItemId,omitempty"`
 
-	// DateLastUsed: Date last used
+	// DateLastUsed: Edm.DateTime
 	DateLastUsed *types.Date `json:"DateLastUsed,omitempty"`
 
-	// ItemDescription: Description of item
+	// IsValid: Edm.Boolean
+	IsValid *bool `json:"IsValid,omitempty"`
+
+	// ItemCode: Edm.String
+	ItemCode *string `json:"ItemCode,omitempty"`
+
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 }
 

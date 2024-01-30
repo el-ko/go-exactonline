@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -8,6 +8,9 @@ package financialtransaction
 import (
 	"context"
 	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 
 	"github.com/mcnijman/go-exactonline/api"
 	"github.com/mcnijman/go-exactonline/types"
@@ -23,53 +26,56 @@ type CashEntriesEndpoint service
 // URL: /api/v1/{division}/financialtransaction/CashEntries
 // HasWebhook: true
 // IsInBeta: false
-// Methods: GET POST
+// Methods: GET POST DELETE
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntries
 type CashEntries struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// EntryID:
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// CashEntryLines:
+	// CashEntryLines: CashEntryLines
 	CashEntryLines *json.RawMessage `json:"CashEntryLines,omitempty"`
 
-	// ClosingBalanceFC:
+	// ClosingBalanceFC: Edm.Double
 	ClosingBalanceFC *float64 `json:"ClosingBalanceFC,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Division:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EntryNumber:
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// FinancialPeriod:
+	// FinancialPeriod: Edm.Int16
 	FinancialPeriod *int `json:"FinancialPeriod,omitempty"`
 
-	// FinancialYear:
+	// FinancialYear: Edm.Int16
 	FinancialYear *int `json:"FinancialYear,omitempty"`
 
-	// JournalCode:
+	// JournalCode: Edm.String
 	JournalCode *string `json:"JournalCode,omitempty"`
 
-	// JournalDescription:
+	// JournalDescription: Edm.String
 	JournalDescription *string `json:"JournalDescription,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// OpeningBalanceFC:
+	// OpeningBalanceFC: Edm.Double
 	OpeningBalanceFC *float64 `json:"OpeningBalanceFC,omitempty"`
 
-	// Status:
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription:
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 }
 
@@ -123,4 +129,25 @@ func (s *CashEntriesEndpoint) Create(ctx context.Context, division int, entity *
 		return nil, err
 	}
 	return e, nil
+}
+
+// Delete the CashEntries entity in the provided division.
+func (s *CashEntriesEndpoint) Delete(ctx context.Context, division int, id *types.GUID) error {
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/financialtransaction/CashEntries", division) // #nosec
+	u, err := api.AddOdataKeyToURL(b, id)
+	if err != nil {
+		return err
+	}
+
+	_, r, requestError := s.client.NewRequestAndDo(ctx, "DELETE", u.String(), nil, nil)
+	if requestError != nil {
+		return requestError
+	}
+
+	if r.StatusCode != http.StatusNoContent {
+		body, _ := ioutil.ReadAll(r.Body) // #nosec
+		return fmt.Errorf("Failed with status %v and body %v", r.StatusCode, body)
+	}
+
+	return nil
 }

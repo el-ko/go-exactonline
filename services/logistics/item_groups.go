@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,94 +26,94 @@ type ItemGroupsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItemGroups
 type ItemGroups struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Code of the item group
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the item group
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLCosts: GL account on which the costs of items of this group will be booked
+	// GLCosts: Edm.Guid
 	GLCosts *types.GUID `json:"GLCosts,omitempty"`
 
-	// GLCostsCode: Code of GLCosts
+	// GLCostsCode: Edm.String
 	GLCostsCode *string `json:"GLCostsCode,omitempty"`
 
-	// GLCostsDescription: Description of GLCosts
+	// GLCostsDescription: Edm.String
 	GLCostsDescription *string `json:"GLCostsDescription,omitempty"`
 
-	// GLPurchaseAccount: GL Purchase account for purchase invoicing according to (non-) perpetual inventory method
+	// GLPurchaseAccount: Edm.Guid
 	GLPurchaseAccount *types.GUID `json:"GLPurchaseAccount,omitempty"`
 
-	// GLPurchaseAccountCode: Code of GLPurchase
+	// GLPurchaseAccountCode: Edm.String
 	GLPurchaseAccountCode *string `json:"GLPurchaseAccountCode,omitempty"`
 
-	// GLPurchaseAccountDescription: Description of GLPurchaseAccount
+	// GLPurchaseAccountDescription: Edm.String
 	GLPurchaseAccountDescription *string `json:"GLPurchaseAccountDescription,omitempty"`
 
-	// GLPurchasePriceDifference: GL account that will be used for the &#39;Standard cost price&#39; valuation method to balance the difference between purchase price and cost price
+	// GLPurchasePriceDifference: Edm.Guid
 	GLPurchasePriceDifference *types.GUID `json:"GLPurchasePriceDifference,omitempty"`
 
-	// GLPurchasePriceDifferenceCode: Code of GLPurchasePriceDifference
+	// GLPurchasePriceDifferenceCode: Edm.String
 	GLPurchasePriceDifferenceCode *string `json:"GLPurchasePriceDifferenceCode,omitempty"`
 
-	// GLPurchasePriceDifferenceDescr: Description of GLPurchasePriceDifference
+	// GLPurchasePriceDifferenceDescr: Edm.String
 	GLPurchasePriceDifferenceDescr *string `json:"GLPurchasePriceDifferenceDescr,omitempty"`
 
-	// GLRevenue: GL account on which the revenue for items of this group will be booked
+	// GLRevenue: Edm.Guid
 	GLRevenue *types.GUID `json:"GLRevenue,omitempty"`
 
-	// GLRevenueCode: Code of GLRevenue
+	// GLRevenueCode: Edm.String
 	GLRevenueCode *string `json:"GLRevenueCode,omitempty"`
 
-	// GLRevenueDescription: Description of GLRevenue
+	// GLRevenueDescription: Edm.String
 	GLRevenueDescription *string `json:"GLRevenueDescription,omitempty"`
 
-	// GLStock: GL account on which stock entries will be booked for items of this group
+	// GLStock: Edm.Guid
 	GLStock *types.GUID `json:"GLStock,omitempty"`
 
-	// GLStockCode: Code of GLStock
+	// GLStockCode: Edm.String
 	GLStockCode *string `json:"GLStockCode,omitempty"`
 
-	// GLStockDescription: Description of GLStock
+	// GLStockDescription: Edm.String
 	GLStockDescription *string `json:"GLStockDescription,omitempty"`
 
-	// GLStockVariance: GL stock variance account for perpetual inventory
+	// GLStockVariance: Edm.Guid
 	GLStockVariance *types.GUID `json:"GLStockVariance,omitempty"`
 
-	// GLStockVarianceCode: Code of GLStockVariance
+	// GLStockVarianceCode: Edm.String
 	GLStockVarianceCode *string `json:"GLStockVarianceCode,omitempty"`
 
-	// GLStockVarianceDescription: Description of GLStockVariance
+	// GLStockVarianceDescription: Edm.String
 	GLStockVarianceDescription *string `json:"GLStockVarianceDescription,omitempty"`
 
-	// IsDefault: Indicates if this is the default item group that will be assigned when a new item is created
+	// IsDefault: Edm.Byte
 	IsDefault *byte `json:"IsDefault,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,136 +26,136 @@ type ActiveEmploymentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollActiveEmployments
 type ActiveEmployments struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AverageDaysPerWeek: The average number of contract days that an employee works per week
+	// AverageDaysPerWeek: Edm.Double
 	AverageDaysPerWeek *float64 `json:"AverageDaysPerWeek,omitempty"`
 
-	// AverageHoursPerWeek: The average number of contract hours that an employee works per week
+	// AverageHoursPerWeek: Edm.Double
 	AverageHoursPerWeek *float64 `json:"AverageHoursPerWeek,omitempty"`
 
-	// Contract: Employment contract ID
+	// Contract: Edm.Guid
 	Contract *types.GUID `json:"Contract,omitempty"`
 
-	// ContractDocument: Document ID of the employment contract
+	// ContractDocument: Edm.Guid
 	ContractDocument *types.GUID `json:"ContractDocument,omitempty"`
 
-	// ContractEndDate: End date of employment contract
+	// ContractEndDate: Edm.DateTime
 	ContractEndDate *types.Date `json:"ContractEndDate,omitempty"`
 
-	// ContractProbationEndDate: Employment probation end date
+	// ContractProbationEndDate: Edm.DateTime
 	ContractProbationEndDate *types.Date `json:"ContractProbationEndDate,omitempty"`
 
-	// ContractProbationPeriod: Employment probation period
+	// ContractProbationPeriod: Edm.Int32
 	ContractProbationPeriod *int `json:"ContractProbationPeriod,omitempty"`
 
-	// ContractStartDate: Start date of employment contract
+	// ContractStartDate: Edm.DateTime
 	ContractStartDate *types.Date `json:"ContractStartDate,omitempty"`
 
-	// ContractType: Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External
+	// ContractType: Edm.Int32
 	ContractType *int `json:"ContractType,omitempty"`
 
-	// ContractTypeDescription: Description of employment contract type
+	// ContractTypeDescription: Edm.String
 	ContractTypeDescription *string `json:"ContractTypeDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Department: Department of employee
+	// Department: Edm.Guid
 	Department *types.GUID `json:"Department,omitempty"`
 
-	// DepartmentCode: Department code of employee
+	// DepartmentCode: Edm.String
 	DepartmentCode *string `json:"DepartmentCode,omitempty"`
 
-	// DepartmentDescription: Description of department
+	// DepartmentDescription: Edm.String
 	DepartmentDescription *string `json:"DepartmentDescription,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee ID
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Name of employee
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric number of Employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EmploymentOrganization: Organization of employment
+	// EmploymentOrganization: Edm.Guid
 	EmploymentOrganization *types.GUID `json:"EmploymentOrganization,omitempty"`
 
-	// EndDate: End date of employment
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// HID: Numeric ID of the employment
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// HourlyWage: Hourly wage
+	// HourlyWage: Edm.Double
 	HourlyWage *float64 `json:"HourlyWage,omitempty"`
 
-	// InternalRate: Internal rate for time &amp; billing or professional service user
+	// InternalRate: Edm.Double
 	InternalRate *float64 `json:"InternalRate,omitempty"`
 
-	// Jobtitle: Job title of employee
+	// Jobtitle: Edm.Guid
 	Jobtitle *types.GUID `json:"Jobtitle,omitempty"`
 
-	// JobtitleDescription: Description of job title
+	// JobtitleDescription: Edm.String
 	JobtitleDescription *string `json:"JobtitleDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// ReasonEnd: ID of employment ended
+	// ReasonEnd: Edm.Int32
 	ReasonEnd *int `json:"ReasonEnd,omitempty"`
 
-	// ReasonEndDescription: Reason of end of employment
+	// ReasonEndDescription: Edm.String
 	ReasonEndDescription *string `json:"ReasonEndDescription,omitempty"`
 
-	// ReasonEndFlex: Reason of ended flexible employment
+	// ReasonEndFlex: Edm.Int32
 	ReasonEndFlex *int `json:"ReasonEndFlex,omitempty"`
 
-	// ReasonEndFlexDescription: Other reason for end of employment
+	// ReasonEndFlexDescription: Edm.String
 	ReasonEndFlexDescription *string `json:"ReasonEndFlexDescription,omitempty"`
 
-	// Salary: Employment salary
+	// Salary: Edm.Guid
 	Salary *types.GUID `json:"Salary,omitempty"`
 
-	// Schedule: Work schedule
+	// Schedule: Edm.Guid
 	Schedule *types.GUID `json:"Schedule,omitempty"`
 
-	// ScheduleAverageHours: Average hours per week in a schedule.
+	// ScheduleAverageHours: Edm.Double
 	ScheduleAverageHours *float64 `json:"ScheduleAverageHours,omitempty"`
 
-	// ScheduleCode: Work schedule code
+	// ScheduleCode: Edm.String
 	ScheduleCode *string `json:"ScheduleCode,omitempty"`
 
-	// ScheduleDays: Number of days of work per week
+	// ScheduleDays: Edm.Double
 	ScheduleDays *float64 `json:"ScheduleDays,omitempty"`
 
-	// ScheduleDescription: Description of work schedule
+	// ScheduleDescription: Edm.String
 	ScheduleDescription *string `json:"ScheduleDescription,omitempty"`
 
-	// ScheduleHours: Number of work hours per week.
+	// ScheduleHours: Edm.Double
 	ScheduleHours *float64 `json:"ScheduleHours,omitempty"`
 
-	// StartDate: Start date of employment
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// StartDateOrganization: Start date of the employee in the organization. This field is used to count the years in service.
+	// StartDateOrganization: Edm.DateTime
 	StartDateOrganization *types.Date `json:"StartDateOrganization,omitempty"`
 }
 

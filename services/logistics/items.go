@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,305 +29,338 @@ type ItemsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItems
 type Items struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Barcode:
+	// AssembledLeadDays: Edm.Int32
+	AssembledLeadDays *int `json:"AssembledLeadDays,omitempty"`
+
+	// AverageCost: Edm.Double
+	AverageCost *float64 `json:"AverageCost,omitempty"`
+
+	// Barcode: Edm.String
 	Barcode *string `json:"Barcode,omitempty"`
 
-	// Class_01:
+	// BatchQuantity: Edm.Double
+	BatchQuantity *float64 `json:"BatchQuantity,omitempty"`
+
+	// Class_01: Edm.String
 	Class_01 *string `json:"Class_01,omitempty"`
 
-	// Class_02:
+	// Class_02: Edm.String
 	Class_02 *string `json:"Class_02,omitempty"`
 
-	// Class_03:
+	// Class_03: Edm.String
 	Class_03 *string `json:"Class_03,omitempty"`
 
-	// Class_04:
+	// Class_04: Edm.String
 	Class_04 *string `json:"Class_04,omitempty"`
 
-	// Class_05:
+	// Class_05: Edm.String
 	Class_05 *string `json:"Class_05,omitempty"`
 
-	// Class_06:
+	// Class_06: Edm.String
 	Class_06 *string `json:"Class_06,omitempty"`
 
-	// Class_07:
+	// Class_07: Edm.String
 	Class_07 *string `json:"Class_07,omitempty"`
 
-	// Class_08:
+	// Class_08: Edm.String
 	Class_08 *string `json:"Class_08,omitempty"`
 
-	// Class_09:
+	// Class_09: Edm.String
 	Class_09 *string `json:"Class_09,omitempty"`
 
-	// Class_10:
+	// Class_10: Edm.String
 	Class_10 *string `json:"Class_10,omitempty"`
 
-	// Code:
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// CopyRemarks:
+	// CopyRemarks: Edm.Byte
 	CopyRemarks *byte `json:"CopyRemarks,omitempty"`
 
-	// CostPriceCurrency:
+	// CostPriceCurrency: Edm.String
 	CostPriceCurrency *string `json:"CostPriceCurrency,omitempty"`
 
-	// CostPriceNew:
+	// CostPriceNew: Edm.Double
 	CostPriceNew *float64 `json:"CostPriceNew,omitempty"`
 
-	// CostPriceStandard:
+	// CostPriceStandard: Edm.Double
 	CostPriceStandard *float64 `json:"CostPriceStandard,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EndDate:
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// ExtraDescription:
+	// ExtraDescription: Edm.String
 	ExtraDescription *string `json:"ExtraDescription,omitempty"`
 
-	// FreeBoolField_01:
+	// FreeBoolField_01: Edm.Boolean
 	FreeBoolField_01 *bool `json:"FreeBoolField_01,omitempty"`
 
-	// FreeBoolField_02:
+	// FreeBoolField_02: Edm.Boolean
 	FreeBoolField_02 *bool `json:"FreeBoolField_02,omitempty"`
 
-	// FreeBoolField_03:
+	// FreeBoolField_03: Edm.Boolean
 	FreeBoolField_03 *bool `json:"FreeBoolField_03,omitempty"`
 
-	// FreeBoolField_04:
+	// FreeBoolField_04: Edm.Boolean
 	FreeBoolField_04 *bool `json:"FreeBoolField_04,omitempty"`
 
-	// FreeBoolField_05:
+	// FreeBoolField_05: Edm.Boolean
 	FreeBoolField_05 *bool `json:"FreeBoolField_05,omitempty"`
 
-	// FreeDateField_01:
+	// FreeDateField_01: Edm.DateTime
 	FreeDateField_01 *types.Date `json:"FreeDateField_01,omitempty"`
 
-	// FreeDateField_02:
+	// FreeDateField_02: Edm.DateTime
 	FreeDateField_02 *types.Date `json:"FreeDateField_02,omitempty"`
 
-	// FreeDateField_03:
+	// FreeDateField_03: Edm.DateTime
 	FreeDateField_03 *types.Date `json:"FreeDateField_03,omitempty"`
 
-	// FreeDateField_04:
+	// FreeDateField_04: Edm.DateTime
 	FreeDateField_04 *types.Date `json:"FreeDateField_04,omitempty"`
 
-	// FreeDateField_05:
+	// FreeDateField_05: Edm.DateTime
 	FreeDateField_05 *types.Date `json:"FreeDateField_05,omitempty"`
 
-	// FreeNumberField_01:
+	// FreeNumberField_01: Edm.Double
 	FreeNumberField_01 *float64 `json:"FreeNumberField_01,omitempty"`
 
-	// FreeNumberField_02:
+	// FreeNumberField_02: Edm.Double
 	FreeNumberField_02 *float64 `json:"FreeNumberField_02,omitempty"`
 
-	// FreeNumberField_03:
+	// FreeNumberField_03: Edm.Double
 	FreeNumberField_03 *float64 `json:"FreeNumberField_03,omitempty"`
 
-	// FreeNumberField_04:
+	// FreeNumberField_04: Edm.Double
 	FreeNumberField_04 *float64 `json:"FreeNumberField_04,omitempty"`
 
-	// FreeNumberField_05:
+	// FreeNumberField_05: Edm.Double
 	FreeNumberField_05 *float64 `json:"FreeNumberField_05,omitempty"`
 
-	// FreeNumberField_06:
+	// FreeNumberField_06: Edm.Double
 	FreeNumberField_06 *float64 `json:"FreeNumberField_06,omitempty"`
 
-	// FreeNumberField_07:
+	// FreeNumberField_07: Edm.Double
 	FreeNumberField_07 *float64 `json:"FreeNumberField_07,omitempty"`
 
-	// FreeNumberField_08:
+	// FreeNumberField_08: Edm.Double
 	FreeNumberField_08 *float64 `json:"FreeNumberField_08,omitempty"`
 
-	// FreeTextField_01:
+	// FreeTextField_01: Edm.String
 	FreeTextField_01 *string `json:"FreeTextField_01,omitempty"`
 
-	// FreeTextField_02:
+	// FreeTextField_02: Edm.String
 	FreeTextField_02 *string `json:"FreeTextField_02,omitempty"`
 
-	// FreeTextField_03:
+	// FreeTextField_03: Edm.String
 	FreeTextField_03 *string `json:"FreeTextField_03,omitempty"`
 
-	// FreeTextField_04:
+	// FreeTextField_04: Edm.String
 	FreeTextField_04 *string `json:"FreeTextField_04,omitempty"`
 
-	// FreeTextField_05:
+	// FreeTextField_05: Edm.String
 	FreeTextField_05 *string `json:"FreeTextField_05,omitempty"`
 
-	// FreeTextField_06:
+	// FreeTextField_06: Edm.String
 	FreeTextField_06 *string `json:"FreeTextField_06,omitempty"`
 
-	// FreeTextField_07:
+	// FreeTextField_07: Edm.String
 	FreeTextField_07 *string `json:"FreeTextField_07,omitempty"`
 
-	// FreeTextField_08:
+	// FreeTextField_08: Edm.String
 	FreeTextField_08 *string `json:"FreeTextField_08,omitempty"`
 
-	// FreeTextField_09:
+	// FreeTextField_09: Edm.String
 	FreeTextField_09 *string `json:"FreeTextField_09,omitempty"`
 
-	// FreeTextField_10:
+	// FreeTextField_10: Edm.String
 	FreeTextField_10 *string `json:"FreeTextField_10,omitempty"`
 
-	// GLCosts:
+	// GLCosts: Edm.Guid
 	GLCosts *types.GUID `json:"GLCosts,omitempty"`
 
-	// GLCostsCode:
+	// GLCostsCode: Edm.String
 	GLCostsCode *string `json:"GLCostsCode,omitempty"`
 
-	// GLCostsDescription:
+	// GLCostsDescription: Edm.String
 	GLCostsDescription *string `json:"GLCostsDescription,omitempty"`
 
-	// GLRevenue:
+	// GLRevenue: Edm.Guid
 	GLRevenue *types.GUID `json:"GLRevenue,omitempty"`
 
-	// GLRevenueCode:
+	// GLRevenueCode: Edm.String
 	GLRevenueCode *string `json:"GLRevenueCode,omitempty"`
 
-	// GLRevenueDescription:
+	// GLRevenueDescription: Edm.String
 	GLRevenueDescription *string `json:"GLRevenueDescription,omitempty"`
 
-	// GLStock:
+	// GLStock: Edm.Guid
 	GLStock *types.GUID `json:"GLStock,omitempty"`
 
-	// GLStockCode:
+	// GLStockCode: Edm.String
 	GLStockCode *string `json:"GLStockCode,omitempty"`
 
-	// GLStockDescription:
+	// GLStockDescription: Edm.String
 	GLStockDescription *string `json:"GLStockDescription,omitempty"`
 
-	// GrossWeight:
+	// GrossWeight: Edm.Double
 	GrossWeight *float64 `json:"GrossWeight,omitempty"`
 
-	// IsBatchItem:
+	// IsBatchItem: Edm.Byte
 	IsBatchItem *byte `json:"IsBatchItem,omitempty"`
 
-	// IsBatchNumberItem:
+	// IsBatchNumberItem: Edm.Byte
 	IsBatchNumberItem *byte `json:"IsBatchNumberItem,omitempty"`
 
-	// IsFractionAllowedItem:
+	// IsFractionAllowedItem: Edm.Boolean
 	IsFractionAllowedItem *bool `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsMakeItem:
+	// IsMakeItem: Edm.Byte
 	IsMakeItem *byte `json:"IsMakeItem,omitempty"`
 
-	// IsNewContract:
+	// IsNewContract: Edm.Byte
 	IsNewContract *byte `json:"IsNewContract,omitempty"`
 
-	// IsOnDemandItem:
+	// IsOnDemandItem: Edm.Byte
 	IsOnDemandItem *byte `json:"IsOnDemandItem,omitempty"`
 
-	// IsPackageItem:
+	// IsPackageItem: Edm.Boolean
 	IsPackageItem *bool `json:"IsPackageItem,omitempty"`
 
-	// IsPurchaseItem:
+	// IsPurchaseItem: Edm.Boolean
 	IsPurchaseItem *bool `json:"IsPurchaseItem,omitempty"`
 
-	// IsRegistrationCodeItem:
+	// IsRegistrationCodeItem: Edm.Byte
 	IsRegistrationCodeItem *byte `json:"IsRegistrationCodeItem,omitempty"`
 
-	// IsSalesItem:
+	// IsSalesItem: Edm.Boolean
 	IsSalesItem *bool `json:"IsSalesItem,omitempty"`
 
-	// IsSerialItem:
+	// IsSerialItem: Edm.Boolean
 	IsSerialItem *bool `json:"IsSerialItem,omitempty"`
 
-	// IsSerialNumberItem:
+	// IsSerialNumberItem: Edm.Boolean
 	IsSerialNumberItem *bool `json:"IsSerialNumberItem,omitempty"`
 
-	// IsStockItem:
+	// IsStockItem: Edm.Boolean
 	IsStockItem *bool `json:"IsStockItem,omitempty"`
 
-	// IsSubcontractedItem:
+	// IsSubcontractedItem: Edm.Boolean
 	IsSubcontractedItem *bool `json:"IsSubcontractedItem,omitempty"`
 
-	// IsTaxableItem:
+	// IsTaxableItem: Edm.Byte
 	IsTaxableItem *byte `json:"IsTaxableItem,omitempty"`
 
-	// IsTime:
+	// IsTime: Edm.Byte
 	IsTime *byte `json:"IsTime,omitempty"`
 
-	// IsWebshopItem:
+	// IsWebshopItem: Edm.Byte
 	IsWebshopItem *byte `json:"IsWebshopItem,omitempty"`
 
-	// ItemGroup:
+	// ItemGroup: Edm.Guid
 	ItemGroup *types.GUID `json:"ItemGroup,omitempty"`
 
-	// ItemGroupCode:
+	// ItemGroupCode: Edm.String
 	ItemGroupCode *string `json:"ItemGroupCode,omitempty"`
 
-	// ItemGroupDescription:
+	// ItemGroupDescription: Edm.String
 	ItemGroupDescription *string `json:"ItemGroupDescription,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// NetWeight:
+	// NetWeight: Edm.Double
 	NetWeight *float64 `json:"NetWeight,omitempty"`
 
-	// NetWeightUnit:
+	// NetWeightUnit: Edm.String
 	NetWeightUnit *string `json:"NetWeightUnit,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PictureName:
+	// Picture: Edm.Binary
+	Picture *[]byte `json:"Picture,omitempty"`
+
+	// PictureName: Edm.String
 	PictureName *string `json:"PictureName,omitempty"`
 
-	// PictureThumbnailUrl:
+	// PictureThumbnailUrl: Edm.String
 	PictureThumbnailUrl *string `json:"PictureThumbnailUrl,omitempty"`
 
-	// PictureUrl:
+	// PictureUrl: Edm.String
 	PictureUrl *string `json:"PictureUrl,omitempty"`
 
-	// SalesVatCode:
+	// SalesVatCode: Edm.String
 	SalesVatCode *string `json:"SalesVatCode,omitempty"`
 
-	// SalesVatCodeDescription:
+	// SalesVatCodeDescription: Edm.String
 	SalesVatCodeDescription *string `json:"SalesVatCodeDescription,omitempty"`
 
-	// SearchCode:
+	// SearchCode: Edm.String
 	SearchCode *string `json:"SearchCode,omitempty"`
 
-	// SecurityLevel:
+	// SecurityLevel: Edm.Int32
 	SecurityLevel *int `json:"SecurityLevel,omitempty"`
 
-	// StartDate:
+	// StandardSalesPrice: Edm.Double
+	StandardSalesPrice *float64 `json:"StandardSalesPrice,omitempty"`
+
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// Stock:
+	// StatisticalCode: Edm.String
+	StatisticalCode *string `json:"StatisticalCode,omitempty"`
+
+	// StatisticalNetWeight: Edm.Double
+	StatisticalNetWeight *float64 `json:"StatisticalNetWeight,omitempty"`
+
+	// StatisticalUnits: Edm.Double
+	StatisticalUnits *float64 `json:"StatisticalUnits,omitempty"`
+
+	// StatisticalValue: Edm.Double
+	StatisticalValue *float64 `json:"StatisticalValue,omitempty"`
+
+	// Stock: Edm.Double
 	Stock *float64 `json:"Stock,omitempty"`
 
-	// Unit:
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription:
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// UnitType:
+	// UnitType: Edm.String
 	UnitType *string `json:"UnitType,omitempty"`
+
+	// UseExplosion: Edm.Byte
+	UseExplosion *byte `json:"UseExplosion,omitempty"`
 }
 
 func (e *Items) GetPrimary() *types.GUID {

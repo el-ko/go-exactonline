@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,88 +26,88 @@ type EmploymentContractsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentContracts
 type EmploymentContracts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// ContractFlexPhase: Flexible employment contract phase
+	// ContractFlexPhase: Edm.Int32
 	ContractFlexPhase *int `json:"ContractFlexPhase,omitempty"`
 
-	// ContractFlexPhaseDescription: Flexible employment contract phase description.
+	// ContractFlexPhaseDescription: Edm.String
 	ContractFlexPhaseDescription *string `json:"ContractFlexPhaseDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document: Document ID of the employment contract
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// Employee: ID of employee
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Name of employee
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric ID of the employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EmployeeType: Type of employee. 1 - Employee, 2 - Contractor, 3 - Temporary, 4 - Student, 5 - Flexworker
+	// EmployeeType: Edm.Int32
 	EmployeeType *int `json:"EmployeeType,omitempty"`
 
-	// EmployeeTypeDescription: Employee type description
+	// EmployeeTypeDescription: Edm.String
 	EmployeeTypeDescription *string `json:"EmployeeTypeDescription,omitempty"`
 
-	// Employment: Employment ID
+	// Employment: Edm.Guid
 	Employment *types.GUID `json:"Employment,omitempty"`
 
-	// EmploymentHID: Numeric ID of the employment
+	// EmploymentHID: Edm.Int32
 	EmploymentHID *int `json:"EmploymentHID,omitempty"`
 
-	// EndDate: End date of employment contract
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes of employment contract
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// ProbationEndDate: Employment probation end date
+	// ProbationEndDate: Edm.DateTime
 	ProbationEndDate *types.Date `json:"ProbationEndDate,omitempty"`
 
-	// ProbationPeriod: Employment probation period
+	// ProbationPeriod: Edm.Int32
 	ProbationPeriod *int `json:"ProbationPeriod,omitempty"`
 
-	// ReasonContract: Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other
+	// ReasonContract: Edm.Int32
 	ReasonContract *int `json:"ReasonContract,omitempty"`
 
-	// ReasonContractDescription: Employment contract reason description
+	// ReasonContractDescription: Edm.String
 	ReasonContractDescription *string `json:"ReasonContractDescription,omitempty"`
 
-	// Sequence: Sequence number
+	// Sequence: Edm.Int32
 	Sequence *int `json:"Sequence,omitempty"`
 
-	// StartDate: Start date of employment contract
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// Type: Type of employment contract. 1 - Definite, 2 - Indefinite, 3 - External
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription: Description of employment contract type
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 }
 

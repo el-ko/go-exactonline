@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,76 +29,76 @@ type InvolvedUsersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers
 type InvolvedUsers struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: ID of the account the user is involved with
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCity: City of the account
+	// AccountCity: Edm.String
 	AccountCity *string `json:"AccountCity,omitempty"`
 
-	// AccountCode: Code of the account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountIsSupplier: Supplier flag of the account
+	// AccountIsSupplier: Edm.Boolean
 	AccountIsSupplier *bool `json:"AccountIsSupplier,omitempty"`
 
-	// AccountLogoThumbnailUrl: Logo thumbnail url of the account
+	// AccountLogoThumbnailUrl: Edm.String
 	AccountLogoThumbnailUrl *string `json:"AccountLogoThumbnailUrl,omitempty"`
 
-	// AccountName: Name of the account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AccountStatus: Status of the account
+	// AccountStatus: Edm.String
 	AccountStatus *string `json:"AccountStatus,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// InvolvedUserRole: ID of the user role
+	// InvolvedUserRole: Edm.Guid
 	InvolvedUserRole *types.GUID `json:"InvolvedUserRole,omitempty"`
 
-	// InvolvedUserRoleDescription: Description of the user role
+	// InvolvedUserRoleDescription: Edm.String
 	InvolvedUserRoleDescription *string `json:"InvolvedUserRoleDescription,omitempty"`
 
-	// IsMainContact: Main contact flag of the involved user
+	// IsMainContact: Edm.Boolean
 	IsMainContact *bool `json:"IsMainContact,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PersonEmail: Email of a person
+	// PersonEmail: Edm.String
 	PersonEmail *string `json:"PersonEmail,omitempty"`
 
-	// PersonPhone: Phone of a person
+	// PersonPhone: Edm.String
 	PersonPhone *string `json:"PersonPhone,omitempty"`
 
-	// PersonPhoneExtension: Phone extension of a person
+	// PersonPhoneExtension: Edm.String
 	PersonPhoneExtension *string `json:"PersonPhoneExtension,omitempty"`
 
-	// PersonPictureThumbnailUrl: Picture thumbnail url of a person
+	// PersonPictureThumbnailUrl: Edm.String
 	PersonPictureThumbnailUrl *string `json:"PersonPictureThumbnailUrl,omitempty"`
 
-	// User: ID of the involved user
+	// User: Edm.Guid
 	User *types.GUID `json:"User,omitempty"`
 
-	// UserFullName: User name of creator
+	// UserFullName: Edm.String
 	UserFullName *string `json:"UserFullName,omitempty"`
 }
 

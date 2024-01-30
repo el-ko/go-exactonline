@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,442 +30,490 @@ type AccountsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAccounts
 type Accounts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Accountant:
+	// Accountant: Edm.Guid
 	Accountant *types.GUID `json:"Accountant,omitempty"`
 
-	// AccountManager:
+	// AccountManager: Edm.Guid
 	AccountManager *types.GUID `json:"AccountManager,omitempty"`
 
-	// AccountManagerFullName:
+	// AccountManagerFullName: Edm.String
 	AccountManagerFullName *string `json:"AccountManagerFullName,omitempty"`
 
-	// AccountManagerHID:
+	// AccountManagerHID: Edm.Int32
 	AccountManagerHID *int `json:"AccountManagerHID,omitempty"`
 
-	// ActivitySector:
+	// ActivitySector: Edm.Guid
 	ActivitySector *types.GUID `json:"ActivitySector,omitempty"`
 
-	// ActivitySubSector:
+	// ActivitySubSector: Edm.Guid
 	ActivitySubSector *types.GUID `json:"ActivitySubSector,omitempty"`
 
-	// AddressLine1:
+	// AddressLine1: Edm.String
 	AddressLine1 *string `json:"AddressLine1,omitempty"`
 
-	// AddressLine2:
+	// AddressLine2: Edm.String
 	AddressLine2 *string `json:"AddressLine2,omitempty"`
 
-	// AddressLine3:
+	// AddressLine3: Edm.String
 	AddressLine3 *string `json:"AddressLine3,omitempty"`
 
-	// BankAccounts:
+	// AddressSource: Edm.Byte
+	AddressSource *byte `json:"AddressSource,omitempty"`
+
+	// AutomaticProcessProposedEntry: Edm.Byte
+	AutomaticProcessProposedEntry *byte `json:"AutomaticProcessProposedEntry,omitempty"`
+
+	// BankAccounts: BankAccounts
 	BankAccounts *json.RawMessage `json:"BankAccounts,omitempty"`
 
-	// Blocked:
+	// Blocked: Edm.Boolean
 	Blocked *bool `json:"Blocked,omitempty"`
 
-	// BRIN:
+	// BRIN: Edm.Guid
 	BRIN *types.GUID `json:"BRIN,omitempty"`
 
-	// BusinessType:
+	// BSN: Edm.String
+	BSN *string `json:"BSN,omitempty"`
+
+	// BusinessType: Edm.Guid
 	BusinessType *types.GUID `json:"BusinessType,omitempty"`
 
-	// CanDropShip:
+	// CanDropShip: Edm.Boolean
 	CanDropShip *bool `json:"CanDropShip,omitempty"`
 
-	// ChamberOfCommerce:
+	// ChamberOfCommerce: Edm.String
 	ChamberOfCommerce *string `json:"ChamberOfCommerce,omitempty"`
 
-	// City:
+	// City: Edm.String
 	City *string `json:"City,omitempty"`
 
-	// Classification:
+	// Classification: Edm.String
 	Classification *string `json:"Classification,omitempty"`
 
-	// Classification1:
+	// Classification1: Edm.Guid
 	Classification1 *types.GUID `json:"Classification1,omitempty"`
 
-	// Classification2:
+	// Classification2: Edm.Guid
 	Classification2 *types.GUID `json:"Classification2,omitempty"`
 
-	// Classification3:
+	// Classification3: Edm.Guid
 	Classification3 *types.GUID `json:"Classification3,omitempty"`
 
-	// Classification4:
+	// Classification4: Edm.Guid
 	Classification4 *types.GUID `json:"Classification4,omitempty"`
 
-	// Classification5:
+	// Classification5: Edm.Guid
 	Classification5 *types.GUID `json:"Classification5,omitempty"`
 
-	// Classification6:
+	// Classification6: Edm.Guid
 	Classification6 *types.GUID `json:"Classification6,omitempty"`
 
-	// Classification7:
+	// Classification7: Edm.Guid
 	Classification7 *types.GUID `json:"Classification7,omitempty"`
 
-	// Classification8:
+	// Classification8: Edm.Guid
 	Classification8 *types.GUID `json:"Classification8,omitempty"`
 
-	// ClassificationDescription:
+	// ClassificationDescription: Edm.String
 	ClassificationDescription *string `json:"ClassificationDescription,omitempty"`
 
-	// Code:
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// CodeAtSupplier:
+	// CodeAtSupplier: Edm.String
 	CodeAtSupplier *string `json:"CodeAtSupplier,omitempty"`
 
-	// CompanySize:
+	// CompanySize: Edm.Guid
 	CompanySize *types.GUID `json:"CompanySize,omitempty"`
 
-	// ConsolidationScenario:
+	// ConsolidationScenario: Edm.Byte
 	ConsolidationScenario *byte `json:"ConsolidationScenario,omitempty"`
 
-	// ControlledDate:
+	// ControlledDate: Edm.DateTime
 	ControlledDate *types.Date `json:"ControlledDate,omitempty"`
 
-	// Costcenter:
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription:
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// CostPaid:
+	// CostPaid: Edm.Byte
 	CostPaid *byte `json:"CostPaid,omitempty"`
 
-	// Country:
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// CountryName:
+	// CountryName: Edm.String
 	CountryName *string `json:"CountryName,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// CreditLinePurchase:
+	// CreditLinePurchase: Edm.Double
 	CreditLinePurchase *float64 `json:"CreditLinePurchase,omitempty"`
 
-	// CreditLineSales:
+	// CreditLineSales: Edm.Double
 	CreditLineSales *float64 `json:"CreditLineSales,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// CustomerSince:
+	// CustomerSince: Edm.DateTime
 	CustomerSince *types.Date `json:"CustomerSince,omitempty"`
 
-	// DatevCreditorCode:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// DatevCreditorCode: Edm.String
 	DatevCreditorCode *string `json:"DatevCreditorCode,omitempty"`
 
-	// DatevDebtorCode:
+	// DatevDebtorCode: Edm.String
 	DatevDebtorCode *string `json:"DatevDebtorCode,omitempty"`
 
-	// DiscountPurchase:
+	// DeliveryAdvice: Edm.Byte
+	DeliveryAdvice *byte `json:"DeliveryAdvice,omitempty"`
+
+	// DiscountPurchase: Edm.Double
 	DiscountPurchase *float64 `json:"DiscountPurchase,omitempty"`
 
-	// DiscountSales:
+	// DiscountSales: Edm.Double
 	DiscountSales *float64 `json:"DiscountSales,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document:
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DunsNumber:
+	// DunsNumber: Edm.String
 	DunsNumber *string `json:"DunsNumber,omitempty"`
 
-	// Email:
+	// Email: Edm.String
 	Email *string `json:"Email,omitempty"`
 
-	// EndDate:
+	// EnableSalesPaymentLink: Edm.Boolean
+	EnableSalesPaymentLink *bool `json:"EnableSalesPaymentLink,omitempty"`
+
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// EstablishedDate:
+	// EORINumber: Edm.String
+	EORINumber *string `json:"EORINumber,omitempty"`
+
+	// EstablishedDate: Edm.DateTime
 	EstablishedDate *types.Date `json:"EstablishedDate,omitempty"`
 
-	// Fax:
+	// Fax: Edm.String
 	Fax *string `json:"Fax,omitempty"`
 
-	// GLAccountPurchase:
+	// GLAccountPurchase: Edm.Guid
 	GLAccountPurchase *types.GUID `json:"GLAccountPurchase,omitempty"`
 
-	// GLAccountSales:
+	// GLAccountSales: Edm.Guid
 	GLAccountSales *types.GUID `json:"GLAccountSales,omitempty"`
 
-	// GLAP:
+	// GLAP: Edm.Guid
 	GLAP *types.GUID `json:"GLAP,omitempty"`
 
-	// GLAR:
+	// GLAR: Edm.Guid
 	GLAR *types.GUID `json:"GLAR,omitempty"`
 
-	// HasWithholdingTaxSales:
+	// GlnNumber: Edm.String
+	GlnNumber *string `json:"GlnNumber,omitempty"`
+
+	// HasWithholdingTaxSales: Edm.Boolean
 	HasWithholdingTaxSales *bool `json:"HasWithholdingTaxSales,omitempty"`
 
-	// IgnoreDatevWarningMessage:
+	// IgnoreDatevWarningMessage: Edm.Boolean
 	IgnoreDatevWarningMessage *bool `json:"IgnoreDatevWarningMessage,omitempty"`
 
-	// IntraStatArea:
+	// IncotermAddressPurchase: Edm.String
+	IncotermAddressPurchase *string `json:"IncotermAddressPurchase,omitempty"`
+
+	// IncotermAddressSales: Edm.String
+	IncotermAddressSales *string `json:"IncotermAddressSales,omitempty"`
+
+	// IncotermCodePurchase: Edm.String
+	IncotermCodePurchase *string `json:"IncotermCodePurchase,omitempty"`
+
+	// IncotermCodeSales: Edm.String
+	IncotermCodeSales *string `json:"IncotermCodeSales,omitempty"`
+
+	// IncotermVersionPurchase: Edm.Int16
+	IncotermVersionPurchase *int `json:"IncotermVersionPurchase,omitempty"`
+
+	// IncotermVersionSales: Edm.Int16
+	IncotermVersionSales *int `json:"IncotermVersionSales,omitempty"`
+
+	// IntraStatArea: Edm.String
 	IntraStatArea *string `json:"IntraStatArea,omitempty"`
 
-	// IntraStatDeliveryTerm:
+	// IntraStatDeliveryTerm: Edm.String
 	IntraStatDeliveryTerm *string `json:"IntraStatDeliveryTerm,omitempty"`
 
-	// IntraStatSystem:
+	// IntraStatSystem: Edm.String
 	IntraStatSystem *string `json:"IntraStatSystem,omitempty"`
 
-	// IntraStatTransactionA:
+	// IntraStatTransactionA: Edm.String
 	IntraStatTransactionA *string `json:"IntraStatTransactionA,omitempty"`
 
-	// IntraStatTransactionB:
+	// IntraStatTransactionB: Edm.String
 	IntraStatTransactionB *string `json:"IntraStatTransactionB,omitempty"`
 
-	// IntraStatTransportMethod:
+	// IntraStatTransportMethod: Edm.String
 	IntraStatTransportMethod *string `json:"IntraStatTransportMethod,omitempty"`
 
-	// InvoiceAccount:
+	// InvoiceAccount: Edm.Guid
 	InvoiceAccount *types.GUID `json:"InvoiceAccount,omitempty"`
 
-	// InvoiceAccountCode:
+	// InvoiceAccountCode: Edm.String
 	InvoiceAccountCode *string `json:"InvoiceAccountCode,omitempty"`
 
-	// InvoiceAccountName:
+	// InvoiceAccountName: Edm.String
 	InvoiceAccountName *string `json:"InvoiceAccountName,omitempty"`
 
-	// InvoiceAttachmentType:
+	// InvoiceAttachmentType: Edm.Int32
 	InvoiceAttachmentType *int `json:"InvoiceAttachmentType,omitempty"`
 
-	// InvoicingMethod:
+	// InvoicingMethod: Edm.Int32
 	InvoicingMethod *int `json:"InvoicingMethod,omitempty"`
 
-	// IsAccountant:
+	// IsAccountant: Edm.Byte
 	IsAccountant *byte `json:"IsAccountant,omitempty"`
 
-	// IsAgency:
+	// IsAgency: Edm.Byte
 	IsAgency *byte `json:"IsAgency,omitempty"`
 
-	// IsAnonymised:
+	// IsAnonymised: Edm.Byte
 	IsAnonymised *byte `json:"IsAnonymised,omitempty"`
 
-	// IsBank:
+	// IsBank: Edm.Boolean
 	IsBank *bool `json:"IsBank,omitempty"`
 
-	// IsCompetitor:
+	// IsCompetitor: Edm.Byte
 	IsCompetitor *byte `json:"IsCompetitor,omitempty"`
 
-	// IsExtraDuty:
+	// IsExtraDuty: Edm.Boolean
 	IsExtraDuty *bool `json:"IsExtraDuty,omitempty"`
 
-	// IsMailing:
+	// IsMailing: Edm.Byte
 	IsMailing *byte `json:"IsMailing,omitempty"`
 
-	// IsMember:
+	// IsMember: Edm.Boolean
 	IsMember *bool `json:"IsMember,omitempty"`
 
-	// IsPilot:
+	// IsPilot: Edm.Boolean
 	IsPilot *bool `json:"IsPilot,omitempty"`
 
-	// IsPurchase:
+	// IsPurchase: Edm.Boolean
 	IsPurchase *bool `json:"IsPurchase,omitempty"`
 
-	// IsReseller:
+	// IsReseller: Edm.Boolean
 	IsReseller *bool `json:"IsReseller,omitempty"`
 
-	// IsSales:
+	// IsSales: Edm.Boolean
 	IsSales *bool `json:"IsSales,omitempty"`
 
-	// IsSupplier:
+	// IsSupplier: Edm.Boolean
 	IsSupplier *bool `json:"IsSupplier,omitempty"`
 
-	// Language:
+	// Language: Edm.String
 	Language *string `json:"Language,omitempty"`
 
-	// LanguageDescription:
+	// LanguageDescription: Edm.String
 	LanguageDescription *string `json:"LanguageDescription,omitempty"`
 
-	// Latitude:
+	// Latitude: Edm.Double
 	Latitude *float64 `json:"Latitude,omitempty"`
 
-	// LeadPurpose:
+	// LeadPurpose: Edm.Guid
 	LeadPurpose *types.GUID `json:"LeadPurpose,omitempty"`
 
-	// LeadSource:
+	// LeadSource: Edm.Guid
 	LeadSource *types.GUID `json:"LeadSource,omitempty"`
 
-	// Logo:
+	// Logo: Edm.Binary
 	Logo *[]byte `json:"Logo,omitempty"`
 
-	// LogoFileName:
+	// LogoFileName: Edm.String
 	LogoFileName *string `json:"LogoFileName,omitempty"`
 
-	// LogoThumbnailUrl:
+	// LogoThumbnailUrl: Edm.String
 	LogoThumbnailUrl *string `json:"LogoThumbnailUrl,omitempty"`
 
-	// LogoUrl:
+	// LogoUrl: Edm.String
 	LogoUrl *string `json:"LogoUrl,omitempty"`
 
-	// Longitude:
+	// Longitude: Edm.Double
 	Longitude *float64 `json:"Longitude,omitempty"`
 
-	// MainContact:
+	// MainContact: Edm.Guid
 	MainContact *types.GUID `json:"MainContact,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Name:
+	// Name: Edm.String
 	Name *string `json:"Name,omitempty"`
 
-	// OINNumber:
+	// OINNumber: Edm.String
 	OINNumber *string `json:"OINNumber,omitempty"`
 
-	// Parent:
+	// Parent: Edm.Guid
 	Parent *types.GUID `json:"Parent,omitempty"`
 
-	// PayAsYouEarn:
+	// PayAsYouEarn: Edm.String
 	PayAsYouEarn *string `json:"PayAsYouEarn,omitempty"`
 
-	// PaymentConditionPurchase:
+	// PaymentConditionPurchase: Edm.String
 	PaymentConditionPurchase *string `json:"PaymentConditionPurchase,omitempty"`
 
-	// PaymentConditionPurchaseDescription:
+	// PaymentConditionPurchaseDescription: Edm.String
 	PaymentConditionPurchaseDescription *string `json:"PaymentConditionPurchaseDescription,omitempty"`
 
-	// PaymentConditionSales:
+	// PaymentConditionSales: Edm.String
 	PaymentConditionSales *string `json:"PaymentConditionSales,omitempty"`
 
-	// PaymentConditionSalesDescription:
+	// PaymentConditionSalesDescription: Edm.String
 	PaymentConditionSalesDescription *string `json:"PaymentConditionSalesDescription,omitempty"`
 
-	// Phone:
+	// Phone: Edm.String
 	Phone *string `json:"Phone,omitempty"`
 
-	// PhoneExtension:
+	// PhoneExtension: Edm.String
 	PhoneExtension *string `json:"PhoneExtension,omitempty"`
 
-	// Postcode:
+	// Postcode: Edm.String
 	Postcode *string `json:"Postcode,omitempty"`
 
-	// PriceList:
+	// PriceList: Edm.Guid
 	PriceList *types.GUID `json:"PriceList,omitempty"`
 
-	// PurchaseCurrency:
+	// PurchaseCurrency: Edm.String
 	PurchaseCurrency *string `json:"PurchaseCurrency,omitempty"`
 
-	// PurchaseCurrencyDescription:
+	// PurchaseCurrencyDescription: Edm.String
 	PurchaseCurrencyDescription *string `json:"PurchaseCurrencyDescription,omitempty"`
 
-	// PurchaseLeadDays:
+	// PurchaseLeadDays: Edm.Int32
 	PurchaseLeadDays *int `json:"PurchaseLeadDays,omitempty"`
 
-	// PurchaseVATCode:
+	// PurchaseVATCode: Edm.String
 	PurchaseVATCode *string `json:"PurchaseVATCode,omitempty"`
 
-	// PurchaseVATCodeDescription:
+	// PurchaseVATCodeDescription: Edm.String
 	PurchaseVATCodeDescription *string `json:"PurchaseVATCodeDescription,omitempty"`
 
-	// RecepientOfCommissions:
+	// RecepientOfCommissions: Edm.Boolean
 	RecepientOfCommissions *bool `json:"RecepientOfCommissions,omitempty"`
 
-	// Remarks:
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// Reseller:
+	// Reseller: Edm.Guid
 	Reseller *types.GUID `json:"Reseller,omitempty"`
 
-	// ResellerCode:
+	// ResellerCode: Edm.String
 	ResellerCode *string `json:"ResellerCode,omitempty"`
 
-	// ResellerName:
+	// ResellerName: Edm.String
 	ResellerName *string `json:"ResellerName,omitempty"`
 
-	// RSIN:
+	// RSIN: Edm.String
 	RSIN *string `json:"RSIN,omitempty"`
 
-	// SalesCurrency:
+	// SalesCurrency: Edm.String
 	SalesCurrency *string `json:"SalesCurrency,omitempty"`
 
-	// SalesCurrencyDescription:
+	// SalesCurrencyDescription: Edm.String
 	SalesCurrencyDescription *string `json:"SalesCurrencyDescription,omitempty"`
 
-	// SalesTaxSchedule:
+	// SalesTaxSchedule: Edm.Guid
 	SalesTaxSchedule *types.GUID `json:"SalesTaxSchedule,omitempty"`
 
-	// SalesTaxScheduleCode:
+	// SalesTaxScheduleCode: Edm.String
 	SalesTaxScheduleCode *string `json:"SalesTaxScheduleCode,omitempty"`
 
-	// SalesTaxScheduleDescription:
+	// SalesTaxScheduleDescription: Edm.String
 	SalesTaxScheduleDescription *string `json:"SalesTaxScheduleDescription,omitempty"`
 
-	// SalesVATCode:
+	// SalesVATCode: Edm.String
 	SalesVATCode *string `json:"SalesVATCode,omitempty"`
 
-	// SalesVATCodeDescription:
+	// SalesVATCodeDescription: Edm.String
 	SalesVATCodeDescription *string `json:"SalesVATCodeDescription,omitempty"`
 
-	// SearchCode:
+	// SearchCode: Edm.String
 	SearchCode *string `json:"SearchCode,omitempty"`
 
-	// SecurityLevel:
+	// SecurityLevel: Edm.Int32
 	SecurityLevel *int `json:"SecurityLevel,omitempty"`
 
-	// SeparateInvPerProject:
+	// SeparateInvPerProject: Edm.Byte
 	SeparateInvPerProject *byte `json:"SeparateInvPerProject,omitempty"`
 
-	// SeparateInvPerSubscription:
+	// SeparateInvPerSubscription: Edm.Byte
 	SeparateInvPerSubscription *byte `json:"SeparateInvPerSubscription,omitempty"`
 
-	// ShippingLeadDays:
+	// ShippingLeadDays: Edm.Int32
 	ShippingLeadDays *int `json:"ShippingLeadDays,omitempty"`
 
-	// ShippingMethod:
+	// ShippingMethod: Edm.Guid
 	ShippingMethod *types.GUID `json:"ShippingMethod,omitempty"`
 
-	// StartDate:
+	// ShowRemarkForSales: Edm.Boolean
+	ShowRemarkForSales *bool `json:"ShowRemarkForSales,omitempty"`
+
+	// Source: Edm.Byte
+	Source *byte `json:"Source,omitempty"`
+
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// State:
+	// State: Edm.String
 	State *string `json:"State,omitempty"`
 
-	// StateName:
+	// StateName: Edm.String
 	StateName *string `json:"StateName,omitempty"`
 
-	// Status:
+	// Status: Edm.String
 	Status *string `json:"Status,omitempty"`
 
-	// StatusSince:
+	// StatusSince: Edm.DateTime
 	StatusSince *types.Date `json:"StatusSince,omitempty"`
 
-	// TradeName:
+	// TradeName: Edm.String
 	TradeName *string `json:"TradeName,omitempty"`
 
-	// Type:
+	// Type: Edm.String
 	Type *string `json:"Type,omitempty"`
 
-	// UniqueTaxpayerReference:
+	// UniqueTaxpayerReference: Edm.String
 	UniqueTaxpayerReference *string `json:"UniqueTaxpayerReference,omitempty"`
 
-	// VATLiability:
+	// VATLiability: Edm.String
 	VATLiability *string `json:"VATLiability,omitempty"`
 
-	// VATNumber:
+	// VATNumber: Edm.String
 	VATNumber *string `json:"VATNumber,omitempty"`
 
-	// Website:
+	// Website: Edm.String
 	Website *string `json:"Website,omitempty"`
 }
 

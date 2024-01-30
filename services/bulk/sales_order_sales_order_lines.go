@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,124 +26,127 @@ type SalesOrderSalesOrderLinesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=BulkSalesOrderSalesOrderLines
 type SalesOrderSalesOrderLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// CostCenter:
+	// CostCenter: Edm.String
 	CostCenter *string `json:"CostCenter,omitempty"`
 
-	// CostCenterDescription:
+	// CostCenterDescription: Edm.String
 	CostCenterDescription *string `json:"CostCenterDescription,omitempty"`
 
-	// CostPriceFC:
+	// CostPriceFC: Edm.Double
 	CostPriceFC *float64 `json:"CostPriceFC,omitempty"`
 
-	// CostUnit:
+	// CostUnit: Edm.String
 	CostUnit *string `json:"CostUnit,omitempty"`
 
-	// CostUnitDescription:
+	// CostUnitDescription: Edm.String
 	CostUnitDescription *string `json:"CostUnitDescription,omitempty"`
 
-	// DeliveryDate:
+	// CustomerItemCode: Edm.String
+	CustomerItemCode *string `json:"CustomerItemCode,omitempty"`
+
+	// DeliveryDate: Edm.DateTime
 	DeliveryDate *types.Date `json:"DeliveryDate,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Discount:
+	// Discount: Edm.Double
 	Discount *float64 `json:"Discount,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Item:
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode:
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription:
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemVersion:
+	// ItemVersion: Edm.Guid
 	ItemVersion *types.GUID `json:"ItemVersion,omitempty"`
 
-	// ItemVersionDescription:
+	// ItemVersionDescription: Edm.String
 	ItemVersionDescription *string `json:"ItemVersionDescription,omitempty"`
 
-	// LineNumber:
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// NetPrice:
+	// NetPrice: Edm.Double
 	NetPrice *float64 `json:"NetPrice,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// OrderID:
+	// OrderID: Edm.Guid
 	OrderID *types.GUID `json:"OrderID,omitempty"`
 
-	// OrderNumber:
+	// OrderNumber: Edm.Int32
 	OrderNumber *int `json:"OrderNumber,omitempty"`
 
-	// Pricelist:
+	// Pricelist: Edm.Guid
 	Pricelist *types.GUID `json:"Pricelist,omitempty"`
 
-	// PricelistDescription:
+	// PricelistDescription: Edm.String
 	PricelistDescription *string `json:"PricelistDescription,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// PurchaseOrder:
+	// PurchaseOrder: Edm.Guid
 	PurchaseOrder *types.GUID `json:"PurchaseOrder,omitempty"`
 
-	// PurchaseOrderLine:
+	// PurchaseOrderLine: Edm.Guid
 	PurchaseOrderLine *types.GUID `json:"PurchaseOrderLine,omitempty"`
 
-	// PurchaseOrderLineNumber:
+	// PurchaseOrderLineNumber: Edm.Int32
 	PurchaseOrderLineNumber *int `json:"PurchaseOrderLineNumber,omitempty"`
 
-	// PurchaseOrderNumber:
+	// PurchaseOrderNumber: Edm.Int32
 	PurchaseOrderNumber *int `json:"PurchaseOrderNumber,omitempty"`
 
-	// Quantity:
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// ShopOrder:
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// UnitCode:
+	// UnitCode: Edm.String
 	UnitCode *string `json:"UnitCode,omitempty"`
 
-	// UnitDescription:
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// UnitPrice:
+	// UnitPrice: Edm.Double
 	UnitPrice *float64 `json:"UnitPrice,omitempty"`
 
-	// UseDropShipment:
+	// UseDropShipment: Edm.Byte
 	UseDropShipment *byte `json:"UseDropShipment,omitempty"`
 
-	// VATAmount:
+	// VATAmount: Edm.Double
 	VATAmount *float64 `json:"VATAmount,omitempty"`
 
-	// VATCode:
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATCodeDescription:
+	// VATCodeDescription: Edm.String
 	VATCodeDescription *string `json:"VATCodeDescription,omitempty"`
 
-	// VATPercentage:
+	// VATPercentage: Edm.Double
 	VATPercentage *float64 `json:"VATPercentage,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,88 +27,91 @@ type GoodsDeliveryLinesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderGoodsDeliveryLines
 type GoodsDeliveryLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// BatchNumbers:
+	// BatchNumbers: StockBatchNumbers
 	BatchNumbers *json.RawMessage `json:"BatchNumbers,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// DeliveryDate:
+	// CustomerItemCode: Edm.String
+	CustomerItemCode *string `json:"CustomerItemCode,omitempty"`
+
+	// DeliveryDate: Edm.DateTime
 	DeliveryDate *types.Date `json:"DeliveryDate,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EntryID:
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// Item:
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode:
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription:
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// LineNumber:
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// QuantityDelivered:
+	// QuantityDelivered: Edm.Double
 	QuantityDelivered *float64 `json:"QuantityDelivered,omitempty"`
 
-	// QuantityOrdered:
+	// QuantityOrdered: Edm.Double
 	QuantityOrdered *float64 `json:"QuantityOrdered,omitempty"`
 
-	// SalesOrderLineID:
+	// SalesOrderLineID: Edm.Guid
 	SalesOrderLineID *types.GUID `json:"SalesOrderLineID,omitempty"`
 
-	// SalesOrderLineNumber:
+	// SalesOrderLineNumber: Edm.Int32
 	SalesOrderLineNumber *int `json:"SalesOrderLineNumber,omitempty"`
 
-	// SalesOrderNumber:
+	// SalesOrderNumber: Edm.Int32
 	SalesOrderNumber *int `json:"SalesOrderNumber,omitempty"`
 
-	// SerialNumbers:
+	// SerialNumbers: StockSerialNumbers
 	SerialNumbers *json.RawMessage `json:"SerialNumbers,omitempty"`
 
-	// StorageLocation:
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode:
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription:
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// TrackingNumber:
+	// TrackingNumber: Edm.String
 	TrackingNumber *string `json:"TrackingNumber,omitempty"`
 
-	// Unitcode:
+	// Unitcode: Edm.String
 	Unitcode *string `json:"Unitcode,omitempty"`
 }
 

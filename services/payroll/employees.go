@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,202 +26,202 @@ type EmployeesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmployees
 type Employees struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// ActiveEmployment: Obsolete
+	// ActiveEmployment: Edm.Byte
 	ActiveEmployment *byte `json:"ActiveEmployment,omitempty"`
 
-	// AddressLine2: Second address line
+	// AddressLine2: Edm.String
 	AddressLine2 *string `json:"AddressLine2,omitempty"`
 
-	// AddressLine3: Third address line
+	// AddressLine3: Edm.String
 	AddressLine3 *string `json:"AddressLine3,omitempty"`
 
-	// AddressStreet: Street of address
+	// AddressStreet: Edm.String
 	AddressStreet *string `json:"AddressStreet,omitempty"`
 
-	// AddressStreetNumber: Street number of address
+	// AddressStreetNumber: Edm.String
 	AddressStreetNumber *string `json:"AddressStreetNumber,omitempty"`
 
-	// AddressStreetNumberSuffix: Street number suffix of address
+	// AddressStreetNumberSuffix: Edm.String
 	AddressStreetNumberSuffix *string `json:"AddressStreetNumberSuffix,omitempty"`
 
-	// BirthDate: Birth date
+	// BirthDate: Edm.DateTime
 	BirthDate *types.Date `json:"BirthDate,omitempty"`
 
-	// BirthName: Birth name
+	// BirthName: Edm.String
 	BirthName *string `json:"BirthName,omitempty"`
 
-	// BirthNamePrefix: Birth middle name
+	// BirthNamePrefix: Edm.String
 	BirthNamePrefix *string `json:"BirthNamePrefix,omitempty"`
 
-	// BirthPlace: Birth place
+	// BirthPlace: Edm.String
 	BirthPlace *string `json:"BirthPlace,omitempty"`
 
-	// BusinessEmail: Email of the employee at the office
+	// BusinessEmail: Edm.String
 	BusinessEmail *string `json:"BusinessEmail,omitempty"`
 
-	// BusinessFax: Fax number of the employee at the office
+	// BusinessFax: Edm.String
 	BusinessFax *string `json:"BusinessFax,omitempty"`
 
-	// BusinessMobile: Office mobile number of the employee
+	// BusinessMobile: Edm.String
 	BusinessMobile *string `json:"BusinessMobile,omitempty"`
 
-	// BusinessPhone: Phone number of the employee at the office
+	// BusinessPhone: Edm.String
 	BusinessPhone *string `json:"BusinessPhone,omitempty"`
 
-	// BusinessPhoneExtension: Phone extension of the employee at the office
+	// BusinessPhoneExtension: Edm.String
 	BusinessPhoneExtension *string `json:"BusinessPhoneExtension,omitempty"`
 
-	// CASONumber: Obsolete
+	// CASONumber: Edm.String
 	CASONumber *string `json:"CASONumber,omitempty"`
 
-	// City: City
+	// City: Edm.String
 	City *string `json:"City,omitempty"`
 
-	// Code: Code of the employee
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Country: Country code
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Customer: Customer ID
+	// Customer: Edm.Guid
 	Customer *types.GUID `json:"Customer,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Email: Email address
+	// Email: Edm.String
 	Email *string `json:"Email,omitempty"`
 
-	// EmployeeHID: Employee number
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EndDate: End date of the employee
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// FirstName: First name of the employee
+	// FirstName: Edm.String
 	FirstName *string `json:"FirstName,omitempty"`
 
-	// FullName: Full name of the employee
+	// FullName: Edm.String
 	FullName *string `json:"FullName,omitempty"`
 
-	// Gender: Gender
+	// Gender: Edm.String
 	Gender *string `json:"Gender,omitempty"`
 
-	// HID: Numeric ID of the employee
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// Initials: Initials
+	// Initials: Edm.String
 	Initials *string `json:"Initials,omitempty"`
 
-	// IsActive: IsActive
+	// IsActive: Edm.Boolean
 	IsActive *bool `json:"IsActive,omitempty"`
 
-	// IsAnonymised: Indicates whether the employee is anonymised.
+	// IsAnonymised: Edm.Byte
 	IsAnonymised *byte `json:"IsAnonymised,omitempty"`
 
-	// Language: Language code
+	// Language: Edm.String
 	Language *string `json:"Language,omitempty"`
 
-	// LastName: Last name
+	// LastName: Edm.String
 	LastName *string `json:"LastName,omitempty"`
 
-	// LocationDescription: Description of the location of the employee (where am I?)
+	// LocationDescription: Edm.String
 	LocationDescription *string `json:"LocationDescription,omitempty"`
 
-	// Manager: Direct manager of the employee
+	// Manager: Edm.Guid
 	Manager *types.GUID `json:"Manager,omitempty"`
 
-	// MaritalDate: Date of marriage
+	// MaritalDate: Edm.DateTime
 	MaritalDate *types.Date `json:"MaritalDate,omitempty"`
 
-	// MaritalStatus: Marital status
+	// MaritalStatus: Edm.Int16
 	MaritalStatus *int `json:"MaritalStatus,omitempty"`
 
-	// MiddleName: Middle name
+	// MiddleName: Edm.String
 	MiddleName *string `json:"MiddleName,omitempty"`
 
-	// Mobile: Mobile phone
+	// Mobile: Edm.String
 	Mobile *string `json:"Mobile,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Municipality: Municipality
+	// Municipality: Edm.String
 	Municipality *string `json:"Municipality,omitempty"`
 
-	// NameComposition:
+	// NameComposition: Edm.Int16
 	NameComposition *int `json:"NameComposition,omitempty"`
 
-	// Nationality: Nationality
+	// Nationality: Edm.String
 	Nationality *string `json:"Nationality,omitempty"`
 
-	// NickName: Nick name
+	// NickName: Edm.String
 	NickName *string `json:"NickName,omitempty"`
 
-	// Notes: Additional notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PartnerName: Name of partner
+	// PartnerName: Edm.String
 	PartnerName *string `json:"PartnerName,omitempty"`
 
-	// PartnerNamePrefix: Middle name of partner
+	// PartnerNamePrefix: Edm.String
 	PartnerNamePrefix *string `json:"PartnerNamePrefix,omitempty"`
 
-	// Person: Reference to the persons table in which the personal data of the employee is stored
+	// Person: Edm.Guid
 	Person *types.GUID `json:"Person,omitempty"`
 
-	// Phone: Phone number
+	// Phone: Edm.String
 	Phone *string `json:"Phone,omitempty"`
 
-	// PhoneExtension: Phone number extension
+	// PhoneExtension: Edm.String
 	PhoneExtension *string `json:"PhoneExtension,omitempty"`
 
-	// PictureFileName: Filename of picture
+	// PictureFileName: Edm.String
 	PictureFileName *string `json:"PictureFileName,omitempty"`
 
-	// PictureUrl: Url of picture
+	// PictureUrl: Edm.String
 	PictureUrl *string `json:"PictureUrl,omitempty"`
 
-	// Postcode: Postcode
+	// Postcode: Edm.String
 	Postcode *string `json:"Postcode,omitempty"`
 
-	// PrivateEmail: Private email address
+	// PrivateEmail: Edm.String
 	PrivateEmail *string `json:"PrivateEmail,omitempty"`
 
-	// SocialSecurityNumber: Social security number
+	// SocialSecurityNumber: Edm.String
 	SocialSecurityNumber *string `json:"SocialSecurityNumber,omitempty"`
 
-	// StartDate: Start date of the employee
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// State: State
+	// State: Edm.String
 	State *string `json:"State,omitempty"`
 
-	// Title: Title
+	// Title: Edm.String
 	Title *string `json:"Title,omitempty"`
 
-	// User: User ID of employee
+	// User: Edm.Guid
 	User *types.GUID `json:"User,omitempty"`
 
-	// UserFullName: Name of user
+	// UserFullName: Edm.String
 	UserFullName *string `json:"UserFullName,omitempty"`
 }
 

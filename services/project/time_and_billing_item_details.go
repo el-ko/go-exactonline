@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,25 +26,25 @@ type TimeAndBillingItemDetailsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingItemDetails
 type TimeAndBillingItemDetails struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Item code
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Description: Description of the item code
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions are allowed for quantities of this item
+	// IsFractionAllowedItem: Edm.Boolean
 	IsFractionAllowedItem *bool `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSalesItem: Indicates if the item can be sold
+	// IsSalesItem: Edm.Boolean
 	IsSalesItem *bool `json:"IsSalesItem,omitempty"`
 
-	// SalesCurrency: Sales currency code
+	// SalesCurrency: Edm.String
 	SalesCurrency *string `json:"SalesCurrency,omitempty"`
 
-	// SalesPrice: Sales price
+	// SalesPrice: Edm.Double
 	SalesPrice *float64 `json:"SalesPrice,omitempty"`
 }
 

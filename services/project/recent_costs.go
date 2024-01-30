@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,79 +26,79 @@ type RecentCostsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectRecentCosts
 type RecentCosts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Id: Primary key
+	// Id: Edm.Int32
 	Id *int `json:"Id,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountId: Reference to Account
+	// AccountId: Edm.Guid
 	AccountId *types.GUID `json:"AccountId,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AmountApproved: Amount approved
+	// AmountApproved: Edm.Double
 	AmountApproved *float64 `json:"AmountApproved,omitempty"`
 
-	// AmountDraft: Amount draft
+	// AmountDraft: Edm.Double
 	AmountDraft *float64 `json:"AmountDraft,omitempty"`
 
-	// AmountRejected: Amount rejected
+	// AmountRejected: Edm.Double
 	AmountRejected *float64 `json:"AmountRejected,omitempty"`
 
-	// AmountSubmitted: Amount submitted
+	// AmountSubmitted: Edm.Double
 	AmountSubmitted *float64 `json:"AmountSubmitted,omitempty"`
 
-	// CurrencyCode: Code of Currency
+	// CurrencyCode: Edm.String
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 
-	// Date: Date
+	// Date: Edm.DateTime
 	Date *types.Date `json:"Date,omitempty"`
 
-	// EntryId: Entry ID
+	// EntryId: Edm.Guid
 	EntryId *types.GUID `json:"EntryId,omitempty"`
 
-	// Expense: Reference to Expense
+	// Expense: Edm.Guid
 	Expense *types.GUID `json:"Expense,omitempty"`
 
-	// ExpenseDescription: Description of Expense
+	// ExpenseDescription: Edm.String
 	ExpenseDescription *string `json:"ExpenseDescription,omitempty"`
 
-	// ItemCode: Code of Item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemId: Reference to Item
+	// ItemId: Edm.Guid
 	ItemId *types.GUID `json:"ItemId,omitempty"`
 
-	// Notes: Remarks
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// ProjectCode: Code of Project
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription: Description of Project
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// ProjectId: Reference to Project
+	// ProjectId: Edm.Guid
 	ProjectId *types.GUID `json:"ProjectId,omitempty"`
 
-	// QuantityApproved: Quantity approved
+	// QuantityApproved: Edm.Double
 	QuantityApproved *float64 `json:"QuantityApproved,omitempty"`
 
-	// QuantityDraft: Quantity draft
+	// QuantityDraft: Edm.Double
 	QuantityDraft *float64 `json:"QuantityDraft,omitempty"`
 
-	// QuantityRejected: Quantity rejected
+	// QuantityRejected: Edm.Double
 	QuantityRejected *float64 `json:"QuantityRejected,omitempty"`
 
-	// QuantitySubmitted: Quantity submitted
+	// QuantitySubmitted: Edm.Double
 	QuantitySubmitted *float64 `json:"QuantitySubmitted,omitempty"`
 
-	// WeekNumber: Week number
+	// WeekNumber: Edm.Int32
 	WeekNumber *int `json:"WeekNumber,omitempty"`
 }
 

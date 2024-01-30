@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,49 +29,49 @@ type SolutionLinksEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks
 type SolutionLinks struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: ID of account to which solution is linked
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// Division: Accountant main division
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// ExternalSolutionCode: If type is external predefined, represents ID of PracticeManagementExternalSolutions (mandatory for External solution)
+	// ExternalSolutionCode: Edm.Int32
 	ExternalSolutionCode *int `json:"ExternalSolutionCode,omitempty"`
 
-	// ExternalSolutionName: Name of the external solution
+	// ExternalSolutionName: Edm.String
 	ExternalSolutionName *string `json:"ExternalSolutionName,omitempty"`
 
-	// ExternalSolutionUrl: Customer URl in external solution, like solution.com/id123 (mandatory for External and ExternalOther solution)
+	// ExternalSolutionUrl: Edm.String
 	ExternalSolutionUrl *string `json:"ExternalSolutionUrl,omitempty"`
 
-	// InternalSolutionDivision: Division code of linked internal solution (mandatory for Internal solution)
+	// InternalSolutionDivision: Edm.Int32
 	InternalSolutionDivision *int `json:"InternalSolutionDivision,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// Name: Name of the solution link
+	// Name: Edm.String
 	Name *string `json:"Name,omitempty"`
 
-	// OtherExternalSolutionName: Name of the custom external solution (mandatory for ExternalOther solution)
+	// OtherExternalSolutionName: Edm.String
 	OtherExternalSolutionName *string `json:"OtherExternalSolutionName,omitempty"`
 
-	// SolutionType: Type of solution: 0 - Internal(EOL), 1 - External(Wellknown solution), 2 - ExternalOther
+	// SolutionType: Edm.Int32
 	SolutionType *int `json:"SolutionType,omitempty"`
 
-	// Status: Link status: 0 - Active, 1 - Inactive, 2 -Archived
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,67 +26,70 @@ type ItemVersionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItemVersions
 type ItemVersions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// BatchQuantity: Batch Quantity of Item Version
+	// BatchQuantity: Edm.Double
 	BatchQuantity *float64 `json:"BatchQuantity,omitempty"`
 
-	// CalculatedCostPrice: Calculated Cost Price of Item Version
+	// CalculatedCostPrice: Edm.Double
 	CalculatedCostPrice *float64 `json:"CalculatedCostPrice,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the item version
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// IsDefault: Indicates if this is the default item version that will be assigned when a item is selected
+	// IsDefault: Edm.Byte
 	IsDefault *byte `json:"IsDefault,omitempty"`
 
-	// Item: Reference to Items table
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// LeadTime: Lead time of Item version
+	// LeadTime: Edm.Int32
 	LeadTime *int `json:"LeadTime,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Line notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Status: Statuses of Item version: 10-Engineering change pending, 20-Engineering change approved, 30-Active &amp; 40-Historic
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription: Description of Status
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 
-	// Type: Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription: Description of Type
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 
-	// VersionNumber: Version Number
+	// VersionDate: Edm.DateTime
+	VersionDate *types.Date `json:"VersionDate,omitempty"`
+
+	// VersionNumber: Edm.Int32
 	VersionNumber *int `json:"VersionNumber,omitempty"`
 }
 

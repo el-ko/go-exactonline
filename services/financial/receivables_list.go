@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -7,6 +7,7 @@ package financial
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/mcnijman/go-exactonline/api"
 	"github.com/mcnijman/go-exactonline/types"
@@ -26,52 +27,55 @@ type ReceivablesListEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReceivablesList
 type ReceivablesList struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// HID: Primary key, human readable ID
+	// HID: Edm.Int64
 	HID *int64 `json:"HID,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountId: Reference to the account
+	// AccountId: Edm.Guid
 	AccountId *types.GUID `json:"AccountId,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Amount: Amount
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 
-	// AmountInTransit: Amount in transit
+	// AmountInTransit: Edm.Double
 	AmountInTransit *float64 `json:"AmountInTransit,omitempty"`
 
-	// CurrencyCode: Code of Currency
+	// CurrencyCode: Edm.String
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 
-	// Description: Description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DueDate: Date the invoice is due (This due date is not the discount due date)
+	// DueDate: Edm.DateTime
 	DueDate *types.Date `json:"DueDate,omitempty"`
 
-	// EntryNumber: Entry number
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// Id: Obsolete
+	// Id: Edm.Guid
 	Id *types.GUID `json:"Id,omitempty"`
 
-	// InvoiceDate: Invoice date
+	// InvoiceDate: Edm.DateTime
 	InvoiceDate *types.Date `json:"InvoiceDate,omitempty"`
 
-	// InvoiceNumber: Invoice number. The value is 0 when the invoice number of the linked transaction is empty.
+	// InvoiceNumber: Edm.Int32
 	InvoiceNumber *int `json:"InvoiceNumber,omitempty"`
 
-	// JournalCode: Code of Journal
+	// JournalCode: Edm.String
 	JournalCode *string `json:"JournalCode,omitempty"`
 
-	// JournalDescription: Description of Journal
+	// JournalDescription: Edm.String
 	JournalDescription *string `json:"JournalDescription,omitempty"`
 
-	// YourRef: Your reference
+	// Notes: Notes
+	Notes *json.RawMessage `json:"Notes,omitempty"`
+
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 

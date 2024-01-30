@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,208 +26,220 @@ type TransactionLinesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionTransactionLines
 type TransactionLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode:
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// AmountVATBaseFC:
+	// AmountVATBaseFC: Edm.Double
 	AmountVATBaseFC *float64 `json:"AmountVATBaseFC,omitempty"`
 
-	// AmountVATFC:
+	// AmountVATFC: Edm.Double
 	AmountVATFC *float64 `json:"AmountVATFC,omitempty"`
 
-	// Asset:
+	// Asset: Edm.Guid
 	Asset *types.GUID `json:"Asset,omitempty"`
 
-	// AssetCode:
+	// AssetCode: Edm.String
 	AssetCode *string `json:"AssetCode,omitempty"`
 
-	// AssetDescription:
+	// AssetDescription: Edm.String
 	AssetDescription *string `json:"AssetDescription,omitempty"`
 
-	// CostCenter:
+	// CostCenter: Edm.String
 	CostCenter *string `json:"CostCenter,omitempty"`
 
-	// CostCenterDescription:
+	// CostCenterDescription: Edm.String
 	CostCenterDescription *string `json:"CostCenterDescription,omitempty"`
 
-	// CostUnit:
+	// CostUnit: Edm.String
 	CostUnit *string `json:"CostUnit,omitempty"`
 
-	// CostUnitDescription:
+	// CostUnitDescription: Edm.String
 	CostUnitDescription *string `json:"CostUnitDescription,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Date:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Date: Edm.DateTime
 	Date *types.Date `json:"Date,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document:
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentNumber:
+	// DocumentNumber: Edm.Int32
 	DocumentNumber *int `json:"DocumentNumber,omitempty"`
 
-	// DocumentSubject:
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// DueDate:
+	// DueDate: Edm.DateTime
 	DueDate *types.Date `json:"DueDate,omitempty"`
 
-	// EntryID:
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// EntryNumber:
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// ExchangeRate:
+	// ExchangeRate: Edm.Double
 	ExchangeRate *float64 `json:"ExchangeRate,omitempty"`
 
-	// ExtraDutyAmountFC:
+	// ExternalLinkDescription: Edm.String
+	ExternalLinkDescription *string `json:"ExternalLinkDescription,omitempty"`
+
+	// ExternalLinkReference: Edm.String
+	ExternalLinkReference *string `json:"ExternalLinkReference,omitempty"`
+
+	// ExtraDutyAmountFC: Edm.Double
 	ExtraDutyAmountFC *float64 `json:"ExtraDutyAmountFC,omitempty"`
 
-	// ExtraDutyPercentage:
+	// ExtraDutyPercentage: Edm.Double
 	ExtraDutyPercentage *float64 `json:"ExtraDutyPercentage,omitempty"`
 
-	// FinancialPeriod:
+	// FinancialPeriod: Edm.Int16
 	FinancialPeriod *int `json:"FinancialPeriod,omitempty"`
 
-	// FinancialYear:
+	// FinancialYear: Edm.Int16
 	FinancialYear *int `json:"FinancialYear,omitempty"`
 
-	// GLAccount:
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// GLAccountCode:
+	// GLAccountCode: Edm.String
 	GLAccountCode *string `json:"GLAccountCode,omitempty"`
 
-	// GLAccountDescription:
+	// GLAccountDescription: Edm.String
 	GLAccountDescription *string `json:"GLAccountDescription,omitempty"`
 
-	// InvoiceNumber:
+	// InvoiceNumber: Edm.Int32
 	InvoiceNumber *int `json:"InvoiceNumber,omitempty"`
 
-	// Item:
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode:
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription:
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// JournalCode:
+	// JournalCode: Edm.String
 	JournalCode *string `json:"JournalCode,omitempty"`
 
-	// JournalDescription:
+	// JournalDescription: Edm.String
 	JournalDescription *string `json:"JournalDescription,omitempty"`
 
-	// LineNumber:
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// LineType:
+	// LineType: Edm.Int16
 	LineType *int `json:"LineType,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// OffsetID:
+	// OffsetID: Edm.Guid
 	OffsetID *types.GUID `json:"OffsetID,omitempty"`
 
-	// OrderNumber:
+	// OrderNumber: Edm.Int32
 	OrderNumber *int `json:"OrderNumber,omitempty"`
 
-	// PaymentDiscountAmount:
+	// PaymentDiscountAmount: Edm.Double
 	PaymentDiscountAmount *float64 `json:"PaymentDiscountAmount,omitempty"`
 
-	// PaymentReference:
+	// PaymentReference: Edm.String
 	PaymentReference *string `json:"PaymentReference,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// Quantity:
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// SerialNumber:
+	// SerialNumber: Edm.String
 	SerialNumber *string `json:"SerialNumber,omitempty"`
 
-	// Status:
+	// ShopOrder: Edm.Guid
+	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
+
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// Subscription:
+	// Subscription: Edm.Guid
 	Subscription *types.GUID `json:"Subscription,omitempty"`
 
-	// SubscriptionDescription:
+	// SubscriptionDescription: Edm.String
 	SubscriptionDescription *string `json:"SubscriptionDescription,omitempty"`
 
-	// TrackingNumber:
+	// TrackingNumber: Edm.String
 	TrackingNumber *string `json:"TrackingNumber,omitempty"`
 
-	// TrackingNumberDescription:
+	// TrackingNumberDescription: Edm.String
 	TrackingNumberDescription *string `json:"TrackingNumberDescription,omitempty"`
 
-	// Type:
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// VATCode:
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATCodeDescription:
+	// VATCodeDescription: Edm.String
 	VATCodeDescription *string `json:"VATCodeDescription,omitempty"`
 
-	// VATPercentage:
+	// VATPercentage: Edm.Double
 	VATPercentage *float64 `json:"VATPercentage,omitempty"`
 
-	// VATType:
+	// VATType: Edm.String
 	VATType *string `json:"VATType,omitempty"`
 
-	// YourRef:
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,145 +30,145 @@ type ShopOrderRoutingStepPlansEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderRoutingStepPlans
 type ShopOrderRoutingStepPlans struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: Reference to Account providing the Outsourced item
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName: Account name
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AccountNumber: Account number
+	// AccountNumber: Edm.String
 	AccountNumber *string `json:"AccountNumber,omitempty"`
 
-	// AttendedPercentage: Attended Percentage
+	// AttendedPercentage: Edm.Double
 	AttendedPercentage *float64 `json:"AttendedPercentage,omitempty"`
 
-	// Backflush: Indicates if this is a backflush step
+	// Backflush: Edm.Byte
 	Backflush *byte `json:"Backflush,omitempty"`
 
-	// CostPerItem: Total cost / Shop order planned quantity
+	// CostPerItem: Edm.Double
 	CostPerItem *float64 `json:"CostPerItem,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the operation
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EfficiencyPercentage: Efficiency Percentage
+	// EfficiencyPercentage: Edm.Double
 	EfficiencyPercentage *float64 `json:"EfficiencyPercentage,omitempty"`
 
-	// FactorType: Conversion factor type between Shop order Item and Subcontract purchase Unit
+	// FactorType: Edm.Int32
 	FactorType *int `json:"FactorType,omitempty"`
 
-	// LineNumber: Sequential order of the operation
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Operation: Reference to Operations
+	// Operation: Edm.Guid
 	Operation *types.GUID `json:"Operation,omitempty"`
 
-	// OperationCode: Code of the routing step operation
+	// OperationCode: Edm.String
 	OperationCode *string `json:"OperationCode,omitempty"`
 
-	// OperationDescription: Description of the operation step
+	// OperationDescription: Edm.String
 	OperationDescription *string `json:"OperationDescription,omitempty"`
 
-	// OperationResource: Reference to OperationResources
+	// OperationResource: Edm.Guid
 	OperationResource *types.GUID `json:"OperationResource,omitempty"`
 
-	// PlannedEndDate: Planned end date
+	// PlannedEndDate: Edm.DateTime
 	PlannedEndDate *types.Date `json:"PlannedEndDate,omitempty"`
 
-	// PlannedRunHours: Planned run hours
+	// PlannedRunHours: Edm.Double
 	PlannedRunHours *float64 `json:"PlannedRunHours,omitempty"`
 
-	// PlannedSetupHours: Planned setup hours
+	// PlannedSetupHours: Edm.Double
 	PlannedSetupHours *float64 `json:"PlannedSetupHours,omitempty"`
 
-	// PlannedStartDate: Planned start date
+	// PlannedStartDate: Edm.DateTime
 	PlannedStartDate *types.Date `json:"PlannedStartDate,omitempty"`
 
-	// PlannedTotalHours: Setup hours &#43; Run hours
+	// PlannedTotalHours: Edm.Double
 	PlannedTotalHours *float64 `json:"PlannedTotalHours,omitempty"`
 
-	// PurchaseUnit: Reference to Units
+	// PurchaseUnit: Edm.String
 	PurchaseUnit *string `json:"PurchaseUnit,omitempty"`
 
-	// PurchaseUnitFactor: Purchase Unit Factor
+	// PurchaseUnitFactor: Edm.Double
 	PurchaseUnitFactor *float64 `json:"PurchaseUnitFactor,omitempty"`
 
-	// PurchaseUnitPriceFC: Purchase Unit Price in the currency of the transaction
+	// PurchaseUnitPriceFC: Edm.Double
 	PurchaseUnitPriceFC *float64 `json:"PurchaseUnitPriceFC,omitempty"`
 
-	// PurchaseUnitQuantity: Purchase unit quantity of the plan
+	// PurchaseUnitQuantity: Edm.Double
 	PurchaseUnitQuantity *float64 `json:"PurchaseUnitQuantity,omitempty"`
 
-	// RoutingStepType: Reference to RoutingStepTypes
+	// RoutingStepType: Edm.Int32
 	RoutingStepType *int `json:"RoutingStepType,omitempty"`
 
-	// Run: Used in conjunction with RunMethod, and EfficiencyPercentage to determine PlannedRunHours
+	// Run: Edm.Double
 	Run *float64 `json:"Run,omitempty"`
 
-	// RunMethod: Reference to OperationMethod
+	// RunMethod: Edm.Int32
 	RunMethod *int `json:"RunMethod,omitempty"`
 
-	// RunMethodDescription: Description of RunMethod
+	// RunMethodDescription: Edm.String
 	RunMethodDescription *string `json:"RunMethodDescription,omitempty"`
 
-	// Setup: Used in conjunction with SetupCount and Setup Unit to determine PlannedSetupHours
+	// Setup: Edm.Double
 	Setup *float64 `json:"Setup,omitempty"`
 
-	// SetupUnit: Reference to TimeUnits
+	// SetupUnit: Edm.String
 	SetupUnit *string `json:"SetupUnit,omitempty"`
 
-	// ShopOrder: Reference to Shop orders
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// Status: Reference to OperationStatus
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription: Description of Status
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 
-	// SubcontractedLeadDays: Subcontracted lead days
+	// SubcontractedLeadDays: Edm.Int32
 	SubcontractedLeadDays *int `json:"SubcontractedLeadDays,omitempty"`
 
-	// TimeTransactions: Collection of TimeTransactions
+	// TimeTransactions: TimeTransactions
 	TimeTransactions *json.RawMessage `json:"TimeTransactions,omitempty"`
 
-	// TotalCostDC: Total cost of the routing line
+	// TotalCostDC: Edm.Double
 	TotalCostDC *float64 `json:"TotalCostDC,omitempty"`
 
-	// Workcenter: Reference to Workcenters
+	// Workcenter: Edm.Guid
 	Workcenter *types.GUID `json:"Workcenter,omitempty"`
 
-	// WorkcenterCode: Workcenter code
+	// WorkcenterCode: Edm.String
 	WorkcenterCode *string `json:"WorkcenterCode,omitempty"`
 
-	// WorkcenterDescription: Workcenter description
+	// WorkcenterDescription: Edm.String
 	WorkcenterDescription *string `json:"WorkcenterDescription,omitempty"`
 }
 

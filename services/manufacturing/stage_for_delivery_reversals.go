@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,67 +26,67 @@ type StageForDeliveryReversalsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingStageForDeliveryReversals
 type StageForDeliveryReversals struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Id: ID of this StageForDeliveryReversal
+	// Id: Edm.Guid
 	Id *types.GUID `json:"Id,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Date of this reversal
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// IsBatch: Does the shop order receipt&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the StageForDeliveryReversal&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the shop order receipt&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item reversed
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item reversed
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item reversed
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of by-product item
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Quantity: Quantity reversed
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// RelatedId: ID of the original stage for delivery entry, which is being reversed
+	// RelatedId: Edm.Guid
 	RelatedId *types.GUID `json:"RelatedId,omitempty"`
 
-	// ShopOrder: Shop order being reversed to
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// ShopOrderNumber: Number of shop order being reversed to
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// TransactionDate: Effective date of this StageForDeliveryReversal
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of item reversed
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of item reversed
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of the shop order warehouse
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of the shop order warehouse
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of the shop order warehouse
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

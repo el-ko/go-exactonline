@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,206 +26,221 @@ type OpportunityContactsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMOpportunityContacts
 type OpportunityContacts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountIsCustomer:
+	// AccountIsCustomer: Edm.Boolean
 	AccountIsCustomer *bool `json:"AccountIsCustomer,omitempty"`
 
-	// AccountIsSupplier:
+	// AccountIsSupplier: Edm.Boolean
 	AccountIsSupplier *bool `json:"AccountIsSupplier,omitempty"`
 
-	// AccountMainContact:
+	// AccountMainContact: Edm.Guid
 	AccountMainContact *types.GUID `json:"AccountMainContact,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AddressLine2:
+	// AddressLine2: Edm.String
 	AddressLine2 *string `json:"AddressLine2,omitempty"`
 
-	// AddressStreet:
+	// AddressStreet: Edm.String
 	AddressStreet *string `json:"AddressStreet,omitempty"`
 
-	// AddressStreetNumber:
+	// AddressStreetNumber: Edm.String
 	AddressStreetNumber *string `json:"AddressStreetNumber,omitempty"`
 
-	// AddressStreetNumberSuffix:
+	// AddressStreetNumberSuffix: Edm.String
 	AddressStreetNumberSuffix *string `json:"AddressStreetNumberSuffix,omitempty"`
 
-	// AllowMailing:
+	// AllowMailing: Edm.Int32
 	AllowMailing *int `json:"AllowMailing,omitempty"`
 
-	// BirthDate:
+	// BirthDate: Edm.DateTime
 	BirthDate *types.Date `json:"BirthDate,omitempty"`
 
-	// BirthName:
+	// BirthName: Edm.String
 	BirthName *string `json:"BirthName,omitempty"`
 
-	// BirthNamePrefix:
+	// BirthNamePrefix: Edm.String
 	BirthNamePrefix *string `json:"BirthNamePrefix,omitempty"`
 
-	// BirthPlace:
+	// BirthPlace: Edm.String
 	BirthPlace *string `json:"BirthPlace,omitempty"`
 
-	// BusinessEmail:
+	// BusinessEmail: Edm.String
 	BusinessEmail *string `json:"BusinessEmail,omitempty"`
 
-	// BusinessFax:
+	// BusinessFax: Edm.String
 	BusinessFax *string `json:"BusinessFax,omitempty"`
 
-	// BusinessMobile:
+	// BusinessMobile: Edm.String
 	BusinessMobile *string `json:"BusinessMobile,omitempty"`
 
-	// BusinessPhone:
+	// BusinessPhone: Edm.String
 	BusinessPhone *string `json:"BusinessPhone,omitempty"`
 
-	// BusinessPhoneExtension:
+	// BusinessPhoneExtension: Edm.String
 	BusinessPhoneExtension *string `json:"BusinessPhoneExtension,omitempty"`
 
-	// City:
+	// City: Edm.String
 	City *string `json:"City,omitempty"`
 
-	// Code:
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Contact:
+	// Contact: Edm.Guid
 	Contact *types.GUID `json:"Contact,omitempty"`
 
-	// Country:
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Email:
+	// Email: Edm.String
 	Email *string `json:"Email,omitempty"`
 
-	// EndDate:
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// FirstName:
+	// FirstName: Edm.String
 	FirstName *string `json:"FirstName,omitempty"`
 
-	// FullName:
+	// FullName: Edm.String
 	FullName *string `json:"FullName,omitempty"`
 
-	// Gender:
+	// Gender: Edm.String
 	Gender *string `json:"Gender,omitempty"`
 
-	// HID:
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// IdentificationDate:
+	// IdentificationDate: Edm.DateTime
 	IdentificationDate *types.Date `json:"IdentificationDate,omitempty"`
 
-	// IdentificationDocument:
+	// IdentificationDocument: Edm.Guid
 	IdentificationDocument *types.GUID `json:"IdentificationDocument,omitempty"`
 
-	// IdentificationUser:
+	// IdentificationUser: Edm.Guid
 	IdentificationUser *types.GUID `json:"IdentificationUser,omitempty"`
 
-	// Initials:
+	// Initials: Edm.String
 	Initials *string `json:"Initials,omitempty"`
 
-	// IsAnonymised:
+	// IsAnonymised: Edm.Byte
 	IsAnonymised *byte `json:"IsAnonymised,omitempty"`
 
-	// IsMailingExcluded:
+	// IsMailingExcluded: Edm.Boolean
 	IsMailingExcluded *bool `json:"IsMailingExcluded,omitempty"`
 
-	// IsMainContact:
+	// IsMainContact: Edm.Boolean
 	IsMainContact *bool `json:"IsMainContact,omitempty"`
 
-	// JobTitleDescription:
+	// JobTitleDescription: Edm.String
 	JobTitleDescription *string `json:"JobTitleDescription,omitempty"`
 
-	// Language:
+	// Language: Edm.String
 	Language *string `json:"Language,omitempty"`
 
-	// LastName:
+	// LastName: Edm.String
 	LastName *string `json:"LastName,omitempty"`
 
-	// MarketingNotes:
+	// LeadPurpose: Edm.Guid
+	LeadPurpose *types.GUID `json:"LeadPurpose,omitempty"`
+
+	// LeadSource: Edm.Guid
+	LeadSource *types.GUID `json:"LeadSource,omitempty"`
+
+	// MarketingNotes: Edm.String
 	MarketingNotes *string `json:"MarketingNotes,omitempty"`
 
-	// MiddleName:
+	// MiddleName: Edm.String
 	MiddleName *string `json:"MiddleName,omitempty"`
 
-	// Mobile:
+	// Mobile: Edm.String
 	Mobile *string `json:"Mobile,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Nationality:
+	// Nationality: Edm.String
 	Nationality *string `json:"Nationality,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Opportunity:
+	// Opportunity: Edm.Guid
 	Opportunity *types.GUID `json:"Opportunity,omitempty"`
 
-	// PartnerName:
+	// PartnerName: Edm.String
 	PartnerName *string `json:"PartnerName,omitempty"`
 
-	// PartnerNamePrefix:
+	// PartnerNamePrefix: Edm.String
 	PartnerNamePrefix *string `json:"PartnerNamePrefix,omitempty"`
 
-	// Person:
+	// Person: Edm.Guid
 	Person *types.GUID `json:"Person,omitempty"`
 
-	// Phone:
+	// Phone: Edm.String
 	Phone *string `json:"Phone,omitempty"`
 
-	// PhoneExtension:
+	// PhoneExtension: Edm.String
 	PhoneExtension *string `json:"PhoneExtension,omitempty"`
 
-	// Picture:
+	// Picture: Edm.Binary
 	Picture *[]byte `json:"Picture,omitempty"`
 
-	// PictureName:
+	// PictureName: Edm.String
 	PictureName *string `json:"PictureName,omitempty"`
 
-	// PictureThumbnailUrl:
+	// PictureThumbnailUrl: Edm.String
 	PictureThumbnailUrl *string `json:"PictureThumbnailUrl,omitempty"`
 
-	// PictureUrl:
+	// PictureUrl: Edm.String
 	PictureUrl *string `json:"PictureUrl,omitempty"`
 
-	// Postcode:
+	// Postcode: Edm.String
 	Postcode *string `json:"Postcode,omitempty"`
 
-	// SocialSecurityNumber:
+	// SocialSecurityNumber: Edm.String
 	SocialSecurityNumber *string `json:"SocialSecurityNumber,omitempty"`
 
-	// StartDate:
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// State:
+	// State: Edm.String
 	State *string `json:"State,omitempty"`
 
-	// Title:
+	// Title: Edm.String
 	Title *string `json:"Title,omitempty"`
+
+	// TitleAbbreviation: Edm.String
+	TitleAbbreviation *string `json:"TitleAbbreviation,omitempty"`
+
+	// TitleDescription: Edm.String
+	TitleDescription *string `json:"TitleDescription,omitempty"`
 }
 
 func (e *OpportunityContacts) GetPrimary() *types.GUID {

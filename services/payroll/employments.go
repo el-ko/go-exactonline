@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,61 +26,61 @@ type EmploymentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmployments
 type Employments struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee ID
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Name of employee
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric number of Employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EndDate: End date of employment
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// HID: Numeric ID of the employment
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// ReasonEnd: ID of employment ended
+	// ReasonEnd: Edm.Int32
 	ReasonEnd *int `json:"ReasonEnd,omitempty"`
 
-	// ReasonEndDescription: Reason of end of employment
+	// ReasonEndDescription: Edm.String
 	ReasonEndDescription *string `json:"ReasonEndDescription,omitempty"`
 
-	// ReasonEndFlex: Reason of ended flexible employment
+	// ReasonEndFlex: Edm.Int32
 	ReasonEndFlex *int `json:"ReasonEndFlex,omitempty"`
 
-	// ReasonEndFlexDescription: Other reason for end of employment
+	// ReasonEndFlexDescription: Edm.String
 	ReasonEndFlexDescription *string `json:"ReasonEndFlexDescription,omitempty"`
 
-	// StartDate: Start date of employment
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// StartDateOrganization: Start date of the employee in the organization. This field is used to count the years in service.
+	// StartDateOrganization: Edm.DateTime
 	StartDateOrganization *types.Date `json:"StartDateOrganization,omitempty"`
 }
 

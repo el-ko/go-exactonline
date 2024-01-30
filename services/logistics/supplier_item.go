@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,97 +29,115 @@ type SupplierItemEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsSupplierItem
 type SupplierItem struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// CopyRemarks: Copy purchase remarks to purchase lines
+	// CopyRemarks: Edm.Byte
 	CopyRemarks *byte `json:"CopyRemarks,omitempty"`
 
-	// CountryOfOrigin: Country of origin code
+	// CountryOfOrigin: Edm.String
 	CountryOfOrigin *string `json:"CountryOfOrigin,omitempty"`
 
-	// CountryOfOriginDescription: Description of country of origin
+	// CountryOfOriginDescription: Edm.String
 	CountryOfOriginDescription *string `json:"CountryOfOriginDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: Currency of item price
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// CurrencyDescription: Description of currency of item price
+	// CurrencyDescription: Edm.String
 	CurrencyDescription *string `json:"CurrencyDescription,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DropShipment: Indicates that the supplier will deliver the item directly to customer. Values: 0 = No, 1 = Yes, 2 = Optional
+	// DropShipment: Edm.Byte
 	DropShipment *byte `json:"DropShipment,omitempty"`
 
-	// Item: Item ID
+	// EndDate: Edm.DateTime
+	EndDate *types.Date `json:"EndDate,omitempty"`
+
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Item code
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// MainSupplier: Indicates this is a main supplier
+	// ItemUnit: Edm.Guid
+	ItemUnit *types.GUID `json:"ItemUnit,omitempty"`
+
+	// ItemUnitCode: Edm.String
+	ItemUnitCode *string `json:"ItemUnitCode,omitempty"`
+
+	// ItemUnitDescription: Edm.String
+	ItemUnitDescription *string `json:"ItemUnitDescription,omitempty"`
+
+	// MainSupplier: Edm.Boolean
 	MainSupplier *bool `json:"MainSupplier,omitempty"`
 
-	// MinimumQuantity: Minimum quantity of the item for purchase, only available for Wholesale &amp; Distribution (Premium only)
+	// MinimumQuantity: Edm.Double
 	MinimumQuantity *float64 `json:"MinimumQuantity,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PurchaseLeadTime: The number of days between placing an order with a supplier and receiving items from the supplier
+	// PurchaseLeadTime: Edm.Int32
 	PurchaseLeadTime *int `json:"PurchaseLeadTime,omitempty"`
 
-	// PurchasePrice: Purchase price
+	// PurchaseLotSize: Edm.Int32
+	PurchaseLotSize *int `json:"PurchaseLotSize,omitempty"`
+
+	// PurchasePrice: Edm.Double
 	PurchasePrice *float64 `json:"PurchasePrice,omitempty"`
 
-	// PurchaseUnit: Unit code
+	// PurchaseUnit: Edm.String
 	PurchaseUnit *string `json:"PurchaseUnit,omitempty"`
 
-	// PurchaseUnitDescription: Description of unit
+	// PurchaseUnitDescription: Edm.String
 	PurchaseUnitDescription *string `json:"PurchaseUnitDescription,omitempty"`
 
-	// PurchaseUnitFactor: This is the multiplication factor when going from default item unit to the unit of this price
+	// PurchaseUnitFactor: Edm.Double
 	PurchaseUnitFactor *float64 `json:"PurchaseUnitFactor,omitempty"`
 
-	// PurchaseVATCode: VAT code
+	// PurchaseVATCode: Edm.String
 	PurchaseVATCode *string `json:"PurchaseVATCode,omitempty"`
 
-	// PurchaseVATCodeDescription: Description of VAT
+	// PurchaseVATCodeDescription: Edm.String
 	PurchaseVATCodeDescription *string `json:"PurchaseVATCodeDescription,omitempty"`
 
-	// Supplier: Supplier ID
+	// StartDate: Edm.DateTime
+	StartDate *types.Date `json:"StartDate,omitempty"`
+
+	// Supplier: Edm.Guid
 	Supplier *types.GUID `json:"Supplier,omitempty"`
 
-	// SupplierCode: Supplier code
+	// SupplierCode: Edm.String
 	SupplierCode *string `json:"SupplierCode,omitempty"`
 
-	// SupplierDescription: Description of supplier
+	// SupplierDescription: Edm.String
 	SupplierDescription *string `json:"SupplierDescription,omitempty"`
 
-	// SupplierItemCode: Supplier’s item code
+	// SupplierItemCode: Edm.String
 	SupplierItemCode *string `json:"SupplierItemCode,omitempty"`
 }
 

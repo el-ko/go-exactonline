@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,106 +29,109 @@ type ProjectPlanningEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectPlanning
 type ProjectPlanning struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode:
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// BGTStatus:
+	// BGTStatus: Edm.Int16
 	BGTStatus *int `json:"BGTStatus,omitempty"`
 
-	// CommunicationErrorStatus:
+	// CommunicationErrorStatus: Edm.Int16
 	CommunicationErrorStatus *int `json:"CommunicationErrorStatus,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee:
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeCode:
+	// EmployeeCode: Edm.String
 	EmployeeCode *string `json:"EmployeeCode,omitempty"`
 
-	// EmployeeHID:
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EndDate:
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// Hours:
+	// Hours: Edm.Double
 	Hours *float64 `json:"Hours,omitempty"`
 
-	// HourType:
+	// HourType: Edm.Guid
 	HourType *types.GUID `json:"HourType,omitempty"`
 
-	// HourTypeCode:
+	// HourTypeCode: Edm.String
 	HourTypeCode *string `json:"HourTypeCode,omitempty"`
 
-	// HourTypeDescription:
+	// HourTypeDescription: Edm.String
 	HourTypeDescription *string `json:"HourTypeDescription,omitempty"`
 
-	// IsBrokenRecurrence:
+	// IsBrokenRecurrence: Edm.Boolean
 	IsBrokenRecurrence *bool `json:"IsBrokenRecurrence,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// OverAllocate:
+	// OverAllocate: Edm.Boolean
 	OverAllocate *bool `json:"OverAllocate,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// ProjectPlanningRecurring:
+	// ProjectPlanningRecurring: Edm.Guid
 	ProjectPlanningRecurring *types.GUID `json:"ProjectPlanningRecurring,omitempty"`
 
-	// ProjectWBS:
+	// ProjectWBS: Edm.Guid
 	ProjectWBS *types.GUID `json:"ProjectWBS,omitempty"`
 
-	// ProjectWBSDescription:
+	// ProjectWBSDescription: Edm.String
 	ProjectWBSDescription *string `json:"ProjectWBSDescription,omitempty"`
 
-	// StartDate:
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// Status:
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// Type:
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 }
 

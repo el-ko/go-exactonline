@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,73 +29,73 @@ type SalesItemPricesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsSalesItemPrices
 type SalesItemPrices struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: ID of the customer
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName: Name of the customer account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: The currency of the price
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// DefaultItemUnit: The default unit of the item
+	// DefaultItemUnit: Edm.String
 	DefaultItemUnit *string `json:"DefaultItemUnit,omitempty"`
 
-	// DefaultItemUnitDescription: The description of the default item unit
+	// DefaultItemUnitDescription: Edm.String
 	DefaultItemUnitDescription *string `json:"DefaultItemUnitDescription,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EndDate: Together with StartDate this determines whether the price is active
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// Item: Item ID
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of Item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// NumberOfItemsPerUnit: This is the multiplication factor when going from default item unit to the unit of this price.For example if the default item unit is &#39;gram&#39; and the price unit is &#39;kilogram&#39; then the value of this property is 1000.
+	// NumberOfItemsPerUnit: Edm.Double
 	NumberOfItemsPerUnit *float64 `json:"NumberOfItemsPerUnit,omitempty"`
 
-	// Price: The actual price of this sales item
+	// Price: Edm.Double
 	Price *float64 `json:"Price,omitempty"`
 
-	// Quantity: Minimum quantity to which the price is applicable
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// StartDate: Together with EndDate this determines whether the price is active
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// Unit: The unit code of the price
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Description of the price unit
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -23,83 +23,86 @@ type GoodsReceiptsEndpoint service
 // URL: /api/v1/{division}/purchaseorder/GoodsReceipts
 // HasWebhook: false
 // IsInBeta: false
-// Methods: GET POST
+// Methods: GET POST PUT
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderGoodsReceipts
 type GoodsReceipts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the goods receipt
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document: Document that is linked to the goods receipt
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentSubject: Document subject
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// EntryNumber: Entry number of the resulting stock entry
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// GoodsReceiptLines: Collection of receipt lines
+	// GoodsReceiptLineCount: Edm.Int32
+	GoodsReceiptLineCount *int `json:"GoodsReceiptLineCount,omitempty"`
+
+	// GoodsReceiptLines: GoodsReceiptLines
 	GoodsReceiptLines *json.RawMessage `json:"GoodsReceiptLines,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of the last modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// ReceiptDate: Date of the goods receipt
+	// ReceiptDate: Edm.DateTime
 	ReceiptDate *types.Date `json:"ReceiptDate,omitempty"`
 
-	// ReceiptNumber: Receipt number
+	// ReceiptNumber: Edm.Int32
 	ReceiptNumber *int `json:"ReceiptNumber,omitempty"`
 
-	// Remarks: Receipt note
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// Supplier: Account ID of the supplier
+	// Supplier: Edm.Guid
 	Supplier *types.GUID `json:"Supplier,omitempty"`
 
-	// SupplierCode: Supplier code
+	// SupplierCode: Edm.String
 	SupplierCode *string `json:"SupplierCode,omitempty"`
 
-	// SupplierContact: ID of the contact person at the supplier
+	// SupplierContact: Edm.Guid
 	SupplierContact *types.GUID `json:"SupplierContact,omitempty"`
 
-	// SupplierContactFullName: Name of the contact person at the supplier
+	// SupplierContactFullName: Edm.String
 	SupplierContactFullName *string `json:"SupplierContactFullName,omitempty"`
 
-	// SupplierName: Supplier name
+	// SupplierName: Edm.String
 	SupplierName *string `json:"SupplierName,omitempty"`
 
-	// Warehouse: Warehouse ID
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Warehouse code
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of the warehouse
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 
-	// YourRef: The purchase invoice number provided by the supplier
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 
@@ -153,4 +156,17 @@ func (s *GoodsReceiptsEndpoint) Create(ctx context.Context, division int, entity
 		return nil, err
 	}
 	return e, nil
+}
+
+// Update the GoodsReceipts entity in the provided division.
+func (s *GoodsReceiptsEndpoint) Update(ctx context.Context, division int, entity *GoodsReceipts) (*GoodsReceipts, error) {
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/purchaseorder/GoodsReceipts", division) // #nosec
+	u, err := api.AddOdataKeyToURL(b, entity.GetPrimary())
+	if err != nil {
+		return nil, err
+	}
+
+	e := &GoodsReceipts{}
+	_, _, requestError := s.client.NewRequestAndDo(ctx, "PUT", u.String(), entity, e)
+	return e, requestError
 }

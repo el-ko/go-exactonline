@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -25,31 +25,31 @@ type OutstandingInvoicesOverviewEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialOutstandingInvoicesOverview
 type OutstandingInvoicesOverview struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// CurrencyCode: Primary key
+	// CurrencyCode: Edm.String
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 
-	// OutstandingPayableInvoiceAmount: Total invoice amount to be paid
+	// OutstandingPayableInvoiceAmount: Edm.Double
 	OutstandingPayableInvoiceAmount *float64 `json:"OutstandingPayableInvoiceAmount,omitempty"`
 
-	// OutstandingPayableInvoiceCount: Number of invoices to be paid
+	// OutstandingPayableInvoiceCount: Edm.Double
 	OutstandingPayableInvoiceCount *float64 `json:"OutstandingPayableInvoiceCount,omitempty"`
 
-	// OutstandingReceivableInvoiceAmount: Total invoice amount to be received
+	// OutstandingReceivableInvoiceAmount: Edm.Double
 	OutstandingReceivableInvoiceAmount *float64 `json:"OutstandingReceivableInvoiceAmount,omitempty"`
 
-	// OutstandingReceivableInvoiceCount: Number of invoices to be received
+	// OutstandingReceivableInvoiceCount: Edm.Double
 	OutstandingReceivableInvoiceCount *float64 `json:"OutstandingReceivableInvoiceCount,omitempty"`
 
-	// OverduePayableInvoiceAmount: Total payable invoice amount that is overdue
+	// OverduePayableInvoiceAmount: Edm.Double
 	OverduePayableInvoiceAmount *float64 `json:"OverduePayableInvoiceAmount,omitempty"`
 
-	// OverduePayableInvoiceCount: Number of payable invoices that are overdue
+	// OverduePayableInvoiceCount: Edm.Double
 	OverduePayableInvoiceCount *float64 `json:"OverduePayableInvoiceCount,omitempty"`
 
-	// OverdueReceivableInvoiceAmount: Total receivable invoice amount that is overdue
+	// OverdueReceivableInvoiceAmount: Edm.Double
 	OverdueReceivableInvoiceAmount *float64 `json:"OverdueReceivableInvoiceAmount,omitempty"`
 
-	// OverdueReceivableInvoiceCount: Number of receivable invoices that are overdue
+	// OverdueReceivableInvoiceCount: Edm.Double
 	OverdueReceivableInvoiceCount *float64 `json:"OverdueReceivableInvoiceCount,omitempty"`
 }
 

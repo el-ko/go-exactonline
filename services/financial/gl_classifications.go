@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,67 +26,67 @@ type GLClassificationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLClassifications
 type GLClassifications struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Abstract: Abstract elements are only used in presentation linkbases to group other elements. They are not supposed to be used in instance documents
+	// Abstract: Edm.Boolean
 	Abstract *bool `json:"Abstract,omitempty"`
 
-	// Balance: Only used for amount concepts: in that case either &#39;debit&#39; or &#39;credit&#39;
+	// Balance: Edm.String
 	Balance *string `json:"Balance,omitempty"`
 
-	// Code: The Code is unique
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the element. Note that this description is only used for division-specific taxonomies (or reporting schemes).
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division is optional. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// IsTupleSubElement: Obsolete
+	// IsTupleSubElement: Edm.Boolean
 	IsTupleSubElement *bool `json:"IsTupleSubElement,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Name: The Name is unique in the namespace
+	// Name: Edm.String
 	Name *string `json:"Name,omitempty"`
 
-	// Nillable: Determines whether usage of the element is mandatory in an instance document
+	// Nillable: Edm.Boolean
 	Nillable *bool `json:"Nillable,omitempty"`
 
-	// Parent: Parent element for reporting schemes. In a reporting scheme, an element can have only one parent. This column is only used for reporting schemes. Note that in a real taxonomy, elements can have multiple parents.
+	// Parent: Edm.Guid
 	Parent *types.GUID `json:"Parent,omitempty"`
 
-	// PeriodType: Only used for item concepts: either &#39;instant&#39; or &#39;duration&#39;. &#39;instant&#39; is used for balance types of concepts, &#39;duration&#39; is used for P&amp;L types of concepts
+	// PeriodType: Edm.String
 	PeriodType *string `json:"PeriodType,omitempty"`
 
-	// SubstitutionGroup: Mostly import sutstitutiongroup is xbrli:tuple, which makes the element a tuple concept. The default substitutiongroup for item concepts is xbrli:item
+	// SubstitutionGroup: Edm.String
 	SubstitutionGroup *string `json:"SubstitutionGroup,omitempty"`
 
-	// TaxonomyNamespace: Namespace of the element
+	// TaxonomyNamespace: Edm.Guid
 	TaxonomyNamespace *types.GUID `json:"TaxonomyNamespace,omitempty"`
 
-	// TaxonomyNamespaceDescription: Description of TaxonomyNamespace
+	// TaxonomyNamespaceDescription: Edm.String
 	TaxonomyNamespaceDescription *string `json:"TaxonomyNamespaceDescription,omitempty"`
 
-	// Type: Type of the element
+	// Type: Edm.Guid
 	Type *types.GUID `json:"Type,omitempty"`
 }
 

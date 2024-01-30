@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -25,13 +25,13 @@ type GLTransactionTypesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLTransactionTypes
 type GLTransactionTypes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Int32
 	ID *int `json:"ID,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DescriptionSuffix:
+	// DescriptionSuffix: Edm.String
 	DescriptionSuffix *string `json:"DescriptionSuffix,omitempty"`
 }
 

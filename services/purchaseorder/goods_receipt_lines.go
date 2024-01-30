@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,94 +27,103 @@ type GoodsReceiptLinesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderGoodsReceiptLines
 type GoodsReceiptLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: The unique identifier of a stock transaction for a goods receipt line. A goods receipt line can be split into multiple storage locations. In this case, multiple storage locations will have the same stock transaction ID.
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// BatchNumbers: Collection of batch numbers
+	// BatchNumbers: StockBatchNumbers
 	BatchNumbers *json.RawMessage `json:"BatchNumbers,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Goods receipt line description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GoodsReceiptID: All the lines of a goods receipt have the same GoodsReceiptID
+	// Expense: Edm.Guid
+	Expense *types.GUID `json:"Expense,omitempty"`
+
+	// ExpenseDescription: Edm.String
+	ExpenseDescription *string `json:"ExpenseDescription,omitempty"`
+
+	// GoodsReceiptID: Edm.Guid
 	GoodsReceiptID *types.GUID `json:"GoodsReceiptID,omitempty"`
 
-	// Item: ID of the received item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of the received item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Item description
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemUnitCode: Unit code of the purchase
+	// ItemUnitCode: Edm.String
 	ItemUnitCode *string `json:"ItemUnitCode,omitempty"`
 
-	// LineNumber: Line number
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// Location: ID of the storage location in the warehouse where the item is received
+	// Location: Edm.Guid
 	Location *types.GUID `json:"Location,omitempty"`
 
-	// LocationCode: Code of the storage location in the warehouse where the item is received
+	// LocationCode: Edm.String
 	LocationCode *string `json:"LocationCode,omitempty"`
 
-	// LocationDescription: Description of the storage location in the warehouse where the item is received
+	// LocationDescription: Edm.String
 	LocationDescription *string `json:"LocationDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of the last modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the last modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Project: Reference to project
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode: Project code
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription: Project description
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// PurchaseOrderID: Reference to purchase order
+	// PurchaseOrderID: Edm.Guid
 	PurchaseOrderID *types.GUID `json:"PurchaseOrderID,omitempty"`
 
-	// PurchaseOrderLineID: ID of the purchase order line that is received
+	// PurchaseOrderLineID: Edm.Guid
 	PurchaseOrderLineID *types.GUID `json:"PurchaseOrderLineID,omitempty"`
 
-	// PurchaseOrderNumber: Order number of the purchase order that is received
+	// PurchaseOrderNumber: Edm.Int32
 	PurchaseOrderNumber *int `json:"PurchaseOrderNumber,omitempty"`
 
-	// QuantityOrdered: Quantity ordered
+	// QuantityOrdered: Edm.Double
 	QuantityOrdered *float64 `json:"QuantityOrdered,omitempty"`
 
-	// QuantityReceived: Quantity received
+	// QuantityReceived: Edm.Double
 	QuantityReceived *float64 `json:"QuantityReceived,omitempty"`
 
-	// SerialNumbers: Collection of serial numbers
+	// Rebill: Edm.Boolean
+	Rebill *bool `json:"Rebill,omitempty"`
+
+	// SerialNumbers: StockSerialNumbers
 	SerialNumbers *json.RawMessage `json:"SerialNumbers,omitempty"`
 
-	// SupplierItemCode: Supplier item code
+	// SupplierItemCode: Edm.String
 	SupplierItemCode *string `json:"SupplierItemCode,omitempty"`
 }
 

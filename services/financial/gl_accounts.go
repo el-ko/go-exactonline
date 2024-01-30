@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -7,6 +7,7 @@ package financial
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -29,124 +30,136 @@ type GLAccountsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLAccounts
 type GLAccounts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AssimilatedVATBox:
+	// AllowCostsInSales: Edm.Byte
+	AllowCostsInSales *byte `json:"AllowCostsInSales,omitempty"`
+
+	// AssimilatedVATBox: Edm.Int16
 	AssimilatedVATBox *int `json:"AssimilatedVATBox,omitempty"`
 
-	// BalanceSide:
+	// BalanceSide: Edm.String
 	BalanceSide *string `json:"BalanceSide,omitempty"`
 
-	// BalanceType:
+	// BalanceType: Edm.String
 	BalanceType *string `json:"BalanceType,omitempty"`
 
-	// BelcotaxType:
+	// BelcotaxType: Edm.Int32
 	BelcotaxType *int `json:"BelcotaxType,omitempty"`
 
-	// Code:
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Compress:
+	// Compress: Edm.Boolean
 	Compress *bool `json:"Compress,omitempty"`
 
-	// Costcenter:
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription:
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// Costunit:
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// CostunitDescription:
+	// CostunitDescription: Edm.String
 	CostunitDescription *string `json:"CostunitDescription,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// DeductibilityPercentages: DeductibilityPercentages
+	DeductibilityPercentages *json.RawMessage `json:"DeductibilityPercentages,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// DescriptionTermID: Edm.Int32
+	DescriptionTermID *int `json:"DescriptionTermID,omitempty"`
+
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// ExcludeVATListing:
+	// ExcludeVATListing: Edm.Byte
 	ExcludeVATListing *byte `json:"ExcludeVATListing,omitempty"`
 
-	// ExpenseNonDeductiblePercentage:
+	// ExpenseNonDeductiblePercentage: Edm.Double
 	ExpenseNonDeductiblePercentage *float64 `json:"ExpenseNonDeductiblePercentage,omitempty"`
 
-	// IsBlocked:
+	// IsBlocked: Edm.Boolean
 	IsBlocked *bool `json:"IsBlocked,omitempty"`
 
-	// Matching:
+	// Matching: Edm.Boolean
 	Matching *bool `json:"Matching,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PrivateGLAccount:
+	// PrivateGLAccount: Edm.Guid
 	PrivateGLAccount *types.GUID `json:"PrivateGLAccount,omitempty"`
 
-	// PrivatePercentage:
+	// PrivatePercentage: Edm.Double
 	PrivatePercentage *float64 `json:"PrivatePercentage,omitempty"`
 
-	// ReportingCode:
+	// ReportingCode: Edm.String
 	ReportingCode *string `json:"ReportingCode,omitempty"`
 
-	// RevalueCurrency:
+	// RevalueCurrency: Edm.Boolean
 	RevalueCurrency *bool `json:"RevalueCurrency,omitempty"`
 
-	// SearchCode:
+	// SearchCode: Edm.String
 	SearchCode *string `json:"SearchCode,omitempty"`
 
-	// Type:
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription:
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 
-	// UseCostcenter:
+	// UseCostcenter: Edm.Byte
 	UseCostcenter *byte `json:"UseCostcenter,omitempty"`
 
-	// UseCostunit:
+	// UseCostunit: Edm.Byte
 	UseCostunit *byte `json:"UseCostunit,omitempty"`
 
-	// VATCode:
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATDescription:
+	// VATDescription: Edm.String
 	VATDescription *string `json:"VATDescription,omitempty"`
 
-	// VATGLAccountType:
+	// VATGLAccountType: Edm.String
 	VATGLAccountType *string `json:"VATGLAccountType,omitempty"`
 
-	// VATNonDeductibleGLAccount:
+	// VATNonDeductibleGLAccount: Edm.Guid
 	VATNonDeductibleGLAccount *types.GUID `json:"VATNonDeductibleGLAccount,omitempty"`
 
-	// VATNonDeductiblePercentage:
+	// VATNonDeductiblePercentage: Edm.Double
 	VATNonDeductiblePercentage *float64 `json:"VATNonDeductiblePercentage,omitempty"`
 
-	// VATSystem:
+	// VATSystem: Edm.String
 	VATSystem *string `json:"VATSystem,omitempty"`
 
-	// YearEndCostGLAccount:
+	// YearEndCostGLAccount: Edm.Guid
 	YearEndCostGLAccount *types.GUID `json:"YearEndCostGLAccount,omitempty"`
 
-	// YearEndReflectionGLAccount:
+	// YearEndReflectionGLAccount: Edm.Guid
 	YearEndReflectionGLAccount *types.GUID `json:"YearEndReflectionGLAccount,omitempty"`
 }
 

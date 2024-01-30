@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,92 +29,98 @@ type ShopOrderMaterialPlansEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderMaterialPlans
 type ShopOrderMaterialPlans struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Backflush: Indicates if this is a backflush step
+	// Backflush: Edm.Byte
 	Backflush *byte `json:"Backflush,omitempty"`
 
-	// CalculatorType: Calculator type
+	// CalculatorType: Edm.Int32
 	CalculatorType *int `json:"CalculatorType,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the material
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DetailDrawing: Detail drawing reference
+	// DetailDrawing: Edm.String
 	DetailDrawing *string `json:"DetailDrawing,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Item: Reference to Items table
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Item Code
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: URL of the material item&#39;s picture
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// LineNumber: Line number
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Line notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PlannedAmountFC: Planned amount in the currency of the transaction
+	// PlannedAmountFC: Edm.Double
 	PlannedAmountFC *float64 `json:"PlannedAmountFC,omitempty"`
 
-	// PlannedDate: Date that the material is required.
+	// PlannedDate: Edm.DateTime
 	PlannedDate *types.Date `json:"PlannedDate,omitempty"`
 
-	// PlannedPriceFC: Planned price of the material
+	// PlannedPriceFC: Edm.Double
 	PlannedPriceFC *float64 `json:"PlannedPriceFC,omitempty"`
 
-	// PlannedQuantity: Intended quantity
+	// PlannedQuantity: Edm.Double
 	PlannedQuantity *float64 `json:"PlannedQuantity,omitempty"`
 
-	// PlannedQuantityFactor: Intended quantity unit factor
+	// PlannedQuantityFactor: Edm.Double
 	PlannedQuantityFactor *float64 `json:"PlannedQuantityFactor,omitempty"`
 
-	// ShopOrder: Reference to ShopOrders table
+	// RoutingStepID: Edm.Guid
+	RoutingStepID *types.GUID `json:"RoutingStepID,omitempty"`
+
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// Status: Line status
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription: Description of Status
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 
-	// Type: Type
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// Unit: Unit
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit description
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
+
+	// WastePercentage: Edm.Double
+	WastePercentage *float64 `json:"WastePercentage,omitempty"`
 }
 
 func (e *ShopOrderMaterialPlans) GetPrimary() *types.GUID {

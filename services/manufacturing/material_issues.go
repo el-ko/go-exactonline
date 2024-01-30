@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,94 +26,94 @@ type MaterialIssuesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingMaterialIssues
 type MaterialIssues struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// StockTransactionId: ID of stock transaction related to this material issue
+	// StockTransactionId: Edm.Guid
 	StockTransactionId *types.GUID `json:"StockTransactionId,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Date this material issue was created
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// DraftStockTransactionID: Serial or batch numbers are reserved prior to a POST to MaterialIssues. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.
+	// DraftStockTransactionID: Edm.Guid
 	DraftStockTransactionID *types.GUID `json:"DraftStockTransactionID,omitempty"`
 
-	// HasReversibleQuantity: Indicates if this MaterialIssue has a quantity eligible to be reversed via MaterialReversals
+	// HasReversibleQuantity: Edm.Boolean
 	HasReversibleQuantity *bool `json:"HasReversibleQuantity,omitempty"`
 
-	// IsBackflush: Boolean indicating if this material issue was the result of shop order backflushing
+	// IsBackflush: Edm.Byte
 	IsBackflush *byte `json:"IsBackflush,omitempty"`
 
-	// IsBatch: Does the material issue&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the material issue&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsIssueFromChild: Boolean indicating if this material issue was an issue to a parent shop order
+	// IsIssueFromChild: Edm.Byte
 	IsIssueFromChild *byte `json:"IsIssueFromChild,omitempty"`
 
-	// IsSerial: Does the material issue&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item issued
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item issued
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item issued
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of item issued
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Note: Notes logged with this material issue
+	// Note: Edm.String
 	Note *string `json:"Note,omitempty"`
 
-	// Quantity: Quantity of this material issue
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// RelatedStockTransaction: If this transaction was part of a SubOrderReceipt, this ID is the related ShopOrderReceipt.StockTransactionID.
+	// RelatedStockTransaction: Edm.Guid
 	RelatedStockTransaction *types.GUID `json:"RelatedStockTransaction,omitempty"`
 
-	// ShopOrder: ID of shop order issued to
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// ShopOrderMaterialPlan: ID of shop order material plan
+	// ShopOrderMaterialPlan: Edm.Guid
 	ShopOrderMaterialPlan *types.GUID `json:"ShopOrderMaterialPlan,omitempty"`
 
-	// ShopOrderNumber: Number of shop order issued to
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// StorageLocation: ID of storage location issued from
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Code of storage location issued from
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Description of storage location issued from
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// TransactionDate: Effective date of this material issue
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of item issued
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of item issued
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of warehouse issued from
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse issued from
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse issued from
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

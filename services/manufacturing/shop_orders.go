@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,178 +30,187 @@ type ShopOrdersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrders
 type ShopOrders struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// CADDrawingURL: URL to CAD Drawing Specified on Manufacturing Bill of Material
+	// CADDrawingURL: Edm.String
 	CADDrawingURL *string `json:"CADDrawingURL,omitempty"`
 
-	// Costcenter: The cost center linked to the shop order
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription: Description of Costcenter
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// Costunit: The cost unit linked to the shop order
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// CostunitDescription: Description of Costunit
+	// CostunitDescription: Edm.String
 	CostunitDescription *string `json:"CostunitDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the shop order
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EntryDate: Date on which the shop order was placed
+	// EntryDate: Edm.DateTime
 	EntryDate *types.Date `json:"EntryDate,omitempty"`
 
-	// IsBatch: Does the material plan&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the material plan&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsInPlanning: Indicator that Shop order is in planning
+	// IsInPlanning: Edm.Byte
 	IsInPlanning *byte `json:"IsInPlanning,omitempty"`
 
-	// IsOnHold: Indicator if the Shop order is on hold
+	// IsOnHold: Edm.Byte
 	IsOnHold *byte `json:"IsOnHold,omitempty"`
 
-	// IsReleased: Indicator that the Shop order has been released to production
+	// IsReleased: Edm.Byte
 	IsReleased *byte `json:"IsReleased,omitempty"`
 
-	// IsSerial: Does the material plan&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Reference to the item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of the item created by this shop order
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of the item created by this shop order
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: URL of the item created by this shop order
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// ItemVersion: Reference to ItemVersion
+	// ItemVersion: Edm.Guid
 	ItemVersion *types.GUID `json:"ItemVersion,omitempty"`
 
-	// ItemVersionDescription: Description of Item Version
+	// ItemVersionDescription: Edm.String
 	ItemVersionDescription *string `json:"ItemVersionDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes - only viewed internally
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PlannedDate: Planned end date of this shop order
+	// PlannedDate: Edm.DateTime
 	PlannedDate *types.Date `json:"PlannedDate,omitempty"`
 
-	// PlannedQuantity: Planned quantity
+	// PlannedQuantity: Edm.Double
 	PlannedQuantity *float64 `json:"PlannedQuantity,omitempty"`
 
-	// PlannedStartDate: Planned start date of this shop order
+	// PlannedStartDate: Edm.DateTime
 	PlannedStartDate *types.Date `json:"PlannedStartDate,omitempty"`
 
-	// ProducedQuantity: Produced quantity
+	// ProducedQuantity: Edm.Double
 	ProducedQuantity *float64 `json:"ProducedQuantity,omitempty"`
 
-	// ProductionLeadDays: Production lead days
+	// ProductionLeadDays: Edm.Int32
 	ProductionLeadDays *int `json:"ProductionLeadDays,omitempty"`
 
-	// Project: Reference to Project
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectDescription: Description of Project
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// ReadyToShipQuantity: Quantity ready to ship
+	// ReadyToShipQuantity: Edm.Double
 	ReadyToShipQuantity *float64 `json:"ReadyToShipQuantity,omitempty"`
 
-	// SalesOrderLineCount: Number of sales orders linked to this shop order
+	// SalesOrderLineCount: Edm.Int32
 	SalesOrderLineCount *int `json:"SalesOrderLineCount,omitempty"`
 
-	// SalesOrderLines: Collection of Sales order lines
+	// SalesOrderLines: SalesOrderlines
 	SalesOrderLines *json.RawMessage `json:"SalesOrderLines,omitempty"`
 
-	// ShopOrderByProductPlanBackflushCount: Number of shop order by-product plans, which are backflushed, for this shop order
+	// SelectionCode: Edm.Guid
+	SelectionCode *types.GUID `json:"SelectionCode,omitempty"`
+
+	// SelectionCodeCode: Edm.String
+	SelectionCodeCode *string `json:"SelectionCodeCode,omitempty"`
+
+	// SelectionCodeDescription: Edm.String
+	SelectionCodeDescription *string `json:"SelectionCodeDescription,omitempty"`
+
+	// ShopOrderByProductPlanBackflushCount: Edm.Int32
 	ShopOrderByProductPlanBackflushCount *int `json:"ShopOrderByProductPlanBackflushCount,omitempty"`
 
-	// ShopOrderByProductPlanCount: Number of shop order by-product plans for this shop order
+	// ShopOrderByProductPlanCount: Edm.Int32
 	ShopOrderByProductPlanCount *int `json:"ShopOrderByProductPlanCount,omitempty"`
 
-	// ShopOrderMain: Shop order main
+	// ShopOrderMain: Edm.Guid
 	ShopOrderMain *types.GUID `json:"ShopOrderMain,omitempty"`
 
-	// ShopOrderMainNumber: Shop order main number
+	// ShopOrderMainNumber: Edm.Int32
 	ShopOrderMainNumber *int `json:"ShopOrderMainNumber,omitempty"`
 
-	// ShopOrderMaterialPlanBackflushCount: Number of shop order material plans, which are backflushed, for this shop order
+	// ShopOrderMaterialPlanBackflushCount: Edm.Int32
 	ShopOrderMaterialPlanBackflushCount *int `json:"ShopOrderMaterialPlanBackflushCount,omitempty"`
 
-	// ShopOrderMaterialPlanCount: Number of shop order material plans for this shop order
+	// ShopOrderMaterialPlanCount: Edm.Int32
 	ShopOrderMaterialPlanCount *int `json:"ShopOrderMaterialPlanCount,omitempty"`
 
-	// ShopOrderMaterialPlans: Collection of Shop order Material plans
+	// ShopOrderMaterialPlans: ShopOrderMaterialPlans
 	ShopOrderMaterialPlans *json.RawMessage `json:"ShopOrderMaterialPlans,omitempty"`
 
-	// ShopOrderNumber: Unique number to indentify the shop order
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// ShopOrderNumberString: Unique number to indentify the shop order (as a string to allow OData filtering, e.g. $filter=substringof(&#39;123&#39;,ShopOrderNumberString) eq true
+	// ShopOrderNumberString: Edm.String
 	ShopOrderNumberString *string `json:"ShopOrderNumberString,omitempty"`
 
-	// ShopOrderParent: Shop order parent
+	// ShopOrderParent: Edm.Guid
 	ShopOrderParent *types.GUID `json:"ShopOrderParent,omitempty"`
 
-	// ShopOrderParentNumber: Shop order parent number
+	// ShopOrderParentNumber: Edm.Int32
 	ShopOrderParentNumber *int `json:"ShopOrderParentNumber,omitempty"`
 
-	// ShopOrderRoutingStepPlanCount: Number of shop order routing step plans for this shop order
+	// ShopOrderRoutingStepPlanCount: Edm.Int32
 	ShopOrderRoutingStepPlanCount *int `json:"ShopOrderRoutingStepPlanCount,omitempty"`
 
-	// ShopOrderRoutingStepPlans: Collection of Shop order Routing step plans
+	// ShopOrderRoutingStepPlans: ShopOrderRoutingStepPlans
 	ShopOrderRoutingStepPlans *json.RawMessage `json:"ShopOrderRoutingStepPlans,omitempty"`
 
-	// Status: Indicates the type of Shop Order: 10 Open, 20 In process, 30 Finished, 40 Completed
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// SubShopOrderCount: The count of material lines of this shop order, which have been linked to a sub order
+	// SubShopOrderCount: Edm.Int32
 	SubShopOrderCount *int `json:"SubShopOrderCount,omitempty"`
 
-	// Type: Overall status of the line: 9040 Regular
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// Unit: Unit of the item created by this shop order
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit description of the unit of the item created by this shop order
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: Reference to the Warehouse associated with the Shop order
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// YourRef: Your reference (of the customer)
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 

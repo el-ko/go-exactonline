@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,82 +26,82 @@ type SubOrderReceiptsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingSubOrderReceipts
 type SubOrderReceipts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ShopOrderReceiptStockTransactionId: ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt
+	// ShopOrderReceiptStockTransactionId: Edm.Guid
 	ShopOrderReceiptStockTransactionId *types.GUID `json:"ShopOrderReceiptStockTransactionId,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Creation date of this SubOrderReceipt
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// DraftStockTransactionID: Serial or batch numbers are reserved prior to a POST to SubOrderReceipt. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.
+	// DraftStockTransactionID: Edm.Guid
 	DraftStockTransactionID *types.GUID `json:"DraftStockTransactionID,omitempty"`
 
-	// HasReversibleQuantity: Indicates if this SubOrderReceipt has a quantity eligible to be reversed via SubOrderReversals
+	// HasReversibleQuantity: Edm.Boolean
 	HasReversibleQuantity *bool `json:"HasReversibleQuantity,omitempty"`
 
-	// IsBatch: Does the SubOrderReceipt&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReceipt&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the SubOrderReceipt&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item of this SubOrderReceipt
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of this SubOrderReceipt&#39;s item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of this SubOrderReceipt&#39;s item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of shop order item
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// MaterialIssueStockTransactionId: MaterialIssue.StockTransactionId related to this SubOrderReceipt
+	// MaterialIssueStockTransactionId: Edm.Guid
 	MaterialIssueStockTransactionId *types.GUID `json:"MaterialIssueStockTransactionId,omitempty"`
 
-	// ParentShopOrder: Shop order issued to
+	// ParentShopOrder: Edm.Guid
 	ParentShopOrder *types.GUID `json:"ParentShopOrder,omitempty"`
 
-	// ParentShopOrderMaterialPlan: Shop order material plan issued to
+	// ParentShopOrderMaterialPlan: Edm.Guid
 	ParentShopOrderMaterialPlan *types.GUID `json:"ParentShopOrderMaterialPlan,omitempty"`
 
-	// ParentShopOrderNumber: Number of shop order issued to
+	// ParentShopOrderNumber: Edm.Int32
 	ParentShopOrderNumber *int `json:"ParentShopOrderNumber,omitempty"`
 
-	// Quantity: Quantity of this SubOrderReceipt
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// SubShopOrder: Shop order issued from
+	// SubShopOrder: Edm.Guid
 	SubShopOrder *types.GUID `json:"SubShopOrder,omitempty"`
 
-	// SubShopOrderNumber: Number of shop order issued from
+	// SubShopOrderNumber: Edm.Int32
 	SubShopOrderNumber *int `json:"SubShopOrderNumber,omitempty"`
 
-	// TransactionDate: Effective date of this SubOrderReceipt
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of this SubOrderReceipt&#39;s item
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of this SubOrderReceipt&#39;s item
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of warehouse SubOrderReceipt
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse SubOrderReceipt
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse SubOrderReceipt
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

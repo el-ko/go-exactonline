@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -25,13 +25,13 @@ type RevenueListEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialRevenueList
 type RevenueList struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Period: Reporting period
+	// Period: Edm.Int32
 	Period *int `json:"Period,omitempty"`
 
-	// Year: Current Reporting year
+	// Year: Edm.Int32
 	Year *int `json:"Year,omitempty"`
 
-	// Amount: Total amount in the default currency of the company
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 }
 

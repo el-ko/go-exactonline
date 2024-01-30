@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -25,55 +25,55 @@ type ProfitLossOverviewEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialProfitLossOverview
 type ProfitLossOverview struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// CurrentYear: Primary key, Current year
+	// CurrentYear: Edm.Int32
 	CurrentYear *int `json:"CurrentYear,omitempty"`
 
-	// CostsCurrentPeriod: Costs in current period
+	// CostsCurrentPeriod: Edm.Double
 	CostsCurrentPeriod *float64 `json:"CostsCurrentPeriod,omitempty"`
 
-	// CostsCurrentYear: Costs in current year
+	// CostsCurrentYear: Edm.Double
 	CostsCurrentYear *float64 `json:"CostsCurrentYear,omitempty"`
 
-	// CostsPreviousYear: Costs in previous year
+	// CostsPreviousYear: Edm.Double
 	CostsPreviousYear *float64 `json:"CostsPreviousYear,omitempty"`
 
-	// CostsPreviousYearPeriod: Costs in period of previous year
+	// CostsPreviousYearPeriod: Edm.Double
 	CostsPreviousYearPeriod *float64 `json:"CostsPreviousYearPeriod,omitempty"`
 
-	// CurrencyCode: Currency code
+	// CurrencyCode: Edm.String
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 
-	// CurrentPeriod: Current period
+	// CurrentPeriod: Edm.Int32
 	CurrentPeriod *int `json:"CurrentPeriod,omitempty"`
 
-	// PreviousYear: Previous year
+	// PreviousYear: Edm.Int32
 	PreviousYear *int `json:"PreviousYear,omitempty"`
 
-	// PreviousYearPeriod: Period in previous year
+	// PreviousYearPeriod: Edm.Int32
 	PreviousYearPeriod *int `json:"PreviousYearPeriod,omitempty"`
 
-	// ResultCurrentPeriod: Results of current period
+	// ResultCurrentPeriod: Edm.Double
 	ResultCurrentPeriod *float64 `json:"ResultCurrentPeriod,omitempty"`
 
-	// ResultCurrentYear:
+	// ResultCurrentYear: Edm.Double
 	ResultCurrentYear *float64 `json:"ResultCurrentYear,omitempty"`
 
-	// ResultPreviousYear:
+	// ResultPreviousYear: Edm.Double
 	ResultPreviousYear *float64 `json:"ResultPreviousYear,omitempty"`
 
-	// ResultPreviousYearPeriod: Results of period in previous year
+	// ResultPreviousYearPeriod: Edm.Double
 	ResultPreviousYearPeriod *float64 `json:"ResultPreviousYearPeriod,omitempty"`
 
-	// RevenueCurrentPeriod: Revenue in current period
+	// RevenueCurrentPeriod: Edm.Double
 	RevenueCurrentPeriod *float64 `json:"RevenueCurrentPeriod,omitempty"`
 
-	// RevenueCurrentYear: Revenue in current year
+	// RevenueCurrentYear: Edm.Double
 	RevenueCurrentYear *float64 `json:"RevenueCurrentYear,omitempty"`
 
-	// RevenuePreviousYear: Revenue in previous year
+	// RevenuePreviousYear: Edm.Double
 	RevenuePreviousYear *float64 `json:"RevenuePreviousYear,omitempty"`
 
-	// RevenuePreviousYearPeriod: Revenue in period of previous year
+	// RevenuePreviousYearPeriod: Edm.Double
 	RevenuePreviousYearPeriod *float64 `json:"RevenuePreviousYearPeriod,omitempty"`
 }
 

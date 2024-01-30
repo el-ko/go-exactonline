@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,32 +29,35 @@ type WebhookSubscriptionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=WebhooksWebhookSubscriptions
 type WebhookSubscriptions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// CallbackURL: Callback URL endpoint
+	// CallbackURL: Edm.String
 	CallbackURL *string `json:"CallbackURL,omitempty"`
 
-	// ClientID: OAuth client Id
+	// ClientID: Edm.Guid
 	ClientID *types.GUID `json:"ClientID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the OAuth Client
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Topic: Webhook subscription topic, e.g.: FinancialTransactions, Items, StockPositions
+	// Topic: Edm.String
 	Topic *string `json:"Topic,omitempty"`
+
+	// UserID: Edm.Guid
+	UserID *types.GUID `json:"UserID,omitempty"`
 }
 
 func (e *WebhookSubscriptions) GetPrimary() *types.GUID {

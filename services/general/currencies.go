@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,22 +26,22 @@ type CurrenciesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=GeneralCurrencies
 type Currencies struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Code: Primary key
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// AmountPrecision: Amount precision
+	// AmountPrecision: Edm.Double
 	AmountPrecision *float64 `json:"AmountPrecision,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Description: Description of the currency
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// PricePrecision: Price precision
+	// PricePrecision: Edm.Double
 	PricePrecision *float64 `json:"PricePrecision,omitempty"`
 }
 

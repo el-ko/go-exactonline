@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,70 +26,70 @@ type StageForDeliveryReceiptsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingStageForDeliveryReceipts
 type StageForDeliveryReceipts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Id: ID of staged for delivery entry
+	// Id: Edm.Guid
 	Id *types.GUID `json:"Id,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Date this Stage for delivery wa created
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// HasReversibleQuantity: Indicates if this StageForDeliveryReceipt has a quantity eligible to be reversed via StageForDeliveryReversals
+	// HasReversibleQuantity: Edm.Boolean
 	HasReversibleQuantity *bool `json:"HasReversibleQuantity,omitempty"`
 
-	// IsBatch: Does the shop order receipt&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the stage for delivery receipt&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the shop order receipt&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item staged for delivery
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item staged for delivery
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item staged for delivery
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of shop order item
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Quantity: Quantity of this StageForDeliveryReceipt
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// RelatedId: ID of the original stage for delivery entry
+	// RelatedId: Edm.Guid
 	RelatedId *types.GUID `json:"RelatedId,omitempty"`
 
-	// ShopOrder: Shop order staged for delivery
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// ShopOrderNumber: Number of shop order staged for delivery
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// TransactionDate: Effective date of this stage for delivery receipt
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of item finished
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of item finished
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of the shop order warehouse
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of the shop order warehouse
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of the shop order warehouse
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

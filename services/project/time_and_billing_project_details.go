@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,22 +26,22 @@ type TimeAndBillingProjectDetailsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingProjectDetails
 type TimeAndBillingProjectDetails struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: The account for this project
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Code: Code of project
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Description: Description of the project
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Type: Reference to ProjectTypes
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 }
 

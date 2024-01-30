@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,79 +29,79 @@ type OperationResourcesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingOperationResources
 type OperationResources struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: Reference to Accounts
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AttendedPercentage: Attended percentage
+	// AttendedPercentage: Edm.Double
 	AttendedPercentage *float64 `json:"AttendedPercentage,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: Reference to Currencies
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EfficiencyPercentage: Efficiency percentage
+	// EfficiencyPercentage: Edm.Double
 	EfficiencyPercentage *float64 `json:"EfficiencyPercentage,omitempty"`
 
-	// IsPrimary: Indicates if this is the primary operation of the workcenter
+	// IsPrimary: Edm.Byte
 	IsPrimary *byte `json:"IsPrimary,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Operation: Reference to Operations
+	// Operation: Edm.Guid
 	Operation *types.GUID `json:"Operation,omitempty"`
 
-	// OperationDescription: Description of Operation
+	// OperationDescription: Edm.String
 	OperationDescription *string `json:"OperationDescription,omitempty"`
 
-	// PurchaseLeadDays: Lead days from purchase
+	// PurchaseLeadDays: Edm.Int32
 	PurchaseLeadDays *int `json:"PurchaseLeadDays,omitempty"`
 
-	// PurchaseUnit: Unit of purchased item from supplier
+	// PurchaseUnit: Edm.String
 	PurchaseUnit *string `json:"PurchaseUnit,omitempty"`
 
-	// PurchaseVATCode: VAT code used for purchased item from supplier
+	// PurchaseVATCode: Edm.String
 	PurchaseVATCode *string `json:"PurchaseVATCode,omitempty"`
 
-	// Run: Used in conjuction with RunMethod and EfficiencyPercentage to determine PlannedRunHours
+	// Run: Edm.Double
 	Run *float64 `json:"Run,omitempty"`
 
-	// RunMethod: Reference to OperationRunMethods
+	// RunMethod: Edm.Int32
 	RunMethod *int `json:"RunMethod,omitempty"`
 
-	// Setup: Used in conjunction with SetupCount and SetupUnit to determine PlannedSetupHours
+	// Setup: Edm.Double
 	Setup *float64 `json:"Setup,omitempty"`
 
-	// SetupUnit: Reference to TimeUnits
+	// SetupUnit: Edm.String
 	SetupUnit *string `json:"SetupUnit,omitempty"`
 
-	// Type: Reference to RoutingStepTypes
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// Workcenter: Reference to Workcenter
+	// Workcenter: Edm.Guid
 	Workcenter *types.GUID `json:"Workcenter,omitempty"`
 
-	// WorkcenterDescription: Description of Workcenter
+	// WorkcenterDescription: Edm.String
 	WorkcenterDescription *string `json:"WorkcenterDescription,omitempty"`
 }
 

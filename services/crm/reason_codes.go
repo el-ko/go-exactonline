@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,46 +26,46 @@ type ReasonCodesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMReasonCodes
 type ReasonCodes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key.
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Active: Indicates if the reason code is active.
+	// Active: Edm.Byte
 	Active *byte `json:"Active,omitempty"`
 
-	// Code: Code of the reason.
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date.
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator.
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator.
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the reason code.
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code.
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Modified: Last modified date.
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier.
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier.
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Extra notes.
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Type: Type of the reason code.
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription: Description of the type of the reason code.
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 }
 

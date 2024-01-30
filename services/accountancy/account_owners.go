@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,49 +29,49 @@ type AccountOwnersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners
 type AccountOwners struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: ID of the account that is owned
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode: Code of the account that is owned
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName: Name of the account that is owned
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of the creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of the creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of the modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of the modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// OwnerAccount: ID of the account who owns specified account
+	// OwnerAccount: Edm.Guid
 	OwnerAccount *types.GUID `json:"OwnerAccount,omitempty"`
 
-	// OwnerAccountCode: Code of the account who owns specified account
+	// OwnerAccountCode: Edm.String
 	OwnerAccountCode *string `json:"OwnerAccountCode,omitempty"`
 
-	// OwnerAccountName: Name of the account who owns specified account
+	// OwnerAccountName: Edm.String
 	OwnerAccountName *string `json:"OwnerAccountName,omitempty"`
 
-	// Shares: Percentage of shares that is owned. 1 is 100%, 0.5 is 50%
+	// Shares: Edm.Double
 	Shares *float64 `json:"Shares,omitempty"`
 }
 

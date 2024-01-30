@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,82 +26,82 @@ type EmploymentOrganizationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentOrganizations
 type EmploymentOrganizations struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// CostCenter: Cost center code
+	// CostCenter: Edm.String
 	CostCenter *string `json:"CostCenter,omitempty"`
 
-	// CostCenterDescription: Description of cost center
+	// CostCenterDescription: Edm.String
 	CostCenterDescription *string `json:"CostCenterDescription,omitempty"`
 
-	// CostUnit: Cost unit code
+	// CostUnit: Edm.String
 	CostUnit *string `json:"CostUnit,omitempty"`
 
-	// CostUnitDescription: Description of cost unit
+	// CostUnitDescription: Edm.String
 	CostUnitDescription *string `json:"CostUnitDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Department: ID of department
+	// Department: Edm.Guid
 	Department *types.GUID `json:"Department,omitempty"`
 
-	// DepartmentCode: Department code
+	// DepartmentCode: Edm.String
 	DepartmentCode *string `json:"DepartmentCode,omitempty"`
 
-	// DepartmentDescription: Department description for organization
+	// DepartmentDescription: Edm.String
 	DepartmentDescription *string `json:"DepartmentDescription,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: ID of employee
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeFullName: Name of employee
+	// EmployeeFullName: Edm.String
 	EmployeeFullName *string `json:"EmployeeFullName,omitempty"`
 
-	// EmployeeHID: Numeric ID of the employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// Employment: Employement ID
+	// Employment: Edm.Guid
 	Employment *types.GUID `json:"Employment,omitempty"`
 
-	// EmploymentHID: Numeric ID of the employment
+	// EmploymentHID: Edm.Int32
 	EmploymentHID *int `json:"EmploymentHID,omitempty"`
 
-	// EndDate: Organization end date
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// JobTitle: ID of job title
+	// JobTitle: Edm.Guid
 	JobTitle *types.GUID `json:"JobTitle,omitempty"`
 
-	// JobTitleCode: Job title code
+	// JobTitleCode: Edm.String
 	JobTitleCode *string `json:"JobTitleCode,omitempty"`
 
-	// JobTitleDescription: Job title description
+	// JobTitleDescription: Edm.String
 	JobTitleDescription *string `json:"JobTitleDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Explanation or extra information can be stored in the notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// StartDate: Organization start date
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 }
 

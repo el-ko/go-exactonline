@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -22,44 +22,44 @@ type GLAccountClassificationMappingsEndpoint service
 // GLAccountClassificationMappings:
 // Service: Financial
 // Entity: GLAccountClassificationMappings
-// URL: /api/v1/beta/{division}/financial/GLAccountClassificationMappings
+// URL: /api/v1/{division}/financial/GLAccountClassificationMappings
 // HasWebhook: false
-// IsInBeta: true
+// IsInBeta: false
 // Methods: GET POST PUT DELETE
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLAccountClassificationMappings
 type GLAccountClassificationMappings struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Classification: ID of the classification
+	// Classification: Edm.Guid
 	Classification *types.GUID `json:"Classification,omitempty"`
 
-	// ClassificationCode: Code of the classification
+	// ClassificationCode: Edm.String
 	ClassificationCode *string `json:"ClassificationCode,omitempty"`
 
-	// ClassificationDescription: Description of the classification
+	// ClassificationDescription: Edm.String
 	ClassificationDescription *string `json:"ClassificationDescription,omitempty"`
 
-	// Division: Division of the classification mapping
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLAccount: ID of the general ledger account
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// GLAccountCode: Code of the general ledger account
+	// GLAccountCode: Edm.String
 	GLAccountCode *string `json:"GLAccountCode,omitempty"`
 
-	// GLAccountDescription: Description of the general ledger account
+	// GLAccountDescription: Edm.String
 	GLAccountDescription *string `json:"GLAccountDescription,omitempty"`
 
-	// GLSchemeCode: Code of the general ledger scheme
+	// GLSchemeCode: Edm.String
 	GLSchemeCode *string `json:"GLSchemeCode,omitempty"`
 
-	// GLSchemeDescription: Description of the general ledger scheme
+	// GLSchemeDescription: Edm.String
 	GLSchemeDescription *string `json:"GLSchemeDescription,omitempty"`
 
-	// GLSchemeID: General ledger scheme ID of the element
+	// GLSchemeID: Edm.Guid
 	GLSchemeID *types.GUID `json:"GLSchemeID,omitempty"`
 }
 
@@ -75,7 +75,7 @@ func (s *GLAccountClassificationMappingsEndpoint) UserHasRights(ctx context.Cont
 // If all is true, all the paginated results are fetched; if false, list the first page.
 func (s *GLAccountClassificationMappingsEndpoint) List(ctx context.Context, division int, all bool, o *api.ListOptions) ([]*GLAccountClassificationMappings, error) {
 	var entities []*GLAccountClassificationMappings
-	u, _ := s.client.ResolvePathWithDivision("/api/v1/beta/{division}/financial/GLAccountClassificationMappings", division) // #nosec
+	u, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/financial/GLAccountClassificationMappings", division) // #nosec
 	api.AddListOptionsToURL(u, o)
 
 	if all {
@@ -88,7 +88,7 @@ func (s *GLAccountClassificationMappingsEndpoint) List(ctx context.Context, divi
 
 // Get the GLAccountClassificationMappings entitiy in the provided division.
 func (s *GLAccountClassificationMappingsEndpoint) Get(ctx context.Context, division int, id *types.GUID) (*GLAccountClassificationMappings, error) {
-	b, _ := s.client.ResolvePathWithDivision("/api/v1/beta/{division}/financial/GLAccountClassificationMappings", division) // #nosec
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/financial/GLAccountClassificationMappings", division) // #nosec
 	u, err := api.AddOdataKeyToURL(b, id)
 	if err != nil {
 		return nil, err
@@ -106,7 +106,7 @@ func (s *GLAccountClassificationMappingsEndpoint) New() *GLAccountClassification
 
 // Create the GLAccountClassificationMappings entity in the provided division.
 func (s *GLAccountClassificationMappingsEndpoint) Create(ctx context.Context, division int, entity *GLAccountClassificationMappings) (*GLAccountClassificationMappings, error) {
-	u, _ := s.client.ResolvePathWithDivision("/api/v1/beta/{division}/financial/GLAccountClassificationMappings", division) // #nosec
+	u, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/financial/GLAccountClassificationMappings", division) // #nosec
 	e := &GLAccountClassificationMappings{}
 	_, _, err := s.client.NewRequestAndDo(ctx, "POST", u.String(), entity, e)
 	if err != nil {
@@ -117,7 +117,7 @@ func (s *GLAccountClassificationMappingsEndpoint) Create(ctx context.Context, di
 
 // Update the GLAccountClassificationMappings entity in the provided division.
 func (s *GLAccountClassificationMappingsEndpoint) Update(ctx context.Context, division int, entity *GLAccountClassificationMappings) (*GLAccountClassificationMappings, error) {
-	b, _ := s.client.ResolvePathWithDivision("/api/v1/beta/{division}/financial/GLAccountClassificationMappings", division) // #nosec
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/financial/GLAccountClassificationMappings", division) // #nosec
 	u, err := api.AddOdataKeyToURL(b, entity.GetPrimary())
 	if err != nil {
 		return nil, err
@@ -130,7 +130,7 @@ func (s *GLAccountClassificationMappingsEndpoint) Update(ctx context.Context, di
 
 // Delete the GLAccountClassificationMappings entity in the provided division.
 func (s *GLAccountClassificationMappingsEndpoint) Delete(ctx context.Context, division int, id *types.GUID) error {
-	b, _ := s.client.ResolvePathWithDivision("/api/v1/beta/{division}/financial/GLAccountClassificationMappings", division) // #nosec
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/financial/GLAccountClassificationMappings", division) // #nosec
 	u, err := api.AddOdataKeyToURL(b, id)
 	if err != nil {
 		return err

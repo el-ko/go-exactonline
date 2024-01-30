@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,46 +29,46 @@ type ExchangeRatesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialExchangeRates
 type ExchangeRates struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Rate: The exchange rate is stored as 1 TARGET CURRENCY = x SOURCE CURRENCY
+	// Rate: Edm.Double
 	Rate *float64 `json:"Rate,omitempty"`
 
-	// SourceCurrency: The foreign currency
+	// SourceCurrency: Edm.String
 	SourceCurrency *string `json:"SourceCurrency,omitempty"`
 
-	// SourceCurrencyDescription: Description of SourceCurrency
+	// SourceCurrencyDescription: Edm.String
 	SourceCurrencyDescription *string `json:"SourceCurrencyDescription,omitempty"`
 
-	// StartDate: The date as of which the rate is valid. The rate is valid until a next rate is defined
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// TargetCurrency: The default currency of the division
+	// TargetCurrency: Edm.String
 	TargetCurrency *string `json:"TargetCurrency,omitempty"`
 
-	// TargetCurrencyDescription: Description of TargetCurrency
+	// TargetCurrencyDescription: Edm.String
 	TargetCurrencyDescription *string `json:"TargetCurrencyDescription,omitempty"`
 }
 

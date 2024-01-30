@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,151 +29,163 @@ type OpportunitiesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMOpportunities
 type Opportunities struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// Accountant:
+	// Accountant: Edm.Guid
 	Accountant *types.GUID `json:"Accountant,omitempty"`
 
-	// AccountantCode:
+	// AccountantCode: Edm.String
 	AccountantCode *string `json:"AccountantCode,omitempty"`
 
-	// AccountantName:
+	// AccountantName: Edm.String
 	AccountantName *string `json:"AccountantName,omitempty"`
 
-	// AccountCode:
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// ActionDate:
+	// ActionDate: Edm.DateTime
 	ActionDate *types.Date `json:"ActionDate,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// Campaign:
+	// Campaign: Edm.Guid
 	Campaign *types.GUID `json:"Campaign,omitempty"`
 
-	// CampaignDescription:
+	// CampaignDescription: Edm.String
 	CampaignDescription *string `json:"CampaignDescription,omitempty"`
 
-	// Channel:
+	// Channel: Edm.Int16
 	Channel *int `json:"Channel,omitempty"`
 
-	// ChannelDescription:
+	// ChannelDescription: Edm.String
 	ChannelDescription *string `json:"ChannelDescription,omitempty"`
 
-	// CloseDate:
+	// CloseDate: Edm.DateTime
 	CloseDate *types.Date `json:"CloseDate,omitempty"`
 
-	// Created:
+	// Contact: Edm.Guid
+	Contact *types.GUID `json:"Contact,omitempty"`
+
+	// ContactFullName: Edm.String
+	ContactFullName *string `json:"ContactFullName,omitempty"`
+
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Division:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// LeadSource:
+	// LeadSource: Edm.Guid
 	LeadSource *types.GUID `json:"LeadSource,omitempty"`
 
-	// LeadSourceDescription:
+	// LeadSourceDescription: Edm.String
 	LeadSourceDescription *string `json:"LeadSourceDescription,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Name:
+	// Name: Edm.String
 	Name *string `json:"Name,omitempty"`
 
-	// NextAction:
+	// NextAction: Edm.String
 	NextAction *string `json:"NextAction,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// OpportunityDepartmentCode:
+	// Number: Edm.Int32
+	Number *int `json:"Number,omitempty"`
+
+	// OpportunityDepartmentCode: Edm.Int16
 	OpportunityDepartmentCode *int `json:"OpportunityDepartmentCode,omitempty"`
 
-	// OpportunityDepartmentDescription:
+	// OpportunityDepartmentDescription: Edm.String
 	OpportunityDepartmentDescription *string `json:"OpportunityDepartmentDescription,omitempty"`
 
-	// OpportunityStage:
+	// OpportunityStage: Edm.Guid
 	OpportunityStage *types.GUID `json:"OpportunityStage,omitempty"`
 
-	// OpportunityStageDescription:
+	// OpportunityStageDescription: Edm.String
 	OpportunityStageDescription *string `json:"OpportunityStageDescription,omitempty"`
 
-	// OpportunityStatus:
+	// OpportunityStatus: Edm.Int32
 	OpportunityStatus *int `json:"OpportunityStatus,omitempty"`
 
-	// OpportunityType:
+	// OpportunityType: Edm.Int16
 	OpportunityType *int `json:"OpportunityType,omitempty"`
 
-	// OpportunityTypeDescription:
+	// OpportunityTypeDescription: Edm.String
 	OpportunityTypeDescription *string `json:"OpportunityTypeDescription,omitempty"`
 
-	// Owner:
+	// Owner: Edm.Guid
 	Owner *types.GUID `json:"Owner,omitempty"`
 
-	// OwnerFullName:
+	// OwnerFullName: Edm.String
 	OwnerFullName *string `json:"OwnerFullName,omitempty"`
 
-	// Probability:
+	// Probability: Edm.Double
 	Probability *float64 `json:"Probability,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// RateFC:
+	// RateFC: Edm.Double
 	RateFC *float64 `json:"RateFC,omitempty"`
 
-	// ReasonCode:
+	// ReasonCode: Edm.Guid
 	ReasonCode *types.GUID `json:"ReasonCode,omitempty"`
 
-	// ReasonCodeDescription:
+	// ReasonCodeDescription: Edm.String
 	ReasonCodeDescription *string `json:"ReasonCodeDescription,omitempty"`
 
-	// Reseller:
+	// Reseller: Edm.Guid
 	Reseller *types.GUID `json:"Reseller,omitempty"`
 
-	// ResellerCode:
+	// ResellerCode: Edm.String
 	ResellerCode *string `json:"ResellerCode,omitempty"`
 
-	// ResellerName:
+	// ResellerName: Edm.String
 	ResellerName *string `json:"ResellerName,omitempty"`
 
-	// SalesType:
+	// SalesType: Edm.Guid
 	SalesType *types.GUID `json:"SalesType,omitempty"`
 
-	// SalesTypeDescription:
+	// SalesTypeDescription: Edm.String
 	SalesTypeDescription *string `json:"SalesTypeDescription,omitempty"`
 }
 

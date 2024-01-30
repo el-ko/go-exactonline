@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,82 +26,82 @@ type AssetGroupsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AssetsAssetGroups
 type AssetGroups struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Code of the asset group
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// DepreciationMethod: Default depreciation method of the assets in this asset group
+	// DepreciationMethod: Edm.Guid
 	DepreciationMethod *types.GUID `json:"DepreciationMethod,omitempty"`
 
-	// DepreciationMethodCode: Code of the depreciation method
+	// DepreciationMethodCode: Edm.String
 	DepreciationMethodCode *string `json:"DepreciationMethodCode,omitempty"`
 
-	// DepreciationMethodDescription: Description of the depreciation method
+	// DepreciationMethodDescription: Edm.String
 	DepreciationMethodDescription *string `json:"DepreciationMethodDescription,omitempty"`
 
-	// Description: Description of the asset group
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLAccountAssets: GLAccount for the assets
+	// GLAccountAssets: Edm.Guid
 	GLAccountAssets *types.GUID `json:"GLAccountAssets,omitempty"`
 
-	// GLAccountAssetsCode: Code of the GLAccount for the assets
+	// GLAccountAssetsCode: Edm.String
 	GLAccountAssetsCode *string `json:"GLAccountAssetsCode,omitempty"`
 
-	// GLAccountAssetsDescription: Description of the GLAccount for the assets
+	// GLAccountAssetsDescription: Edm.String
 	GLAccountAssetsDescription *string `json:"GLAccountAssetsDescription,omitempty"`
 
-	// GLAccountDepreciationBS: GLAccount for depreciation (Balance sheet)
+	// GLAccountDepreciationBS: Edm.Guid
 	GLAccountDepreciationBS *types.GUID `json:"GLAccountDepreciationBS,omitempty"`
 
-	// GLAccountDepreciationBSCode: Code of the GLAccount for depreciation (Balance sheet)
+	// GLAccountDepreciationBSCode: Edm.String
 	GLAccountDepreciationBSCode *string `json:"GLAccountDepreciationBSCode,omitempty"`
 
-	// GLAccountDepreciationBSDescription: Description of the GLAccount for depreciation (Balance sheet)
+	// GLAccountDepreciationBSDescription: Edm.String
 	GLAccountDepreciationBSDescription *string `json:"GLAccountDepreciationBSDescription,omitempty"`
 
-	// GLAccountDepreciationPL: GLAccount for depreciation (Profit &amp; Loss)
+	// GLAccountDepreciationPL: Edm.Guid
 	GLAccountDepreciationPL *types.GUID `json:"GLAccountDepreciationPL,omitempty"`
 
-	// GLAccountDepreciationPLCode: Code of the GLAccount for depreciation (Profit &amp; Loss)
+	// GLAccountDepreciationPLCode: Edm.String
 	GLAccountDepreciationPLCode *string `json:"GLAccountDepreciationPLCode,omitempty"`
 
-	// GLAccountDepreciationPLDescription: Description of the GLAccount for depreciation (Profit &amp; Loss)
+	// GLAccountDepreciationPLDescription: Edm.String
 	GLAccountDepreciationPLDescription *string `json:"GLAccountDepreciationPLDescription,omitempty"`
 
-	// GLAccountRevaluationBS: GLAccount for revaluation (Balance sheet)
+	// GLAccountRevaluationBS: Edm.Guid
 	GLAccountRevaluationBS *types.GUID `json:"GLAccountRevaluationBS,omitempty"`
 
-	// GLAccountRevaluationBSCode: Code of the GLAccount for revaluation (Balance sheet)
+	// GLAccountRevaluationBSCode: Edm.String
 	GLAccountRevaluationBSCode *string `json:"GLAccountRevaluationBSCode,omitempty"`
 
-	// GLAccountRevaluationBSDescription: Description of the GLAccount for revaluation (Balance sheet)
+	// GLAccountRevaluationBSDescription: Edm.String
 	GLAccountRevaluationBSDescription *string `json:"GLAccountRevaluationBSDescription,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 }
 

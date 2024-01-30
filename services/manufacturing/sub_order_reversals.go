@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,82 +26,82 @@ type SubOrderReversalsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingSubOrderReversals
 type SubOrderReversals struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// MaterialReversalStockTransactionId: MaterialReversal.StockTransactionId related to this SubOrderReversal&#39;s MaterialReversal
+	// MaterialReversalStockTransactionId: Edm.Guid
 	MaterialReversalStockTransactionId *types.GUID `json:"MaterialReversalStockTransactionId,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Creation date of this SubOrderReversal
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// IsBatch: Does the SubOrderReversal&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the SubOrderReversal&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the SubOrderReversal&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item reversed
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item reversed
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item reversed
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of shop order item
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Note: Notes logged with this reversal
+	// Note: Edm.String
 	Note *string `json:"Note,omitempty"`
 
-	// OriginalMaterialIssueStockTransactionId: MaterialIssue.StockTransactionId related to this SubOrderReceipt&#39;s original MaterialIssue
+	// OriginalMaterialIssueStockTransactionId: Edm.Guid
 	OriginalMaterialIssueStockTransactionId *types.GUID `json:"OriginalMaterialIssueStockTransactionId,omitempty"`
 
-	// OriginalShopOrderReceiptStockTransactionId: ShopOrderReceipt.StockTransactionId related to this SubOrderReceipt&#39;s original ShopOrderReceipt
+	// OriginalShopOrderReceiptStockTransactionId: Edm.Guid
 	OriginalShopOrderReceiptStockTransactionId *types.GUID `json:"OriginalShopOrderReceiptStockTransactionId,omitempty"`
 
-	// ParentShopOrder: Shop order reversed from
+	// ParentShopOrder: Edm.Guid
 	ParentShopOrder *types.GUID `json:"ParentShopOrder,omitempty"`
 
-	// ParentShopOrderNumber: Number of shop order reversed from
+	// ParentShopOrderNumber: Edm.Int32
 	ParentShopOrderNumber *int `json:"ParentShopOrderNumber,omitempty"`
 
-	// Quantity: Quantity of this SubOrderReversal
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// ShopOrderReversalStockTransactionId: ShopOrderReversal.StockTransactionId related to this SubOrderReversal&#39;s ShopOrderReversal
+	// ShopOrderReversalStockTransactionId: Edm.Guid
 	ShopOrderReversalStockTransactionId *types.GUID `json:"ShopOrderReversalStockTransactionId,omitempty"`
 
-	// SubShopOrder: Shop order reversed to
+	// SubShopOrder: Edm.Guid
 	SubShopOrder *types.GUID `json:"SubShopOrder,omitempty"`
 
-	// SubShopOrderNumber: Number of shop order reversed to
+	// SubShopOrderNumber: Edm.Int32
 	SubShopOrderNumber *int `json:"SubShopOrderNumber,omitempty"`
 
-	// TransactionDate: Effective date of this SubOrderReversal
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of this SubOrderReversal&#39;s item
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of this SubOrderReversal&#39;s item
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of warehouse of this SubOrderReversal
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse of this SubOrderReversal
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse of this SubOrderReversal
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

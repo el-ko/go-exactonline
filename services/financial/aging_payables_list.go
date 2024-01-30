@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,55 +26,55 @@ type AgingPayablesListEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialAgingPayablesList
 type AgingPayablesList struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// AccountId: Primary key
+	// AccountId: Edm.Guid
 	AccountId *types.GUID `json:"AccountId,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// AgeGroup1: Age group 1
+	// AgeGroup1: Edm.Int32
 	AgeGroup1 *int `json:"AgeGroup1,omitempty"`
 
-	// AgeGroup1Amount: Amount of age group 1
+	// AgeGroup1Amount: Edm.Double
 	AgeGroup1Amount *float64 `json:"AgeGroup1Amount,omitempty"`
 
-	// AgeGroup1Description: Description of AgeGroup1
+	// AgeGroup1Description: Edm.String
 	AgeGroup1Description *string `json:"AgeGroup1Description,omitempty"`
 
-	// AgeGroup2: Age group 2
+	// AgeGroup2: Edm.Int32
 	AgeGroup2 *int `json:"AgeGroup2,omitempty"`
 
-	// AgeGroup2Amount: Amount of age group 2
+	// AgeGroup2Amount: Edm.Double
 	AgeGroup2Amount *float64 `json:"AgeGroup2Amount,omitempty"`
 
-	// AgeGroup2Description: Description of AgeGroup2
+	// AgeGroup2Description: Edm.String
 	AgeGroup2Description *string `json:"AgeGroup2Description,omitempty"`
 
-	// AgeGroup3: Age group 3
+	// AgeGroup3: Edm.Int32
 	AgeGroup3 *int `json:"AgeGroup3,omitempty"`
 
-	// AgeGroup3Amount: Amount of age group 3
+	// AgeGroup3Amount: Edm.Double
 	AgeGroup3Amount *float64 `json:"AgeGroup3Amount,omitempty"`
 
-	// AgeGroup3Description: Description of AgeGroup3
+	// AgeGroup3Description: Edm.String
 	AgeGroup3Description *string `json:"AgeGroup3Description,omitempty"`
 
-	// AgeGroup4: Age group 4
+	// AgeGroup4: Edm.Int32
 	AgeGroup4 *int `json:"AgeGroup4,omitempty"`
 
-	// AgeGroup4Amount: Amount of age group 4
+	// AgeGroup4Amount: Edm.Double
 	AgeGroup4Amount *float64 `json:"AgeGroup4Amount,omitempty"`
 
-	// AgeGroup4Description: Description of AgeGroup4
+	// AgeGroup4Description: Edm.String
 	AgeGroup4Description *string `json:"AgeGroup4Description,omitempty"`
 
-	// CurrencyCode: Code of Currency
+	// CurrencyCode: Edm.String
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 
-	// TotalAmount: Total amount of all age groups
+	// TotalAmount: Edm.Double
 	TotalAmount *float64 `json:"TotalAmount,omitempty"`
 }
 

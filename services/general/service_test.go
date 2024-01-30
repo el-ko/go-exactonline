@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,6 +30,7 @@ func TestNewGeneralService(t *testing.T) {
 	want.common.client = c
 
 	want.Currencies = (*CurrenciesEndpoint)(&want.common)
+	want.Layouts = (*LayoutsEndpoint)(&want.common)
 
 	if !reflect.DeepEqual(s, want) {
 		t.Error("Clients are supposed to be the same")

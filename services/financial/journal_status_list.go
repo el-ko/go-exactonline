@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -25,28 +25,28 @@ type JournalStatusListEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialJournalStatusList
 type JournalStatusList struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Journal:
+	// Journal: Edm.String
 	Journal *string `json:"Journal,omitempty"`
 
-	// Period:
+	// Period: Edm.Int32
 	Period *int `json:"Period,omitempty"`
 
-	// Year:
+	// Year: Edm.Int32
 	Year *int `json:"Year,omitempty"`
 
-	// JournalDescription:
+	// JournalDescription: Edm.String
 	JournalDescription *string `json:"JournalDescription,omitempty"`
 
-	// JournalType:
+	// JournalType: Edm.Int32
 	JournalType *int `json:"JournalType,omitempty"`
 
-	// JournalTypeDescription:
+	// JournalTypeDescription: Edm.String
 	JournalTypeDescription *string `json:"JournalTypeDescription,omitempty"`
 
-	// Status:
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription:
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 }
 

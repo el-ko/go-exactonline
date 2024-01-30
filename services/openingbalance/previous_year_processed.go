@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,25 +26,25 @@ type PreviousYearProcessedEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=OpeningBalancePreviousYearProcessed
 type PreviousYearProcessed struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Division: Division code.
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLAccount: The balance sheet account.
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// ReportingYear: The reporting year of the opening balance.
+	// ReportingYear: Edm.Int32
 	ReportingYear *int `json:"ReportingYear,omitempty"`
 
-	// Amount: The opening balance amount of the G/L account.
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 
-	// BalanceSide: Indicates whether the G/L account is a debit or credit account. D = Debit, C = Credit.
+	// BalanceSide: Edm.String
 	BalanceSide *string `json:"BalanceSide,omitempty"`
 
-	// GLAccountCode: The code of the G/L account.
+	// GLAccountCode: Edm.String
 	GLAccountCode *string `json:"GLAccountCode,omitempty"`
 
-	// GLAccountDescription: The description of the G/L account.
+	// GLAccountDescription: Edm.String
 	GLAccountDescription *string `json:"GLAccountDescription,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -40,9 +40,12 @@ func TestNewCRMService(t *testing.T) {
 	want.Documents = (*DocumentsEndpoint)(&want.common)
 	want.DocumentsAttachments = (*DocumentsAttachmentsEndpoint)(&want.common)
 	want.HostingOpportunities = (*HostingOpportunitiesEndpoint)(&want.common)
+	want.LeadPurposes = (*LeadPurposesEndpoint)(&want.common)
+	want.LeadSources = (*LeadSourcesEndpoint)(&want.common)
 	want.Opportunities = (*OpportunitiesEndpoint)(&want.common)
 	want.OpportunityContacts = (*OpportunityContactsEndpoint)(&want.common)
 	want.QuotationLines = (*QuotationLinesEndpoint)(&want.common)
+	want.QuotationOrderChargeLines = (*QuotationOrderChargeLinesEndpoint)(&want.common)
 	want.Quotations = (*QuotationsEndpoint)(&want.common)
 	want.ReasonCodes = (*ReasonCodesEndpoint)(&want.common)
 

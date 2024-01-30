@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,10 +26,13 @@ type HourCostTypesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHourCostTypes
 type HourCostTypes struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ItemId: Primary key
+	// ItemId: Edm.Guid
 	ItemId *types.GUID `json:"ItemId,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemCode: Edm.String
+	ItemCode *string `json:"ItemCode,omitempty"`
+
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 }
 

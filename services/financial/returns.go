@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,49 +26,52 @@ type ReturnsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReturns
 type Returns struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// DocumentID: Primary key, document ID
+	// DocumentID: Edm.Guid
 	DocumentID *types.GUID `json:"DocumentID,omitempty"`
 
-	// Amount: Amount in the currency of the transaction
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Currency: Currency
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Description: Description
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DocumentViewUrl: Url to view the document
+	// DocumentViewUrl: Edm.String
 	DocumentViewUrl *string `json:"DocumentViewUrl,omitempty"`
 
-	// DueDate: Due date
+	// DueDate: Edm.DateTime
 	DueDate *types.Date `json:"DueDate,omitempty"`
 
-	// Frequency: Frequency
+	// Frequency: Edm.String
 	Frequency *string `json:"Frequency,omitempty"`
 
-	// PayrollDeclarationType: Payroll declaration type
+	// PayrollDeclarationType: Edm.String
 	PayrollDeclarationType *string `json:"PayrollDeclarationType,omitempty"`
 
-	// Period: Period
+	// Period: Edm.Int32
 	Period *int `json:"Period,omitempty"`
 
-	// PeriodDescription: Description of Period
+	// PeriodDescription: Edm.String
 	PeriodDescription *string `json:"PeriodDescription,omitempty"`
 
-	// Request: Reference to request
+	// Request: Edm.Guid
 	Request *types.GUID `json:"Request,omitempty"`
 
-	// Status: Status
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// Type: Type
+	// Subject: Edm.String
+	Subject *string `json:"Subject,omitempty"`
+
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// Year: Year
+	// Year: Edm.Int32
 	Year *int `json:"Year,omitempty"`
 }
 

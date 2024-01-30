@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,92 +29,98 @@ type BillOfMaterialMaterialsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingBillOfMaterialMaterials
 type BillOfMaterialMaterials struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AverageCost: Item average cost available when average cost method is used
+	// AverageCost: Edm.Double
 	AverageCost *float64 `json:"AverageCost,omitempty"`
 
-	// Backflush: Indicates if this is a backflush item
+	// Backflush: Edm.Byte
 	Backflush *byte `json:"Backflush,omitempty"`
 
-	// CalculatorType: Calculator type
+	// CalculatorType: Edm.Int32
 	CalculatorType *int `json:"CalculatorType,omitempty"`
 
-	// CostBatch: Cost batch
+	// CostBatch: Edm.Double
 	CostBatch *float64 `json:"CostBatch,omitempty"`
 
-	// CostCenter: Cost center
+	// CostCenter: Edm.String
 	CostCenter *string `json:"CostCenter,omitempty"`
 
-	// CostCenterDescription: Cost center description
+	// CostCenterDescription: Edm.String
 	CostCenterDescription *string `json:"CostCenterDescription,omitempty"`
 
-	// CostUnit: Cost unit
+	// CostUnit: Edm.String
 	CostUnit *string `json:"CostUnit,omitempty"`
 
-	// CostUnitDescription: Cost unit description
+	// CostUnitDescription: Edm.String
 	CostUnitDescription *string `json:"CostUnitDescription,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the material
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// DetailDrawing: Detail drawing reference
+	// DetailDrawing: Edm.String
 	DetailDrawing *string `json:"DetailDrawing,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// ItemVersion: Key of item version
+	// ItemVersion: Edm.Guid
 	ItemVersion *types.GUID `json:"ItemVersion,omitempty"`
 
-	// LineNumber: Line number
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// NetWeight: Net weight
+	// NetWeight: Edm.Double
 	NetWeight *float64 `json:"NetWeight,omitempty"`
 
-	// NetWeightUnit: Net weight unit of measure
+	// NetWeightUnit: Edm.String
 	NetWeightUnit *string `json:"NetWeightUnit,omitempty"`
 
-	// Notes: Notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PartItem: Key of part item
+	// PartItem: Edm.Guid
 	PartItem *types.GUID `json:"PartItem,omitempty"`
 
-	// PartItemCode: Part item code
+	// PartItemCode: Edm.String
 	PartItemCode *string `json:"PartItemCode,omitempty"`
 
-	// PartItemCostPriceStandard: Item standard cost available when standard cost method is used
+	// PartItemCostPriceStandard: Edm.Double
 	PartItemCostPriceStandard *float64 `json:"PartItemCostPriceStandard,omitempty"`
 
-	// PartItemDescription: Part item description
+	// PartItemDescription: Edm.String
 	PartItemDescription *string `json:"PartItemDescription,omitempty"`
 
-	// Quantity: Quantity
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// QuantityBatch: Quantity batch
+	// QuantityBatch: Edm.Double
 	QuantityBatch *float64 `json:"QuantityBatch,omitempty"`
 
-	// Syscreated: Creation date
+	// RoutingStepID: Edm.Guid
+	RoutingStepID *types.GUID `json:"RoutingStepID,omitempty"`
+
+	// Syscreated: Edm.DateTime
 	Syscreated *types.Date `json:"syscreated,omitempty"`
 
-	// Syscreator: User ID of creator
+	// Syscreator: Edm.Guid
 	Syscreator *types.GUID `json:"syscreator,omitempty"`
 
-	// Sysmodified: Modified date
+	// Sysmodified: Edm.DateTime
 	Sysmodified *types.Date `json:"sysmodified,omitempty"`
 
-	// Sysmodifier: User ID of modifier
+	// Sysmodifier: Edm.Guid
 	Sysmodifier *types.GUID `json:"sysmodifier,omitempty"`
 
-	// Type: Material type 1 indicates material, 2 indicates byproduct
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
+
+	// WastePercentage: Edm.Double
+	WastePercentage *float64 `json:"WastePercentage,omitempty"`
 }
 
 func (e *BillOfMaterialMaterials) GetPrimary() *types.GUID {

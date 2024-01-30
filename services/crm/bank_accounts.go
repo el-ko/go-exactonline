@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,73 +29,76 @@ type BankAccountsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMBankAccounts
 type BankAccounts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Bank:
+	// Bank: Edm.Guid
 	Bank *types.GUID `json:"Bank,omitempty"`
 
-	// BankAccount:
+	// BankAccount: Edm.String
 	BankAccount *string `json:"BankAccount,omitempty"`
 
-	// BankAccountHolderName:
+	// BankAccountHolderName: Edm.String
 	BankAccountHolderName *string `json:"BankAccountHolderName,omitempty"`
 
-	// BankDescription:
+	// BankDescription: Edm.String
 	BankDescription *string `json:"BankDescription,omitempty"`
 
-	// BankName:
+	// BankName: Edm.String
 	BankName *string `json:"BankName,omitempty"`
 
-	// BICCode:
+	// BICCode: Edm.String
 	BICCode *string `json:"BICCode,omitempty"`
 
-	// Created:
+	// Blocked: Edm.Boolean
+	Blocked *bool `json:"Blocked,omitempty"`
+
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Format:
+	// Format: Edm.String
 	Format *string `json:"Format,omitempty"`
 
-	// IBAN:
+	// IBAN: Edm.String
 	IBAN *string `json:"IBAN,omitempty"`
 
-	// Main:
+	// Main: Edm.Boolean
 	Main *bool `json:"Main,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PaymentServiceAccount:
+	// PaymentServiceAccount: Edm.Guid
 	PaymentServiceAccount *types.GUID `json:"PaymentServiceAccount,omitempty"`
 
-	// Type:
+	// Type: Edm.String
 	Type *string `json:"Type,omitempty"`
 
-	// TypeDescription:
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 }
 

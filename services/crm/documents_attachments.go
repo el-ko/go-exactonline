@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,19 +26,19 @@ type DocumentsAttachmentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMDocumentsAttachments
 type DocumentsAttachments struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AttachmentFileName: Filename of the attachment
+	// AttachmentFileName: Edm.String
 	AttachmentFileName *string `json:"AttachmentFileName,omitempty"`
 
-	// AttachmentFileSize: File size of the attachment
+	// AttachmentFileSize: Edm.Double
 	AttachmentFileSize *float64 `json:"AttachmentFileSize,omitempty"`
 
-	// AttachmentUrl: Url for downloading the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &amp;Download=1 to the url.
+	// AttachmentUrl: Edm.String
 	AttachmentUrl *string `json:"AttachmentUrl,omitempty"`
 
-	// CanShowInWebView:
+	// CanShowInWebView: Edm.Boolean
 	CanShowInWebView *bool `json:"CanShowInWebView,omitempty"`
 }
 

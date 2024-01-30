@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,148 +29,151 @@ type ProjectPlanningRecurringEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectPlanningRecurring
 type ProjectPlanningRecurring struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: Account linked to the recurring planning
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// BGTStatus: Status of the project planning process, 1 = To be processed, 2 = Processed, 3 = Failed
+	// BGTStatus: Edm.Int16
 	BGTStatus *int `json:"BGTStatus,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// DayOrThe: Indicates whether the recurring planning is day of the month or weekday of the month
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// DayOrThe: Edm.Int32
 	DayOrThe *int `json:"DayOrThe,omitempty"`
 
-	// Description: Description of recurring planning
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee linked to the recurring planning
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EmployeeCode: Code of employee
+	// EmployeeCode: Edm.String
 	EmployeeCode *string `json:"EmployeeCode,omitempty"`
 
-	// EmployeeHID: Numeric ID of the employee
+	// EmployeeHID: Edm.Int32
 	EmployeeHID *int `json:"EmployeeHID,omitempty"`
 
-	// EndDate: End date of the recurring planning
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// EndDateOrAfter: Indicates whether the recurring planning is end on end date or end after number of times
+	// EndDateOrAfter: Edm.Int32
 	EndDateOrAfter *int `json:"EndDateOrAfter,omitempty"`
 
-	// EndTime: End time for the recurring planning to be active
+	// EndTime: Edm.DateTime
 	EndTime *types.Date `json:"EndTime,omitempty"`
 
-	// Hours: Number of hours for the recurring planning
+	// Hours: Edm.Double
 	Hours *float64 `json:"Hours,omitempty"`
 
-	// HourType: Hour type of the recurring planning, item with &#39;Time&#39; type
+	// HourType: Edm.Guid
 	HourType *types.GUID `json:"HourType,omitempty"`
 
-	// HourTypeCode: Code of the hour type
+	// HourTypeCode: Edm.String
 	HourTypeCode *string `json:"HourTypeCode,omitempty"`
 
-	// HourTypeDescription: Description of the hour type
+	// HourTypeDescription: Edm.String
 	HourTypeDescription *string `json:"HourTypeDescription,omitempty"`
 
-	// Modified: Date modified
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: Modifier user ID
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Modifier name
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// MonthPatternDay: Day of the monthly recurring
+	// MonthPatternDay: Edm.Byte
 	MonthPatternDay *byte `json:"MonthPatternDay,omitempty"`
 
-	// MonthPatternOrdinalDay: Ordinal number of week day for the monthly recurring planning, 1 = first, 2 = second, 3 = third, 4 = fourth, 31 = last
+	// MonthPatternOrdinalDay: Edm.Byte
 	MonthPatternOrdinalDay *byte `json:"MonthPatternOrdinalDay,omitempty"`
 
-	// MonthPatternOrdinalWeek: Ordinal week day of the monthly recurring planning, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, 7 = Sunday
+	// MonthPatternOrdinalWeek: Edm.Byte
 	MonthPatternOrdinalWeek *byte `json:"MonthPatternOrdinalWeek,omitempty"`
 
-	// Notes: For additional information about recurring planning
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// NumberOfRecurrences: Number of times the planning recurs
+	// NumberOfRecurrences: Edm.Int16
 	NumberOfRecurrences *int `json:"NumberOfRecurrences,omitempty"`
 
-	// OverAllocate: Indicates whether the entries can have over allocated planning hours
+	// OverAllocate: Edm.Boolean
 	OverAllocate *bool `json:"OverAllocate,omitempty"`
 
-	// PatternFrequency: Number of planning times for weekly or monthly recurring planning
+	// PatternFrequency: Edm.Byte
 	PatternFrequency *byte `json:"PatternFrequency,omitempty"`
 
-	// Project: Project linked to the recurring planning
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode: Code of project
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription: Description of project
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// ProjectPlanningRecurringType: Type of the recurring planning, 1 = weekly, 2 = monthly
+	// ProjectPlanningRecurringType: Edm.Byte
 	ProjectPlanningRecurringType *byte `json:"ProjectPlanningRecurringType,omitempty"`
 
-	// ProjectWBS: WBS linked to the recurring planning
+	// ProjectWBS: Edm.Guid
 	ProjectWBS *types.GUID `json:"ProjectWBS,omitempty"`
 
-	// ProjectWBSDescription: Description of WBS
+	// ProjectWBSDescription: Edm.String
 	ProjectWBSDescription *string `json:"ProjectWBSDescription,omitempty"`
 
-	// StartDate: Start date of the recurring planning
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// StartTime: Start time for the recurring planning to be active
+	// StartTime: Edm.DateTime
 	StartTime *types.Date `json:"StartTime,omitempty"`
 
-	// Status: Status of the project planning, 1 = Reserved, 2 = Planned
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// WeekPatternDay: Week day for the weekly recurring planning
+	// WeekPatternDay: Edm.Byte
 	WeekPatternDay *byte `json:"WeekPatternDay,omitempty"`
 
-	// WeekPatternFriday: Create planning on Friday, apply to weekly pattern recurring planning only
+	// WeekPatternFriday: Edm.Boolean
 	WeekPatternFriday *bool `json:"WeekPatternFriday,omitempty"`
 
-	// WeekPatternMonday: Create planning on Monday, apply to weekly pattern recurring planning only
+	// WeekPatternMonday: Edm.Boolean
 	WeekPatternMonday *bool `json:"WeekPatternMonday,omitempty"`
 
-	// WeekPatternSaturday: Create planning on Saturday, apply to weekly pattern recurring planning only
+	// WeekPatternSaturday: Edm.Boolean
 	WeekPatternSaturday *bool `json:"WeekPatternSaturday,omitempty"`
 
-	// WeekPatternSunday: Create planning on Sunday, apply to weekly pattern recurring planning only
+	// WeekPatternSunday: Edm.Boolean
 	WeekPatternSunday *bool `json:"WeekPatternSunday,omitempty"`
 
-	// WeekPatternThursday: Create planning on Thursday, apply to weekly pattern recurring planning only
+	// WeekPatternThursday: Edm.Boolean
 	WeekPatternThursday *bool `json:"WeekPatternThursday,omitempty"`
 
-	// WeekPatternTuesday: Create planning on Tuesday, apply to weekly pattern recurring planning only
+	// WeekPatternTuesday: Edm.Boolean
 	WeekPatternTuesday *bool `json:"WeekPatternTuesday,omitempty"`
 
-	// WeekPatternWednesday: Create planning on Wednesday, apply to weekly pattern recurring planning only
+	// WeekPatternWednesday: Edm.Boolean
 	WeekPatternWednesday *bool `json:"WeekPatternWednesday,omitempty"`
 }
 

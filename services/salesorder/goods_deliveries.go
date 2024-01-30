@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,91 +27,91 @@ type GoodsDeliveriesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderGoodsDeliveries
 type GoodsDeliveries struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// EntryID:
+	// EntryID: Edm.Guid
 	EntryID *types.GUID `json:"EntryID,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// DeliveryAccount:
+	// DeliveryAccount: Edm.Guid
 	DeliveryAccount *types.GUID `json:"DeliveryAccount,omitempty"`
 
-	// DeliveryAccountCode:
+	// DeliveryAccountCode: Edm.String
 	DeliveryAccountCode *string `json:"DeliveryAccountCode,omitempty"`
 
-	// DeliveryAccountName:
+	// DeliveryAccountName: Edm.String
 	DeliveryAccountName *string `json:"DeliveryAccountName,omitempty"`
 
-	// DeliveryAddress:
+	// DeliveryAddress: Edm.Guid
 	DeliveryAddress *types.GUID `json:"DeliveryAddress,omitempty"`
 
-	// DeliveryContact:
+	// DeliveryContact: Edm.Guid
 	DeliveryContact *types.GUID `json:"DeliveryContact,omitempty"`
 
-	// DeliveryContactPersonFullName:
+	// DeliveryContactPersonFullName: Edm.String
 	DeliveryContactPersonFullName *string `json:"DeliveryContactPersonFullName,omitempty"`
 
-	// DeliveryDate:
+	// DeliveryDate: Edm.DateTime
 	DeliveryDate *types.Date `json:"DeliveryDate,omitempty"`
 
-	// DeliveryNumber:
+	// DeliveryNumber: Edm.Int32
 	DeliveryNumber *int `json:"DeliveryNumber,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document:
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentSubject:
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// EntryNumber:
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// GoodsDeliveryLines:
+	// GoodsDeliveryLines: GoodsDeliveryLines
 	GoodsDeliveryLines *json.RawMessage `json:"GoodsDeliveryLines,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Remarks:
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// ShippingMethod:
+	// ShippingMethod: Edm.Guid
 	ShippingMethod *types.GUID `json:"ShippingMethod,omitempty"`
 
-	// ShippingMethodCode:
+	// ShippingMethodCode: Edm.String
 	ShippingMethodCode *string `json:"ShippingMethodCode,omitempty"`
 
-	// ShippingMethodDescription:
+	// ShippingMethodDescription: Edm.String
 	ShippingMethodDescription *string `json:"ShippingMethodDescription,omitempty"`
 
-	// TrackingNumber:
+	// TrackingNumber: Edm.String
 	TrackingNumber *string `json:"TrackingNumber,omitempty"`
 
-	// Warehouse:
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode:
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription:
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

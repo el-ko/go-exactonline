@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -31,6 +31,7 @@ func TestNewAssetsService(t *testing.T) {
 
 	want.AssetGroups = (*AssetGroupsEndpoint)(&want.common)
 	want.Assets = (*AssetsEndpoint)(&want.common)
+	want.CommercialBuildingValues = (*CommercialBuildingValuesEndpoint)(&want.common)
 	want.DepreciationMethods = (*DepreciationMethodsEndpoint)(&want.common)
 
 	if !reflect.DeepEqual(s, want) {

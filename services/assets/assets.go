@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -7,6 +7,7 @@ package assets
 
 import (
 	"context"
+	"encoding/json"
 
 	"github.com/mcnijman/go-exactonline/api"
 	"github.com/mcnijman/go-exactonline/types"
@@ -26,164 +27,173 @@ type AssetsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AssetsAssets
 type Assets struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AlreadyDepreciated: Indicates if an asset was already depreciated before registering it in Exact Online
+	// AlreadyDepreciated: Edm.Byte
 	AlreadyDepreciated *byte `json:"AlreadyDepreciated,omitempty"`
 
-	// AssetFrom: In case of a transfer or a split, the original asset ID is saved in this field. This is done to provide tracability of the Asset
+	// AssetFrom: Edm.Guid
 	AssetFrom *types.GUID `json:"AssetFrom,omitempty"`
 
-	// AssetFromDescription: Description of AssetFrom
+	// AssetFromDescription: Edm.String
 	AssetFromDescription *string `json:"AssetFromDescription,omitempty"`
 
-	// AssetGroup: Asset group identifies GLAccounts to be used for Asset transactions
+	// AssetGroup: Edm.Guid
 	AssetGroup *types.GUID `json:"AssetGroup,omitempty"`
 
-	// AssetGroupCode: Code of the asset group
+	// AssetGroupCode: Edm.String
 	AssetGroupCode *string `json:"AssetGroupCode,omitempty"`
 
-	// AssetGroupDescription: Description of the asset group
+	// AssetGroupDescription: Edm.String
 	AssetGroupDescription *string `json:"AssetGroupDescription,omitempty"`
 
-	// CatalogueValue: The catalogue value of the asset
+	// CatalogueValue: Edm.Double
 	CatalogueValue *float64 `json:"CatalogueValue,omitempty"`
 
-	// Code: Code of the asset
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Costcenter: Assets can be linked to a cost center
+	// CommercialBuildingValues: CommercialBuildingValues
+	CommercialBuildingValues *json.RawMessage `json:"CommercialBuildingValues,omitempty"`
+
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription: Description of Costcenter
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// Costunit: Assets can be linked to a cost unit
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// CostunitDescription: Description of Costunit
+	// CostunitDescription: Edm.String
 	CostunitDescription *string `json:"CostunitDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// DeductionPercentage: Used for Belgium legislation. Used to produce the official &#39;Investment deduction&#39; report
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// DeductionPercentage: Edm.Double
 	DeductionPercentage *float64 `json:"DeductionPercentage,omitempty"`
 
-	// DepreciatedAmount: Amount that is already depreciated when adding an existing asset. Can only be filled when &#39;Alreadydepreciated&#39; is on
+	// DepreciatedAmount: Edm.Double
 	DepreciatedAmount *float64 `json:"DepreciatedAmount,omitempty"`
 
-	// DepreciatedPeriods: Number of periods that already have been depreciated for the asset. Can only be filled when &#39;Alreadydepreciated&#39; is on
+	// DepreciatedPeriods: Edm.Int32
 	DepreciatedPeriods *int `json:"DepreciatedPeriods,omitempty"`
 
-	// DepreciatedStartDate: StartDate of depreciating. Can only be filled when &#39;Alreadydepreciated&#39; is on
+	// DepreciatedStartDate: Edm.DateTime
 	DepreciatedStartDate *types.Date `json:"DepreciatedStartDate,omitempty"`
 
-	// Description: This is the description of the Asset
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// EndDate: Asset EndDate is filled when asset is Sold or Inactive
+	// EndDate: Edm.DateTime
 	EndDate *types.Date `json:"EndDate,omitempty"`
 
-	// EngineEmission: Engine emission of the asset, needed to calculate the co² report
+	// EngineEmission: Edm.Int16
 	EngineEmission *int `json:"EngineEmission,omitempty"`
 
-	// EngineType: Engine type of the asset, Needed to generate a co² report
+	// EngineType: Edm.Int16
 	EngineType *int `json:"EngineType,omitempty"`
 
-	// GLTransactionLine: Links to the gltransactions.id. GL transaction line based on which the asset is created
+	// GLTransactionLine: Edm.Guid
 	GLTransactionLine *types.GUID `json:"GLTransactionLine,omitempty"`
 
-	// GLTransactionLineDescription: Description of GLTransactionLine
+	// GLTransactionLineDescription: Edm.String
 	GLTransactionLineDescription *string `json:"GLTransactionLineDescription,omitempty"`
 
-	// InvestmentAccount: Supplier of the asset
+	// InvestmentAccount: Edm.Guid
 	InvestmentAccount *types.GUID `json:"InvestmentAccount,omitempty"`
 
-	// InvestmentAccountCode: Code of InvestmentAccount
+	// InvestmentAccountCode: Edm.String
 	InvestmentAccountCode *string `json:"InvestmentAccountCode,omitempty"`
 
-	// InvestmentAccountName: Name of InvestmentAccount
+	// InvestmentAccountName: Edm.String
 	InvestmentAccountName *string `json:"InvestmentAccountName,omitempty"`
 
-	// InvestmentAmountDC: Investment amount in the default currency of the company
+	// InvestmentAmountDC: Edm.Double
 	InvestmentAmountDC *float64 `json:"InvestmentAmountDC,omitempty"`
 
-	// InvestmentAmountFC: Investment value of the asset. Currently the field is filled with the PurchasePriceLocal. Can be status &#39;Not used&#39; after sources have been cleaned
+	// InvestmentAmountFC: Edm.Double
 	InvestmentAmountFC *float64 `json:"InvestmentAmountFC,omitempty"`
 
-	// InvestmentCurrency: Indicates the currency of the investment amount
+	// InvestmentCurrency: Edm.String
 	InvestmentCurrency *string `json:"InvestmentCurrency,omitempty"`
 
-	// InvestmentCurrencyDescription: Description of InvestmentCurrency
+	// InvestmentCurrencyDescription: Edm.String
 	InvestmentCurrencyDescription *string `json:"InvestmentCurrencyDescription,omitempty"`
 
-	// InvestmentDate: Refers to the original date when the asset was bought
+	// InvestmentDate: Edm.DateTime
 	InvestmentDate *types.Date `json:"InvestmentDate,omitempty"`
 
-	// InvestmentDeduction: Belgian functionality, to determine how a local legal report regarding investment deduction must be created
+	// InvestmentDeduction: Edm.Int16
 	InvestmentDeduction *int `json:"InvestmentDeduction,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Extra remarks for the asset
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Parent: Parent asset
+	// Parent: Edm.Guid
 	Parent *types.GUID `json:"Parent,omitempty"`
 
-	// ParentCode: Code of Parent
+	// ParentCode: Edm.String
 	ParentCode *string `json:"ParentCode,omitempty"`
 
-	// ParentDescription: Description of Parent
+	// ParentDescription: Edm.String
 	ParentDescription *string `json:"ParentDescription,omitempty"`
 
-	// Picture: Image for an asset
+	// Picture: Edm.Binary
 	Picture *[]byte `json:"Picture,omitempty"`
 
-	// PictureFileName: Filename of the image
+	// PictureFileName: Edm.String
 	PictureFileName *string `json:"PictureFileName,omitempty"`
 
-	// PrimaryMethod: First method of depreciation. Currently, it is the only one used
+	// PrimaryMethod: Edm.Guid
 	PrimaryMethod *types.GUID `json:"PrimaryMethod,omitempty"`
 
-	// PrimaryMethodCode: Code of PrimaryMethod
+	// PrimaryMethodCode: Edm.String
 	PrimaryMethodCode *string `json:"PrimaryMethodCode,omitempty"`
 
-	// PrimaryMethodDescription: Description of PrimaryMethod
+	// PrimaryMethodDescription: Edm.String
 	PrimaryMethodDescription *string `json:"PrimaryMethodDescription,omitempty"`
 
-	// ResidualValue: Indicates the residual value of the asset at the end of the depreciation
+	// ResidualValue: Edm.Double
 	ResidualValue *float64 `json:"ResidualValue,omitempty"`
 
-	// StartDate: Asset Depreciation StartDate
+	// StartDate: Edm.DateTime
 	StartDate *types.Date `json:"StartDate,omitempty"`
 
-	// Status: Identifies the status of the Asset. (see AssetStatus table to see the possibilities)
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// TransactionEntryID: Reference to the transaction lines that make up the financial entry.
+	// TransactionEntryID: Edm.Guid
 	TransactionEntryID *types.GUID `json:"TransactionEntryID,omitempty"`
 
-	// TransactionEntryNo: Entry number of transaction
+	// TransactionEntryNo: Edm.Int32
 	TransactionEntryNo *int `json:"TransactionEntryNo,omitempty"`
+
+	// Type: Edm.String
+	Type *string `json:"Type,omitempty"`
 }
 
 func (e *Assets) GetPrimary() *types.GUID {

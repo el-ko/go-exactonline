@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,85 +26,85 @@ type MaterialReversalsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingMaterialReversals
 type MaterialReversals struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ReversalStockTransactionId: ID of stock transaction related to this material issue
+	// ReversalStockTransactionId: Edm.Guid
 	ReversalStockTransactionId *types.GUID `json:"ReversalStockTransactionId,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Date this reversal was created
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// IsBackflush: Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal
+	// IsBackflush: Edm.Boolean
 	IsBackflush *bool `json:"IsBackflush,omitempty"`
 
-	// IsBatch: Does the issue reversal&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the material reversal&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the issue reversal&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: Item reversed
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of item reversed
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of item reversed
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of item issued
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Note: Notes logged with this reversal
+	// Note: Edm.String
 	Note *string `json:"Note,omitempty"`
 
-	// OriginalStockTransactionId: ID of the original stock transaction, which was reversed
+	// OriginalStockTransactionId: Edm.Guid
 	OriginalStockTransactionId *types.GUID `json:"OriginalStockTransactionId,omitempty"`
 
-	// Quantity: Quantity of this reversal
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// ShopOrder: ID of shop order reversed from
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// ShopOrderMaterialPlan: ID of shop order material plan
+	// ShopOrderMaterialPlan: Edm.Guid
 	ShopOrderMaterialPlan *types.GUID `json:"ShopOrderMaterialPlan,omitempty"`
 
-	// ShopOrderNumber: Number of shop order reversed from
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// StorageLocation: ID of storage location reversed to
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Code of storage location reversed to
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Description of storage location reversed to
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// TransactionDate: Effective date of this reversal
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of item reversed
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of item reversed
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of warehouse reversed to
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse reversed to
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse reversed to
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

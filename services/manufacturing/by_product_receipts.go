@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,85 +26,85 @@ type ByProductReceiptsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingByProductReceipts
 type ByProductReceipts struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// StockTransactionId: ID of stock transaction related to this by-product finish
+	// StockTransactionId: Edm.Guid
 	StockTransactionId *types.GUID `json:"StockTransactionId,omitempty"`
 
-	// CreatedBy: ID of creating user
+	// CreatedBy: Edm.Guid
 	CreatedBy *types.GUID `json:"CreatedBy,omitempty"`
 
-	// CreatedByFullName: Name of the creating user
+	// CreatedByFullName: Edm.String
 	CreatedByFullName *string `json:"CreatedByFullName,omitempty"`
 
-	// CreatedDate: Date this by-product finish was created
+	// CreatedDate: Edm.DateTime
 	CreatedDate *types.Date `json:"CreatedDate,omitempty"`
 
-	// DraftStockTransactionID: Serial or batch numbers are reserved prior to a POST to ByProductReceipts. This DraftStockTransactionID represents the group of serial or batch numbers to be used in this transaction.
+	// DraftStockTransactionID: Edm.Guid
 	DraftStockTransactionID *types.GUID `json:"DraftStockTransactionID,omitempty"`
 
-	// HasReversibleQuantity: Indicates if this ByProductReceipt has a quantity eligible to be reversed via ByProductReversals
+	// HasReversibleQuantity: Edm.Boolean
 	HasReversibleQuantity *bool `json:"HasReversibleQuantity,omitempty"`
 
-	// IsBackflush: Boolean indicating if this by-product finish was the result of shop order backflushing
+	// IsBackflush: Edm.Boolean
 	IsBackflush *bool `json:"IsBackflush,omitempty"`
 
-	// IsBatch: Does the ByProductReceipt&#39;s item use batch numbers
+	// IsBatch: Edm.Byte
 	IsBatch *byte `json:"IsBatch,omitempty"`
 
-	// IsFractionAllowedItem: Indicates if fractions (for example 0.35) are allowed for quantities of the ByProductReceipt&#39;s item
+	// IsFractionAllowedItem: Edm.Byte
 	IsFractionAllowedItem *byte `json:"IsFractionAllowedItem,omitempty"`
 
-	// IsSerial: Does the ByProductReceipt&#39;s item use serial numbers
+	// IsSerial: Edm.Byte
 	IsSerial *byte `json:"IsSerial,omitempty"`
 
-	// Item: ID of by-product item
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode: Code of by-product item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of by-product item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemPictureUrl: Picture url of by-product item
+	// ItemPictureUrl: Edm.String
 	ItemPictureUrl *string `json:"ItemPictureUrl,omitempty"`
 
-	// Quantity: Quantity of this by-product finish
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// ShopOrder: ID of shop order, which produced the by-product
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// ShopOrderMaterialPlan: ID of the shop order material plan for this by-product
+	// ShopOrderMaterialPlan: Edm.Guid
 	ShopOrderMaterialPlan *types.GUID `json:"ShopOrderMaterialPlan,omitempty"`
 
-	// ShopOrderNumber: Number of shop order, which produced the by-product
+	// ShopOrderNumber: Edm.Int32
 	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
 
-	// StorageLocation: ID of storage location finished to
+	// StorageLocation: Edm.Guid
 	StorageLocation *types.GUID `json:"StorageLocation,omitempty"`
 
-	// StorageLocationCode: Code of storage location finished to
+	// StorageLocationCode: Edm.String
 	StorageLocationCode *string `json:"StorageLocationCode,omitempty"`
 
-	// StorageLocationDescription: Description of storage location finished to
+	// StorageLocationDescription: Edm.String
 	StorageLocationDescription *string `json:"StorageLocationDescription,omitempty"`
 
-	// TransactionDate: Effective date of this by-product finish
+	// TransactionDate: Edm.DateTime
 	TransactionDate *types.Date `json:"TransactionDate,omitempty"`
 
-	// Unit: Unit of measurement abbreviation of by-product item
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription: Unit of measurement of by-product item
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// Warehouse: ID of warehouse finished to
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode: Code of warehouse finished to
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription: Description of warehouse finished to
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 }
 

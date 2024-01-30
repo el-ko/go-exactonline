@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -27,73 +27,91 @@ type DocumentsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMDocuments
 type Documents struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account: ID of the related account of this document
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// Attachments: Attachments linked to the document. Binaries are not sent in the response.
+	// Attachments: Attachments
 	Attachments *json.RawMessage `json:"Attachments,omitempty"`
 
-	// Created: Creation date
+	// Contact: Edm.Guid
+	Contact *types.GUID `json:"Contact,omitempty"`
+
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DocumentDate: Entry date of the incoming document
+	// DocumentDate: Edm.DateTime
 	DocumentDate *types.Date `json:"DocumentDate,omitempty"`
 
-	// DocumentFolder: Id of document folder
+	// DocumentFolder: Edm.Guid
 	DocumentFolder *types.GUID `json:"DocumentFolder,omitempty"`
 
-	// DocumentViewUrl: Url to view the document
+	// DocumentViewUrl: Edm.String
 	DocumentViewUrl *string `json:"DocumentViewUrl,omitempty"`
 
-	// HasEmptyBody: Indicates that the document body is empty
+	// HasEmptyBody: Edm.Boolean
 	HasEmptyBody *bool `json:"HasEmptyBody,omitempty"`
 
-	// HID: Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
+	// HID: Edm.Int32
 	HID *int `json:"HID,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// Opportunity: The opportunity linked to the document
+	// Opportunity: Edm.Guid
 	Opportunity *types.GUID `json:"Opportunity,omitempty"`
 
-	// PurchaseInvoiceNumber: Purchase invoice number.
+	// PurchaseInvoiceNumber: Edm.Int32
 	PurchaseInvoiceNumber *int `json:"PurchaseInvoiceNumber,omitempty"`
 
-	// PurchaseOrderNumber: Purchase order number.
+	// PurchaseOrderNumber: Edm.Int32
 	PurchaseOrderNumber *int `json:"PurchaseOrderNumber,omitempty"`
 
-	// SalesInvoiceNumber: &#39;Our reference&#39; of the transaction that belongs to this document
+	// SalesInvoiceNumber: Edm.Int32
 	SalesInvoiceNumber *int `json:"SalesInvoiceNumber,omitempty"`
 
-	// SalesOrderNumber: Number of the sales order
+	// SalesOrderNumber: Edm.Int32
 	SalesOrderNumber *int `json:"SalesOrderNumber,omitempty"`
 
-	// SendMethod: Send Method
+	// SendMethod: Edm.Int32
 	SendMethod *int `json:"SendMethod,omitempty"`
 
-	// Subject: Subject of this document
+	// Share: Edm.Int32
+	Share *int `json:"Share,omitempty"`
+
+	// SharePointConnectionStatus: Edm.Int16
+	SharePointConnectionStatus *int `json:"SharePointConnectionStatus,omitempty"`
+
+	// SharePointID: Edm.String
+	SharePointID *string `json:"SharePointID,omitempty"`
+
+	// Source: Edm.Int32
+	Source *int `json:"Source,omitempty"`
+
+	// SourceDescription: Edm.String
+	SourceDescription *string `json:"SourceDescription,omitempty"`
+
+	// Subject: Edm.String
 	Subject *string `json:"Subject,omitempty"`
 
-	// Type: The document type
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 
-	// TypeDescription: Translated description of the document type. $filter and $orderby are not supported for this property.
+	// TypeDescription: Edm.String
 	TypeDescription *string `json:"TypeDescription,omitempty"`
 }
 

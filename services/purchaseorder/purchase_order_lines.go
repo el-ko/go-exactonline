@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -7,6 +7,7 @@ package purchaseorder
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -25,158 +26,197 @@ type PurchaseOrderLinesEndpoint service
 // URL: /api/v1/{division}/purchaseorder/PurchaseOrderLines
 // HasWebhook: true
 // IsInBeta: false
-// Methods: GET POST DELETE
+// Methods: GET POST PUT DELETE
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrderLines
 type PurchaseOrderLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// CostCenter:
+	// CostCenter: Edm.String
 	CostCenter *string `json:"CostCenter,omitempty"`
 
-	// CostCenterDescription:
+	// CostCenterDescription: Edm.String
 	CostCenterDescription *string `json:"CostCenterDescription,omitempty"`
 
-	// CostUnit:
+	// CostUnit: Edm.String
 	CostUnit *string `json:"CostUnit,omitempty"`
 
-	// CostUnitDescription:
+	// CostUnitDescription: Edm.String
 	CostUnitDescription *string `json:"CostUnitDescription,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Discount:
+	// Discount: Edm.Double
 	Discount *float64 `json:"Discount,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Expense:
+	// Expense: Edm.Guid
 	Expense *types.GUID `json:"Expense,omitempty"`
 
-	// ExpenseDescription:
+	// ExpenseDescription: Edm.String
 	ExpenseDescription *string `json:"ExpenseDescription,omitempty"`
 
-	// InStock:
+	// InStock: Edm.Double
 	InStock *float64 `json:"InStock,omitempty"`
 
-	// InvoicedQuantity:
+	// InvoicedQuantity: Edm.Double
 	InvoicedQuantity *float64 `json:"InvoicedQuantity,omitempty"`
 
-	// Item:
+	// IsBatchNumberItem: Edm.Byte
+	IsBatchNumberItem *byte `json:"IsBatchNumberItem,omitempty"`
+
+	// IsSerialNumberItem: Edm.Byte
+	IsSerialNumberItem *byte `json:"IsSerialNumberItem,omitempty"`
+
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemCode:
+	// ItemBarcode: Edm.String
+	ItemBarcode *string `json:"ItemBarcode,omitempty"`
+
+	// ItemBarcodeAdditional: Edm.String
+	ItemBarcodeAdditional *string `json:"ItemBarcodeAdditional,omitempty"`
+
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription:
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemDivisable:
+	// ItemDivisable: Edm.Boolean
 	ItemDivisable *bool `json:"ItemDivisable,omitempty"`
 
-	// LineNumber:
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// NetPrice:
+	// NetPrice: Edm.Double
 	NetPrice *float64 `json:"NetPrice,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// ProjectedStock:
+	// ProjectedStock: Edm.Double
 	ProjectedStock *float64 `json:"ProjectedStock,omitempty"`
 
-	// PurchaseOrderID:
+	// PurchaseOrderID: Edm.Guid
 	PurchaseOrderID *types.GUID `json:"PurchaseOrderID,omitempty"`
 
-	// Quantity:
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// QuantityInPurchaseUnits:
+	// QuantityInPurchaseUnits: Edm.Double
 	QuantityInPurchaseUnits *float64 `json:"QuantityInPurchaseUnits,omitempty"`
 
-	// Rebill:
+	// Rebill: Edm.Boolean
 	Rebill *bool `json:"Rebill,omitempty"`
 
-	// ReceiptDate:
+	// ReceiptDate: Edm.DateTime
 	ReceiptDate *types.Date `json:"ReceiptDate,omitempty"`
 
-	// ReceivedQuantity:
+	// ReceivedQuantity: Edm.Double
 	ReceivedQuantity *float64 `json:"ReceivedQuantity,omitempty"`
 
-	// SalesOrder:
+	// SalesOrder: Edm.Guid
 	SalesOrder *types.GUID `json:"SalesOrder,omitempty"`
 
-	// SalesOrderLine:
+	// SalesOrderLine: Edm.Guid
 	SalesOrderLine *types.GUID `json:"SalesOrderLine,omitempty"`
 
-	// SalesOrderLineNumber:
+	// SalesOrderLineNumber: Edm.Int32
 	SalesOrderLineNumber *int `json:"SalesOrderLineNumber,omitempty"`
 
-	// SalesOrderNumber:
+	// SalesOrderNumber: Edm.Int32
 	SalesOrderNumber *int `json:"SalesOrderNumber,omitempty"`
 
-	// SupplierItemCode:
+	// ShopOrder: Edm.Guid
+	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
+
+	// ShopOrderMaterialPlan: Edm.Guid
+	ShopOrderMaterialPlan *types.GUID `json:"ShopOrderMaterialPlan,omitempty"`
+
+	// ShopOrderMaterialPlanLineNumber: Edm.Int32
+	ShopOrderMaterialPlanLineNumber *int `json:"ShopOrderMaterialPlanLineNumber,omitempty"`
+
+	// ShopOrderMaterialPlans: ShopOrderMaterialPlans
+	ShopOrderMaterialPlans *json.RawMessage `json:"ShopOrderMaterialPlans,omitempty"`
+
+	// ShopOrderNumber: Edm.Int32
+	ShopOrderNumber *int `json:"ShopOrderNumber,omitempty"`
+
+	// ShopOrderRoutingStepPlan: Edm.Guid
+	ShopOrderRoutingStepPlan *types.GUID `json:"ShopOrderRoutingStepPlan,omitempty"`
+
+	// ShopOrderRoutingStepPlanLineNumber: Edm.Int32
+	ShopOrderRoutingStepPlanLineNumber *int `json:"ShopOrderRoutingStepPlanLineNumber,omitempty"`
+
+	// ShopOrderRoutingStepPlans: ShopOrderRoutingStepPlans
+	ShopOrderRoutingStepPlans *json.RawMessage `json:"ShopOrderRoutingStepPlans,omitempty"`
+
+	// SupplierItemCode: Edm.String
 	SupplierItemCode *string `json:"SupplierItemCode,omitempty"`
 
-	// SupplierItemCopyRemarks:
+	// SupplierItemCopyRemarks: Edm.Byte
 	SupplierItemCopyRemarks *byte `json:"SupplierItemCopyRemarks,omitempty"`
 
-	// Unit:
+	// Unit: Edm.String
 	Unit *string `json:"Unit,omitempty"`
 
-	// UnitDescription:
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// UnitPrice:
+	// UnitPrice: Edm.Double
 	UnitPrice *float64 `json:"UnitPrice,omitempty"`
 
-	// VATAmount:
+	// VATAmount: Edm.Double
 	VATAmount *float64 `json:"VATAmount,omitempty"`
 
-	// VATCode:
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATDescription:
+	// VATDescription: Edm.String
 	VATDescription *string `json:"VATDescription,omitempty"`
 
-	// VATPercentage:
+	// VATPercentage: Edm.Double
 	VATPercentage *float64 `json:"VATPercentage,omitempty"`
 }
 
@@ -230,6 +270,19 @@ func (s *PurchaseOrderLinesEndpoint) Create(ctx context.Context, division int, e
 		return nil, err
 	}
 	return e, nil
+}
+
+// Update the PurchaseOrderLines entity in the provided division.
+func (s *PurchaseOrderLinesEndpoint) Update(ctx context.Context, division int, entity *PurchaseOrderLines) (*PurchaseOrderLines, error) {
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/purchaseorder/PurchaseOrderLines", division) // #nosec
+	u, err := api.AddOdataKeyToURL(b, entity.GetPrimary())
+	if err != nil {
+		return nil, err
+	}
+
+	e := &PurchaseOrderLines{}
+	_, _, requestError := s.client.NewRequestAndDo(ctx, "PUT", u.String(), entity, e)
+	return e, requestError
 }
 
 // Delete the PurchaseOrderLines entity in the provided division.

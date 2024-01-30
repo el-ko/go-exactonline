@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,52 +29,52 @@ type ProductionAreasEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingProductionAreas
 type ProductionAreas struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Code: Code of the production area group
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Costcenter: Reference to Cost center
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription: Description of Costcenter
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// Costunit: Reference to Cost unit
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// CostunitDescription: Description of Costunit
+	// CostunitDescription: Edm.String
 	CostunitDescription *string `json:"CostunitDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the production area
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// IsDefault: Indicates if this is the default production area. This will be used when creating a new production area
+	// IsDefault: Edm.Byte
 	IsDefault *byte `json:"IsDefault,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Production area notes
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 }
 

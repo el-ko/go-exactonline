@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,70 +29,91 @@ type QuotationLinesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotationLines
 type QuotationLines struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// Description:
+	// CostCenter: Edm.String
+	CostCenter *string `json:"CostCenter,omitempty"`
+
+	// CostCenterDescription: Edm.String
+	CostCenterDescription *string `json:"CostCenterDescription,omitempty"`
+
+	// CostUnit: Edm.String
+	CostUnit *string `json:"CostUnit,omitempty"`
+
+	// CostUnitDescription: Edm.String
+	CostUnitDescription *string `json:"CostUnitDescription,omitempty"`
+
+	// CustomerItemCode: Edm.String
+	CustomerItemCode *string `json:"CustomerItemCode,omitempty"`
+
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Discount:
+	// Discount: Edm.Double
 	Discount *float64 `json:"Discount,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Item:
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemDescription:
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// LineNumber:
+	// LineNumber: Edm.Int32
 	LineNumber *int `json:"LineNumber,omitempty"`
 
-	// NetPrice:
+	// NetPrice: Edm.Double
 	NetPrice *float64 `json:"NetPrice,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Quantity:
+	// Optional: Edm.Boolean
+	Optional *bool `json:"Optional,omitempty"`
+
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// QuotationID:
+	// QuotationID: Edm.Guid
 	QuotationID *types.GUID `json:"QuotationID,omitempty"`
 
-	// QuotationNumber:
+	// QuotationNumber: Edm.Int32
 	QuotationNumber *int `json:"QuotationNumber,omitempty"`
 
-	// UnitCode:
+	// UnitCode: Edm.String
 	UnitCode *string `json:"UnitCode,omitempty"`
 
-	// UnitDescription:
+	// UnitDescription: Edm.String
 	UnitDescription *string `json:"UnitDescription,omitempty"`
 
-	// UnitPrice:
+	// UnitPrice: Edm.Double
 	UnitPrice *float64 `json:"UnitPrice,omitempty"`
 
-	// VATAmountFC:
+	// VATAmountFC: Edm.Double
 	VATAmountFC *float64 `json:"VATAmountFC,omitempty"`
 
-	// VATCode:
+	// VATCode: Edm.String
 	VATCode *string `json:"VATCode,omitempty"`
 
-	// VATDescription:
+	// VATDescription: Edm.String
 	VATDescription *string `json:"VATDescription,omitempty"`
 
-	// VATPercentage:
+	// VATPercentage: Edm.Double
 	VATPercentage *float64 `json:"VATPercentage,omitempty"`
 
-	// VersionNumber:
+	// VersionNumber: Edm.Int32
 	VersionNumber *int `json:"VersionNumber,omitempty"`
 }
 

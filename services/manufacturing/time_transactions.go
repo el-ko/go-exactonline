@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,70 +29,70 @@ type TimeTransactionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingTimeTransactions
 type TimeTransactions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Activity: Manufacturing time type: Setup = 10, Run = 20
+	// Activity: Edm.Int32
 	Activity *int `json:"Activity,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Date: Date
+	// Date: Edm.DateTime
 	Date *types.Date `json:"Date,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Employee: Employee linked to the transaction
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// Hours: Machine hours
+	// Hours: Edm.Double
 	Hours *float64 `json:"Hours,omitempty"`
 
-	// IsOperationFinished: Is the operation finished?
+	// IsOperationFinished: Edm.Byte
 	IsOperationFinished *byte `json:"IsOperationFinished,omitempty"`
 
-	// LaborHours: Labor Hours on the operation
+	// LaborHours: Edm.Double
 	LaborHours *float64 `json:"LaborHours,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Notes linked to the time transaction
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// PercentComplete: Percentage of the operation that is complete
+	// PercentComplete: Edm.Double
 	PercentComplete *float64 `json:"PercentComplete,omitempty"`
 
-	// Quantity: Quantity
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// RoutingStepPlan: Routing step linked to the transaction
+	// RoutingStepPlan: Edm.Guid
 	RoutingStepPlan *types.GUID `json:"RoutingStepPlan,omitempty"`
 
-	// ShopOrder: Shop order linked to the transaction
+	// ShopOrder: Edm.Guid
 	ShopOrder *types.GUID `json:"ShopOrder,omitempty"`
 
-	// Status: Status of the transaction: Draft = 1, Rejected = 2, Submitted = 10, Final = 20
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// TimedTimeTransaction: Timed time transaction linked to the transaction
+	// TimedTimeTransaction: Edm.Guid
 	TimedTimeTransaction *types.GUID `json:"TimedTimeTransaction,omitempty"`
 
-	// WorkCenter: Workcenter linked to the transaction
+	// WorkCenter: Edm.Guid
 	WorkCenter *types.GUID `json:"WorkCenter,omitempty"`
 }
 

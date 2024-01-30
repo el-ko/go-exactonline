@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -25,19 +25,19 @@ type AgingOverviewEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialAgingOverview
 type AgingOverview struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// AgeGroup: Primary key
+	// AgeGroup: Edm.Int32
 	AgeGroup *int `json:"AgeGroup,omitempty"`
 
-	// AgeGroupDescription: Description of AgeGroup
+	// AgeGroupDescription: Edm.String
 	AgeGroupDescription *string `json:"AgeGroupDescription,omitempty"`
 
-	// AmountPayable: Amount payable
+	// AmountPayable: Edm.Double
 	AmountPayable *float64 `json:"AmountPayable,omitempty"`
 
-	// AmountReceivable: Amount receivable
+	// AmountReceivable: Edm.Double
 	AmountReceivable *float64 `json:"AmountReceivable,omitempty"`
 
-	// CurrencyCode: Code of Currency
+	// CurrencyCode: Edm.String
 	CurrencyCode *string `json:"CurrencyCode,omitempty"`
 }
 

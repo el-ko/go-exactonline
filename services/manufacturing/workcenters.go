@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,82 +29,82 @@ type WorkcentersEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingWorkcenters
 type Workcenters struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Capacity: Capacity of the work center
+	// Capacity: Edm.Int32
 	Capacity *int `json:"Capacity,omitempty"`
 
-	// Code: Code of the work center
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Costcenter: Reference to CostCenters
+	// Costcenter: Edm.String
 	Costcenter *string `json:"Costcenter,omitempty"`
 
-	// CostcenterDescription: Description of Costcenter
+	// CostcenterDescription: Edm.String
 	CostcenterDescription *string `json:"CostcenterDescription,omitempty"`
 
-	// Costunit: Reference to CostUnits
+	// Costunit: Edm.String
 	Costunit *string `json:"Costunit,omitempty"`
 
-	// CostunitDescription: Description of Costunit
+	// CostunitDescription: Edm.String
 	CostunitDescription *string `json:"CostunitDescription,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Description: Description of the work center
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GeneralBurdenRate: General burden rate
+	// GeneralBurdenRate: Edm.Double
 	GeneralBurdenRate *float64 `json:"GeneralBurdenRate,omitempty"`
 
-	// IsLaborBurdenPercent: Indicates if labor burden is calculated as a percentage or amount
+	// IsLaborBurdenPercent: Edm.Byte
 	IsLaborBurdenPercent *byte `json:"IsLaborBurdenPercent,omitempty"`
 
-	// LaborBurdenRate: Labor burden rate
+	// LaborBurdenRate: Edm.Double
 	LaborBurdenRate *float64 `json:"LaborBurdenRate,omitempty"`
 
-	// MachineBurdenRate: Machine burden rate
+	// MachineBurdenRate: Edm.Double
 	MachineBurdenRate *float64 `json:"MachineBurdenRate,omitempty"`
 
-	// Modified: Last modified date
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes: Remarks
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// ProductionArea: Area to which the work center belongs.
+	// ProductionArea: Edm.Guid
 	ProductionArea *types.GUID `json:"ProductionArea,omitempty"`
 
-	// RunLaborRate: Run labor rate
+	// RunLaborRate: Edm.Double
 	RunLaborRate *float64 `json:"RunLaborRate,omitempty"`
 
-	// SearchCode: Search code of the work center
+	// SearchCode: Edm.String
 	SearchCode *string `json:"SearchCode,omitempty"`
 
-	// SetupLaborRate: Setup labor rate
+	// SetupLaborRate: Edm.Double
 	SetupLaborRate *float64 `json:"SetupLaborRate,omitempty"`
 
-	// Status: Reference to WorkcenterStatus
+	// Status: Edm.Int32
 	Status *int `json:"Status,omitempty"`
 
-	// Type: Reference to WorkcenterTypes
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 }
 

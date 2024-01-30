@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,76 +26,76 @@ type RecentHoursEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectRecentHours
 type RecentHours struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// Id: Primary key
+	// Id: Edm.Int32
 	Id *int `json:"Id,omitempty"`
 
-	// AccountCode: Code of Account
+	// AccountCode: Edm.String
 	AccountCode *string `json:"AccountCode,omitempty"`
 
-	// AccountId: Reference to Account
+	// AccountId: Edm.Guid
 	AccountId *types.GUID `json:"AccountId,omitempty"`
 
-	// AccountName: Name of Account
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Activity: Reference to Activity
+	// Activity: Edm.Guid
 	Activity *types.GUID `json:"Activity,omitempty"`
 
-	// ActivityDescription: Description of Activity
+	// ActivityDescription: Edm.String
 	ActivityDescription *string `json:"ActivityDescription,omitempty"`
 
-	// Date: Date
+	// Date: Edm.DateTime
 	Date *types.Date `json:"Date,omitempty"`
 
-	// EntryId: Entry ID
+	// EntryId: Edm.Guid
 	EntryId *types.GUID `json:"EntryId,omitempty"`
 
-	// HoursApproved: Hours approved
+	// HoursApproved: Edm.Double
 	HoursApproved *float64 `json:"HoursApproved,omitempty"`
 
-	// HoursApprovedBillable: Billable hours approved
+	// HoursApprovedBillable: Edm.Double
 	HoursApprovedBillable *float64 `json:"HoursApprovedBillable,omitempty"`
 
-	// HoursDraft: Hours draft
+	// HoursDraft: Edm.Double
 	HoursDraft *float64 `json:"HoursDraft,omitempty"`
 
-	// HoursDraftBillable: Billable hours draft
+	// HoursDraftBillable: Edm.Double
 	HoursDraftBillable *float64 `json:"HoursDraftBillable,omitempty"`
 
-	// HoursRejected: Hours rejected
+	// HoursRejected: Edm.Double
 	HoursRejected *float64 `json:"HoursRejected,omitempty"`
 
-	// HoursRejectedBillable: Billable hours rejected
+	// HoursRejectedBillable: Edm.Double
 	HoursRejectedBillable *float64 `json:"HoursRejectedBillable,omitempty"`
 
-	// HoursSubmitted: Hours submitted
+	// HoursSubmitted: Edm.Double
 	HoursSubmitted *float64 `json:"HoursSubmitted,omitempty"`
 
-	// HoursSubmittedBillable: Billable hours submitted
+	// HoursSubmittedBillable: Edm.Double
 	HoursSubmittedBillable *float64 `json:"HoursSubmittedBillable,omitempty"`
 
-	// ItemCode: Code of Item
+	// ItemCode: Edm.String
 	ItemCode *string `json:"ItemCode,omitempty"`
 
-	// ItemDescription: Description of Item
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemId: Reference to Item
+	// ItemId: Edm.Guid
 	ItemId *types.GUID `json:"ItemId,omitempty"`
 
-	// Notes: Remarks
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// ProjectCode: Code of Project
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription: Description of Project
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// ProjectId: Reference to Project
+	// ProjectId: Edm.Guid
 	ProjectId *types.GUID `json:"ProjectId,omitempty"`
 
-	// WeekNumber: Week number
+	// WeekNumber: Edm.Int32
 	WeekNumber *int `json:"WeekNumber,omitempty"`
 }
 

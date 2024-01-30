@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,109 +29,115 @@ type JournalsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialJournals
 type Journals struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary Key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// AllowVariableCurrency: Indicates if the journal allows variable currency
+	// AllowVariableCurrency: Edm.Boolean
 	AllowVariableCurrency *bool `json:"AllowVariableCurrency,omitempty"`
 
-	// AllowVariableExchangeRate: Indicates if the journal allows the exchange rate of the currency of the amounts in the journal entry to be changed
+	// AllowVariableExchangeRate: Edm.Boolean
 	AllowVariableExchangeRate *bool `json:"AllowVariableExchangeRate,omitempty"`
 
-	// AllowVAT: Indicates if the journal allows the use of VAT in the financial entry. Especially true for general journals
+	// AllowVAT: Edm.Boolean
 	AllowVAT *bool `json:"AllowVAT,omitempty"`
 
-	// AutoSave: Indicates if the journal automatically saves the entries when the amount is in balance with the entry lines
+	// AutoSave: Edm.Boolean
 	AutoSave *bool `json:"AutoSave,omitempty"`
 
-	// Bank: Reference to bank account
+	// Bank: Edm.Guid
 	Bank *types.GUID `json:"Bank,omitempty"`
 
-	// BankAccountBICCode: BIC code of the bank where the bank account is held
+	// BankAccountBICCode: Edm.String
 	BankAccountBICCode *string `json:"BankAccountBICCode,omitempty"`
 
-	// BankAccountCountry: Country of bank account
+	// BankAccountCountry: Edm.String
 	BankAccountCountry *string `json:"BankAccountCountry,omitempty"`
 
-	// BankAccountDescription: Description of BankAccount
+	// BankAccountDescription: Edm.String
 	BankAccountDescription *string `json:"BankAccountDescription,omitempty"`
 
-	// BankAccountIBAN: IBAN of the bank account
+	// BankAccountIBAN: Edm.String
 	BankAccountIBAN *string `json:"BankAccountIBAN,omitempty"`
 
-	// BankAccountID: Reference to the Bank Account linked to the Journal
+	// BankAccountID: Edm.Guid
 	BankAccountID *types.GUID `json:"BankAccountID,omitempty"`
 
-	// BankAccountIncludingMask: Bank account number. Is mandatory for Journals that have Type = Bank
+	// BankAccountIncludingMask: Edm.String
 	BankAccountIncludingMask *string `json:"BankAccountIncludingMask,omitempty"`
 
-	// BankAccountUseSEPA: Obsolete. Whether or not use SEPA for the bank account
+	// BankAccountUseSEPA: Edm.Boolean
 	BankAccountUseSEPA *bool `json:"BankAccountUseSEPA,omitempty"`
 
-	// BankAccountUseSepaDirectDebit: Obsolete. Whether or not use SEPA direct debit for the bank account
+	// BankAccountUseSepaDirectDebit: Edm.Boolean
 	BankAccountUseSepaDirectDebit *bool `json:"BankAccountUseSepaDirectDebit,omitempty"`
 
-	// BankName: Name of bank account
+	// BankName: Edm.String
 	BankName *string `json:"BankName,omitempty"`
 
-	// Code: Primary key
+	// Code: Edm.String
 	Code *string `json:"Code,omitempty"`
 
-	// Created: Creation date
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator: User ID of creator
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName: Name of creator
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency: Default Currency of the Journal. If AllowVariableCurrency is false this is the only currency that can be used
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// CurrencyDescription: Description of Currency
+	// CurrencyDescription: Edm.String
 	CurrencyDescription *string `json:"CurrencyDescription,omitempty"`
 
-	// Description: Name of the Journal
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division: Division code
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// GLAccount: Suspense general ledger account
+	// GLAccount: Edm.Guid
 	GLAccount *types.GUID `json:"GLAccount,omitempty"`
 
-	// GLAccountCode: Code of GLAccount
+	// GLAccountCode: Edm.String
 	GLAccountCode *string `json:"GLAccountCode,omitempty"`
 
-	// GLAccountDescription: Description of GLAccount
+	// GLAccountDescription: Edm.String
 	GLAccountDescription *string `json:"GLAccountDescription,omitempty"`
 
-	// GLAccountType: Type of GLAccount
+	// GLAccountType: Edm.Int32
 	GLAccountType *int `json:"GLAccountType,omitempty"`
 
-	// Modified: Last modified date
+	// IsBlocked: Edm.Boolean
+	IsBlocked *bool `json:"IsBlocked,omitempty"`
+
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier: User ID of modifier
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName: Name of modifier
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// PaymentInTransitAccount: General ledger account for payment in transit
+	// PaymentInTransitAccount: Edm.Guid
 	PaymentInTransitAccount *types.GUID `json:"PaymentInTransitAccount,omitempty"`
 
-	// PaymentServiceAccountIdentifier: Identifier detail of the Payment service account. Ex. EmailID for Paypal type of Payment service account
+	// PaymentServiceAccountIdentifier: Edm.String
 	PaymentServiceAccountIdentifier *string `json:"PaymentServiceAccountIdentifier,omitempty"`
 
-	// PaymentServiceProvider: Type of Payment service provider. The following values are supported: 1 (Adyen), 2 (Paypal), 3 (Stripe). Is mandatory for Journals of Type 16 (Payment service)
+	// PaymentServiceProvider: Edm.Int32
 	PaymentServiceProvider *int `json:"PaymentServiceProvider,omitempty"`
 
-	// PaymentServiceProviderName: Name of the Payment service provider
+	// PaymentServiceProviderName: Edm.String
 	PaymentServiceProviderName *string `json:"PaymentServiceProviderName,omitempty"`
 
-	// Type: Type of Journal. The following values are supported: 10 (Cash) 12 (Bank) 16 (Payment service) 20 (Sales) 21 (Return invoice) 22 (Purchase) 23 (Received return invoice) 90 (General journal)
+	// Type: Edm.Int32
 	Type *int `json:"Type,omitempty"`
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -29,139 +29,142 @@ type TimeTransactionsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectTimeTransactions
 type TimeTransactions struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID:
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Account:
+	// Account: Edm.Guid
 	Account *types.GUID `json:"Account,omitempty"`
 
-	// AccountName:
+	// AccountName: Edm.String
 	AccountName *string `json:"AccountName,omitempty"`
 
-	// Activity:
+	// Activity: Edm.Guid
 	Activity *types.GUID `json:"Activity,omitempty"`
 
-	// ActivityDescription:
+	// ActivityDescription: Edm.String
 	ActivityDescription *string `json:"ActivityDescription,omitempty"`
 
-	// Amount:
+	// Amount: Edm.Double
 	Amount *float64 `json:"Amount,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// Attachment:
+	// Attachment: Edm.Guid
 	Attachment *types.GUID `json:"Attachment,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// Date:
+	// CustomField: Edm.String
+	CustomField *string `json:"CustomField,omitempty"`
+
+	// Date: Edm.DateTime
 	Date *types.Date `json:"Date,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// DivisionDescription:
+	// DivisionDescription: Edm.String
 	DivisionDescription *string `json:"DivisionDescription,omitempty"`
 
-	// Employee:
+	// Employee: Edm.Guid
 	Employee *types.GUID `json:"Employee,omitempty"`
 
-	// EndTime:
+	// EndTime: Edm.DateTime
 	EndTime *types.Date `json:"EndTime,omitempty"`
 
-	// EntryNumber:
+	// EntryNumber: Edm.Int32
 	EntryNumber *int `json:"EntryNumber,omitempty"`
 
-	// ErrorText:
+	// ErrorText: Edm.String
 	ErrorText *string `json:"ErrorText,omitempty"`
 
-	// HourStatus:
+	// HourStatus: Edm.Int16
 	HourStatus *int `json:"HourStatus,omitempty"`
 
-	// Item:
+	// Item: Edm.Guid
 	Item *types.GUID `json:"Item,omitempty"`
 
-	// ItemDescription:
+	// ItemDescription: Edm.String
 	ItemDescription *string `json:"ItemDescription,omitempty"`
 
-	// ItemDivisable:
+	// ItemDivisable: Edm.Boolean
 	ItemDivisable *bool `json:"ItemDivisable,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Notes:
+	// Notes: Edm.String
 	Notes *string `json:"Notes,omitempty"`
 
-	// Price:
+	// Price: Edm.Double
 	Price *float64 `json:"Price,omitempty"`
 
-	// PriceFC:
+	// PriceFC: Edm.Double
 	PriceFC *float64 `json:"PriceFC,omitempty"`
 
-	// Project:
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectAccount:
+	// ProjectAccount: Edm.Guid
 	ProjectAccount *types.GUID `json:"ProjectAccount,omitempty"`
 
-	// ProjectAccountCode:
+	// ProjectAccountCode: Edm.String
 	ProjectAccountCode *string `json:"ProjectAccountCode,omitempty"`
 
-	// ProjectAccountName:
+	// ProjectAccountName: Edm.String
 	ProjectAccountName *string `json:"ProjectAccountName,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// Quantity:
+	// Quantity: Edm.Double
 	Quantity *float64 `json:"Quantity,omitempty"`
 
-	// SkipValidation:
+	// SkipValidation: Edm.Boolean
 	SkipValidation *bool `json:"SkipValidation,omitempty"`
 
-	// StartTime:
+	// StartTime: Edm.DateTime
 	StartTime *types.Date `json:"StartTime,omitempty"`
 
-	// Subscription:
+	// Subscription: Edm.Guid
 	Subscription *types.GUID `json:"Subscription,omitempty"`
 
-	// SubscriptionAccount:
+	// SubscriptionAccount: Edm.Guid
 	SubscriptionAccount *types.GUID `json:"SubscriptionAccount,omitempty"`
 
-	// SubscriptionAccountCode:
+	// SubscriptionAccountCode: Edm.String
 	SubscriptionAccountCode *string `json:"SubscriptionAccountCode,omitempty"`
 
-	// SubscriptionAccountName:
+	// SubscriptionAccountName: Edm.String
 	SubscriptionAccountName *string `json:"SubscriptionAccountName,omitempty"`
 
-	// SubscriptionDescription:
+	// SubscriptionDescription: Edm.String
 	SubscriptionDescription *string `json:"SubscriptionDescription,omitempty"`
 
-	// SubscriptionNumber:
+	// SubscriptionNumber: Edm.Int32
 	SubscriptionNumber *int `json:"SubscriptionNumber,omitempty"`
 
-	// Type:
+	// Type: Edm.Int16
 	Type *int `json:"Type,omitempty"`
 }
 

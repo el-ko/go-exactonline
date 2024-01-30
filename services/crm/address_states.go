@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,25 +26,25 @@ type AddressStatesEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAddressStates
 type AddressStates struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// ID: Primary key
+	// ID: Edm.Guid
 	ID *types.GUID `json:"ID,omitempty"`
 
-	// Country: Country code
+	// Country: Edm.String
 	Country *string `json:"Country,omitempty"`
 
-	// DisplayValue: Description of state prefixed with the code
+	// DisplayValue: Edm.String
 	DisplayValue *string `json:"DisplayValue,omitempty"`
 
-	// Latitude: Latitude
+	// Latitude: Edm.Double
 	Latitude *float64 `json:"Latitude,omitempty"`
 
-	// Longitude: Longitude
+	// Longitude: Edm.Double
 	Longitude *float64 `json:"Longitude,omitempty"`
 
-	// Name: State name
+	// Name: Edm.String
 	Name *string `json:"Name,omitempty"`
 
-	// State: State code
+	// State: Edm.String
 	State *string `json:"State,omitempty"`
 }
 

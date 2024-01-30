@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -26,155 +26,194 @@ type PurchaseOrdersEndpoint service
 // URL: /api/v1/{division}/purchaseorder/PurchaseOrders
 // HasWebhook: true
 // IsInBeta: false
-// Methods: GET POST DELETE
+// Methods: GET POST PUT DELETE
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrders
 type PurchaseOrders struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// PurchaseOrderID:
+	// PurchaseOrderID: Edm.Guid
 	PurchaseOrderID *types.GUID `json:"PurchaseOrderID,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// Created:
+	// ApprovalStatus: Edm.Int16
+	ApprovalStatus *int `json:"ApprovalStatus,omitempty"`
+
+	// ApprovalStatusDescription: Edm.String
+	ApprovalStatusDescription *string `json:"ApprovalStatusDescription,omitempty"`
+
+	// Approved: Edm.DateTime
+	Approved *types.Date `json:"Approved,omitempty"`
+
+	// Approver: Edm.Guid
+	Approver *types.GUID `json:"Approver,omitempty"`
+
+	// ApproverFullName: Edm.String
+	ApproverFullName *string `json:"ApproverFullName,omitempty"`
+
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// DeliveryAccount:
+	// DeliveryAccount: Edm.Guid
 	DeliveryAccount *types.GUID `json:"DeliveryAccount,omitempty"`
 
-	// DeliveryAccountCode:
+	// DeliveryAccountCode: Edm.String
 	DeliveryAccountCode *string `json:"DeliveryAccountCode,omitempty"`
 
-	// DeliveryAccountName:
+	// DeliveryAccountName: Edm.String
 	DeliveryAccountName *string `json:"DeliveryAccountName,omitempty"`
 
-	// DeliveryAddress:
+	// DeliveryAddress: Edm.Guid
 	DeliveryAddress *types.GUID `json:"DeliveryAddress,omitempty"`
 
-	// DeliveryContact:
+	// DeliveryContact: Edm.Guid
 	DeliveryContact *types.GUID `json:"DeliveryContact,omitempty"`
 
-	// DeliveryContactPersonFullName:
+	// DeliveryContactPersonFullName: Edm.String
 	DeliveryContactPersonFullName *string `json:"DeliveryContactPersonFullName,omitempty"`
 
-	// Description:
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document:
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentSubject:
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// DropShipment:
+	// DropShipment: Edm.Boolean
 	DropShipment *bool `json:"DropShipment,omitempty"`
 
-	// ExchangeRate:
+	// ExchangeRate: Edm.Double
 	ExchangeRate *float64 `json:"ExchangeRate,omitempty"`
 
-	// InvoiceStatus:
+	// IncotermAddress: Edm.String
+	IncotermAddress *string `json:"IncotermAddress,omitempty"`
+
+	// IncotermCode: Edm.String
+	IncotermCode *string `json:"IncotermCode,omitempty"`
+
+	// IncotermVersion: Edm.Int16
+	IncotermVersion *int `json:"IncotermVersion,omitempty"`
+
+	// InvoiceStatus: Edm.Int32
 	InvoiceStatus *int `json:"InvoiceStatus,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// OrderDate:
+	// OrderDate: Edm.DateTime
 	OrderDate *types.Date `json:"OrderDate,omitempty"`
 
-	// OrderNumber:
+	// OrderNumber: Edm.Int32
 	OrderNumber *int `json:"OrderNumber,omitempty"`
 
-	// OrderStatus:
+	// OrderStatus: Edm.Int32
 	OrderStatus *int `json:"OrderStatus,omitempty"`
 
-	// PaymentCondition:
+	// PaymentCondition: Edm.String
 	PaymentCondition *string `json:"PaymentCondition,omitempty"`
 
-	// PaymentConditionDescription:
+	// PaymentConditionDescription: Edm.String
 	PaymentConditionDescription *string `json:"PaymentConditionDescription,omitempty"`
 
-	// PurchaseAgent:
+	// PurchaseAgent: Edm.Guid
 	PurchaseAgent *types.GUID `json:"PurchaseAgent,omitempty"`
 
-	// PurchaseAgentFullName:
+	// PurchaseAgentFullName: Edm.String
 	PurchaseAgentFullName *string `json:"PurchaseAgentFullName,omitempty"`
 
-	// PurchaseOrderLines:
+	// PurchaseOrderLineCount: Edm.Int32
+	PurchaseOrderLineCount *int `json:"PurchaseOrderLineCount,omitempty"`
+
+	// PurchaseOrderLines: PurchaseOrderLines
 	PurchaseOrderLines *json.RawMessage `json:"PurchaseOrderLines,omitempty"`
 
-	// ReceiptDate:
+	// ReceiptDate: Edm.DateTime
 	ReceiptDate *types.Date `json:"ReceiptDate,omitempty"`
 
-	// ReceiptStatus:
+	// ReceiptStatus: Edm.Int32
 	ReceiptStatus *int `json:"ReceiptStatus,omitempty"`
 
-	// Remarks:
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// SalesOrder:
+	// SalesOrder: Edm.Guid
 	SalesOrder *types.GUID `json:"SalesOrder,omitempty"`
 
-	// SalesOrderNumber:
+	// SalesOrderNumber: Edm.Int32
 	SalesOrderNumber *int `json:"SalesOrderNumber,omitempty"`
 
-	// ShippingMethod:
+	// SelectionCode: Edm.Guid
+	SelectionCode *types.GUID `json:"SelectionCode,omitempty"`
+
+	// SelectionCodeCode: Edm.String
+	SelectionCodeCode *string `json:"SelectionCodeCode,omitempty"`
+
+	// SelectionCodeDescription: Edm.String
+	SelectionCodeDescription *string `json:"SelectionCodeDescription,omitempty"`
+
+	// ShippingMethod: Edm.Guid
 	ShippingMethod *types.GUID `json:"ShippingMethod,omitempty"`
 
-	// ShippingMethodDescription:
+	// ShippingMethodCode: Edm.String
+	ShippingMethodCode *string `json:"ShippingMethodCode,omitempty"`
+
+	// ShippingMethodDescription: Edm.String
 	ShippingMethodDescription *string `json:"ShippingMethodDescription,omitempty"`
 
-	// Source:
+	// Source: Edm.Int16
 	Source *int `json:"Source,omitempty"`
 
-	// Supplier:
+	// Supplier: Edm.Guid
 	Supplier *types.GUID `json:"Supplier,omitempty"`
 
-	// SupplierCode:
+	// SupplierCode: Edm.String
 	SupplierCode *string `json:"SupplierCode,omitempty"`
 
-	// SupplierContact:
+	// SupplierContact: Edm.Guid
 	SupplierContact *types.GUID `json:"SupplierContact,omitempty"`
 
-	// SupplierContactPersonFullName:
+	// SupplierContactPersonFullName: Edm.String
 	SupplierContactPersonFullName *string `json:"SupplierContactPersonFullName,omitempty"`
 
-	// SupplierName:
+	// SupplierName: Edm.String
 	SupplierName *string `json:"SupplierName,omitempty"`
 
-	// VATAmount:
+	// VATAmount: Edm.Double
 	VATAmount *float64 `json:"VATAmount,omitempty"`
 
-	// Warehouse:
+	// Warehouse: Edm.Guid
 	Warehouse *types.GUID `json:"Warehouse,omitempty"`
 
-	// WarehouseCode:
+	// WarehouseCode: Edm.String
 	WarehouseCode *string `json:"WarehouseCode,omitempty"`
 
-	// WarehouseDescription:
+	// WarehouseDescription: Edm.String
 	WarehouseDescription *string `json:"WarehouseDescription,omitempty"`
 
-	// YourRef:
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 
@@ -228,6 +267,19 @@ func (s *PurchaseOrdersEndpoint) Create(ctx context.Context, division int, entit
 		return nil, err
 	}
 	return e, nil
+}
+
+// Update the PurchaseOrders entity in the provided division.
+func (s *PurchaseOrdersEndpoint) Update(ctx context.Context, division int, entity *PurchaseOrders) (*PurchaseOrders, error) {
+	b, _ := s.client.ResolvePathWithDivision("/api/v1/{division}/purchaseorder/PurchaseOrders", division) // #nosec
+	u, err := api.AddOdataKeyToURL(b, entity.GetPrimary())
+	if err != nil {
+		return nil, err
+	}
+
+	e := &PurchaseOrders{}
+	_, _, requestError := s.client.NewRequestAndDo(ctx, "PUT", u.String(), entity, e)
+	return e, requestError
 }
 
 // Delete the PurchaseOrders entity in the provided division.

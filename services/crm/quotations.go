@@ -1,4 +1,4 @@
-// Copyright 2018 The go-exactonline AUTHORS. All rights reserved.
+// Copyright 2024 The go-exactonline AUTHORS. All rights reserved.
 //
 // Use of this source code is governed by a MIT
 // license that can be found in the LICENSE file.
@@ -30,151 +30,202 @@ type QuotationsEndpoint service
 // Endpoint docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotations
 type Quotations struct {
 	MetaData *api.MetaData `json:"__metadata,omitempty"`
-	// QuotationID:
+	// QuotationID: Edm.Guid
 	QuotationID *types.GUID `json:"QuotationID,omitempty"`
 
-	// AmountDC:
+	// AmountDC: Edm.Double
 	AmountDC *float64 `json:"AmountDC,omitempty"`
 
-	// AmountFC:
+	// AmountDiscount: Edm.Double
+	AmountDiscount *float64 `json:"AmountDiscount,omitempty"`
+
+	// AmountDiscountExclVat: Edm.Double
+	AmountDiscountExclVat *float64 `json:"AmountDiscountExclVat,omitempty"`
+
+	// AmountFC: Edm.Double
 	AmountFC *float64 `json:"AmountFC,omitempty"`
 
-	// CloseDate:
+	// CloseDate: Edm.DateTime
 	CloseDate *types.Date `json:"CloseDate,omitempty"`
 
-	// ClosingDate:
+	// ClosingDate: Edm.DateTime
 	ClosingDate *types.Date `json:"ClosingDate,omitempty"`
 
-	// Created:
+	// Created: Edm.DateTime
 	Created *types.Date `json:"Created,omitempty"`
 
-	// Creator:
+	// Creator: Edm.Guid
 	Creator *types.GUID `json:"Creator,omitempty"`
 
-	// CreatorFullName:
+	// CreatorFullName: Edm.String
 	CreatorFullName *string `json:"CreatorFullName,omitempty"`
 
-	// Currency:
+	// Currency: Edm.String
 	Currency *string `json:"Currency,omitempty"`
 
-	// DeliveryAccount:
+	// DeliveryAccount: Edm.Guid
 	DeliveryAccount *types.GUID `json:"DeliveryAccount,omitempty"`
 
-	// DeliveryAccountCode:
+	// DeliveryAccountCode: Edm.String
 	DeliveryAccountCode *string `json:"DeliveryAccountCode,omitempty"`
 
-	// DeliveryAccountContact:
+	// DeliveryAccountContact: Edm.Guid
 	DeliveryAccountContact *types.GUID `json:"DeliveryAccountContact,omitempty"`
 
-	// DeliveryAccountContactFullName:
+	// DeliveryAccountContactFullName: Edm.String
 	DeliveryAccountContactFullName *string `json:"DeliveryAccountContactFullName,omitempty"`
 
-	// DeliveryAccountName:
+	// DeliveryAccountName: Edm.String
 	DeliveryAccountName *string `json:"DeliveryAccountName,omitempty"`
 
-	// DeliveryAddress:
+	// DeliveryAddress: Edm.Guid
 	DeliveryAddress *types.GUID `json:"DeliveryAddress,omitempty"`
 
-	// Description:
+	// DeliveryDate: Edm.DateTime
+	DeliveryDate *types.Date `json:"DeliveryDate,omitempty"`
+
+	// Description: Edm.String
 	Description *string `json:"Description,omitempty"`
 
-	// Division:
+	// Division: Edm.Int32
 	Division *int `json:"Division,omitempty"`
 
-	// Document:
+	// Document: Edm.Guid
 	Document *types.GUID `json:"Document,omitempty"`
 
-	// DocumentSubject:
+	// DocumentSubject: Edm.String
 	DocumentSubject *string `json:"DocumentSubject,omitempty"`
 
-	// DueDate:
+	// DueDate: Edm.DateTime
 	DueDate *types.Date `json:"DueDate,omitempty"`
 
-	// InvoiceAccount:
+	// IncotermAddress: Edm.String
+	IncotermAddress *string `json:"IncotermAddress,omitempty"`
+
+	// IncotermCode: Edm.String
+	IncotermCode *string `json:"IncotermCode,omitempty"`
+
+	// IncotermVersion: Edm.Int16
+	IncotermVersion *int `json:"IncotermVersion,omitempty"`
+
+	// InvoiceAccount: Edm.Guid
 	InvoiceAccount *types.GUID `json:"InvoiceAccount,omitempty"`
 
-	// InvoiceAccountCode:
+	// InvoiceAccountCode: Edm.String
 	InvoiceAccountCode *string `json:"InvoiceAccountCode,omitempty"`
 
-	// InvoiceAccountContact:
+	// InvoiceAccountContact: Edm.Guid
 	InvoiceAccountContact *types.GUID `json:"InvoiceAccountContact,omitempty"`
 
-	// InvoiceAccountContactFullName:
+	// InvoiceAccountContactFullName: Edm.String
 	InvoiceAccountContactFullName *string `json:"InvoiceAccountContactFullName,omitempty"`
 
-	// InvoiceAccountName:
+	// InvoiceAccountName: Edm.String
 	InvoiceAccountName *string `json:"InvoiceAccountName,omitempty"`
 
-	// Modified:
+	// Modified: Edm.DateTime
 	Modified *types.Date `json:"Modified,omitempty"`
 
-	// Modifier:
+	// Modifier: Edm.Guid
 	Modifier *types.GUID `json:"Modifier,omitempty"`
 
-	// ModifierFullName:
+	// ModifierFullName: Edm.String
 	ModifierFullName *string `json:"ModifierFullName,omitempty"`
 
-	// Opportunity:
+	// Opportunity: Edm.Guid
 	Opportunity *types.GUID `json:"Opportunity,omitempty"`
 
-	// OpportunityName:
+	// OpportunityName: Edm.String
 	OpportunityName *string `json:"OpportunityName,omitempty"`
 
-	// OrderAccount:
+	// OrderAccount: Edm.Guid
 	OrderAccount *types.GUID `json:"OrderAccount,omitempty"`
 
-	// OrderAccountCode:
+	// OrderAccountCode: Edm.String
 	OrderAccountCode *string `json:"OrderAccountCode,omitempty"`
 
-	// OrderAccountContact:
+	// OrderAccountContact: Edm.Guid
 	OrderAccountContact *types.GUID `json:"OrderAccountContact,omitempty"`
 
-	// OrderAccountContactFullName:
+	// OrderAccountContactFullName: Edm.String
 	OrderAccountContactFullName *string `json:"OrderAccountContactFullName,omitempty"`
 
-	// OrderAccountName:
+	// OrderAccountName: Edm.String
 	OrderAccountName *string `json:"OrderAccountName,omitempty"`
 
-	// Project:
+	// PaymentCondition: Edm.String
+	PaymentCondition *string `json:"PaymentCondition,omitempty"`
+
+	// PaymentConditionDescription: Edm.String
+	PaymentConditionDescription *string `json:"PaymentConditionDescription,omitempty"`
+
+	// Project: Edm.Guid
 	Project *types.GUID `json:"Project,omitempty"`
 
-	// ProjectCode:
+	// ProjectCode: Edm.String
 	ProjectCode *string `json:"ProjectCode,omitempty"`
 
-	// ProjectDescription:
+	// ProjectDescription: Edm.String
 	ProjectDescription *string `json:"ProjectDescription,omitempty"`
 
-	// QuotationDate:
+	// QuotationDate: Edm.DateTime
 	QuotationDate *types.Date `json:"QuotationDate,omitempty"`
 
-	// QuotationLines:
+	// QuotationLines: QuotationLines
 	QuotationLines *json.RawMessage `json:"QuotationLines,omitempty"`
 
-	// QuotationNumber:
+	// QuotationNumber: Edm.Int32
 	QuotationNumber *int `json:"QuotationNumber,omitempty"`
 
-	// Remarks:
+	// QuotationOrderChargeLines: QuotationOrderChargeLines
+	QuotationOrderChargeLines *json.RawMessage `json:"QuotationOrderChargeLines,omitempty"`
+
+	// Remarks: Edm.String
 	Remarks *string `json:"Remarks,omitempty"`
 
-	// SalesPerson:
+	// SalesChannel: Edm.Guid
+	SalesChannel *types.GUID `json:"SalesChannel,omitempty"`
+
+	// SalesChannelCode: Edm.String
+	SalesChannelCode *string `json:"SalesChannelCode,omitempty"`
+
+	// SalesChannelDescription: Edm.String
+	SalesChannelDescription *string `json:"SalesChannelDescription,omitempty"`
+
+	// SalesPerson: Edm.Guid
 	SalesPerson *types.GUID `json:"SalesPerson,omitempty"`
 
-	// SalesPersonFullName:
+	// SalesPersonFullName: Edm.String
 	SalesPersonFullName *string `json:"SalesPersonFullName,omitempty"`
 
-	// Status:
+	// SelectionCode: Edm.Guid
+	SelectionCode *types.GUID `json:"SelectionCode,omitempty"`
+
+	// SelectionCodeCode: Edm.String
+	SelectionCodeCode *string `json:"SelectionCodeCode,omitempty"`
+
+	// SelectionCodeDescription: Edm.String
+	SelectionCodeDescription *string `json:"SelectionCodeDescription,omitempty"`
+
+	// ShippingMethod: Edm.Guid
+	ShippingMethod *types.GUID `json:"ShippingMethod,omitempty"`
+
+	// ShippingMethodDescription: Edm.String
+	ShippingMethodDescription *string `json:"ShippingMethodDescription,omitempty"`
+
+	// Status: Edm.Int16
 	Status *int `json:"Status,omitempty"`
 
-	// StatusDescription:
+	// StatusDescription: Edm.String
 	StatusDescription *string `json:"StatusDescription,omitempty"`
 
-	// VATAmountFC:
+	// VATAmountFC: Edm.Double
 	VATAmountFC *float64 `json:"VATAmountFC,omitempty"`
 
-	// VersionNumber:
+	// VersionNumber: Edm.Int32
 	VersionNumber *int `json:"VersionNumber,omitempty"`
 
-	// YourRef:
+	// YourRef: Edm.String
 	YourRef *string `json:"YourRef,omitempty"`
 }
 
