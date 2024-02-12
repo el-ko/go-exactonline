@@ -1,9 +1,10 @@
-module github.com/mcnijman/go-exactonline
+module github.com/el-ko/go-exactonline
 
 go 1.20
 
 require (
 	github.com/gofrs/uuid v3.1.0+incompatible
+	github.com/mcnijman/go-exactonline v0.0.0-20180909213922-222102c5fd05
 	golang.org/x/oauth2 v0.0.0-20180821212333-d2e6202438be
 	golang.org/x/time v0.5.0
 )
