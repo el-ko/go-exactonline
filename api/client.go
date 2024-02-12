@@ -117,11 +117,9 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*Response, error) {
 	req = req.WithContext(ctx)
 
-	c.Limiter.Wait(ctx)
-
-	/* if err := c.Throttle(ctx); err != nil {
+	if err := c.Throttle(ctx); err != nil {
 		return nil, err
-	} */
+	}
 	res, err := c.client.Do(req) // #nosec G107
 	if err != nil {
 		// If we got an error, and the context has been canceled,
@@ -173,8 +171,7 @@ func (c *Client) Do(ctx context.Context, req *http.Request, v interface{}) (*Res
 }
 
 func (c *Client) Throttle(ctx context.Context) error {
-	fmt.Print("Throttling ")
-	fmt.Println(c.Limiter.Allow())
+	c.Limiter.Allow()
 	return c.Limiter.Wait(ctx)
 }
 
