@@ -12,6 +12,8 @@ require (
 require (
 	github.com/golang/protobuf v1.2.0 // indirect
 	golang.org/x/net v0.7.0 // indirect
-	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
+	golang.org/x/sync v0.6.0 // indirect
 	google.golang.org/appengine v1.1.0 // indirect
 )
+
+replace github.com/mcnijman/go-exactonline => C:\Users\ElkovanBemmel\git\go-exactonline

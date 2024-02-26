@@ -15,6 +15,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/el-ko/go-exactonline/services/sync"
 	"github.com/gofrs/uuid"
 	"github.com/mcnijman/go-exactonline/api"
 	"github.com/mcnijman/go-exactonline/services/accountancy"
@@ -93,6 +94,7 @@ type Client struct {
 	HRM                  *hrm.HRMService
 	Manufacturing        *manufacturing.ManufacturingService
 	Subscription         *subscription.SubscriptionService
+	Sync                 *sync.SyncService
 	System               *system.SystemService
 	Activities           *activities.ActivitiesService
 }
